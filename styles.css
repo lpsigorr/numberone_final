@@ -25,7 +25,6 @@ body {
     position: relative;
     width: 100%;
     height: 123px;
-    background: linear-gradient(180deg, white 0%, #2B60AE 100%);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -74,7 +73,7 @@ body {
 .menu-btn span {
     width: 100%;
     height: 3px;
-    background: white;
+    background: #0F417B;
     border-radius: 2px;
 }
 
@@ -82,7 +81,7 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    height: 408px;
+    height: 448px;
     overflow: hidden;
 }
 
@@ -92,19 +91,11 @@ body {
     height: 489.60px;
     left: -91px;
     top: -16px;
-    background: #0F417B;
+    background-image: url('wave_1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     z-index: 1;
-}
-
-.hero-bg::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    background: white;
-    clip-path: ellipse(140% 100% at 50% 100%);
 }
 
 .hero-content {
@@ -155,7 +146,6 @@ body {
     width: 218px;
     height: 4px;
     background: #38A448;
-    margin-top: 87px;
 }
 
 .hero-subtitle {
@@ -171,7 +161,7 @@ body {
     position: relative;
     z-index: 10;
     padding: 0 37px;
-    margin-top: -100px;
+    margin-top: -220px;
 }
 
 .cta-info-box {
@@ -257,13 +247,13 @@ body {
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: row-reverse;
     margin-top: -200px;
     z-index: 3;
 }
 
 .packages-img {
-    width: 258px;
+    width: 200px;
     height: auto;
     object-fit: contain;
 }
@@ -275,7 +265,7 @@ body {
     height: 75px;
     background: #194483;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -90px;
+    margin-top: -60px;
 }
 
 
