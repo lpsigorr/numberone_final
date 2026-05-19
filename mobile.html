@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number One Transport - From 1 Gram to 30 Tons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mobile.css">
+    <script>
+        // Auto-redirect to desktop if accessed from desktop device
+        (function() {
+            const width = window.innerWidth;
+            const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+            
+            // If desktop screen size and not mobile device, redirect to desktop
+            if (width >= 768 && !isMobile) {
+                window.location.href = 'desktop.html';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="flag">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'%3E%3Cpath fill='%23002395' d='M0 0h900v600H0z'/%3E%3Cpath fill='%23FFF' d='M300 0h600v600H300z'/%3E%3Cpath fill='%23ED2939' d='M600 0h300v600H600z'/%3E%3C/svg%3E" alt="France">
+            </div>
+            <div class="logo">
+                <img src="images/logo_01.png" alt="Number One Transport">
+            </div>
+            <button class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="text-white">From</span>
+                    <span class="text-green"> 1 </span>
+                    <span class="text-white">gram </span>
+                    <span class="text-white-large">to </span>
+                    <span class="text-green-large">30</span>
+                    <span class="text-white-large"> tons</span>
+                </h1>
+                <div class="hero-line"></div>
+                <p class="hero-subtitle">Reliable and efficient<br>transport solutions</p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-info-box">
+                <p>Besoin d'une solution rapide ?</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">
+                    Faire un devis
+                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 12L10 8L6 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    Nous contacter
+                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 12L10 8L6 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Person Illustration -->
+        <div class="person-section">
+            <img src="images/perso_acceuil.png" alt="Delivery person" class="person-img">
+        </div>
+
+        <!-- Packages Illustration -->
+        <div class="packages-section">
+            <img src="images/colis.png" alt="Packages" class="packages-img">
+        </div>
+
+        <!-- Blue Ground Separator -->
+        <div class="ground-separator"></div>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="services-header">
+                <h2 class="services-title">NOS SERVICES</h2>
+                <div class="services-title-line"></div>
+                <h3 class="services-subtitle">NUMBER ONE</h3>
+                <p class="services-tagline">Des solutions de design adaptées<br>à vos besoin</p>
+            </div>
+
+            <div class="services-cards">
+                <!-- Transport Card -->
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <img src="images/image_25.png" alt="Transport">
+                        </div>
+                        <div class="service-text">
+                            <h4>Transport</h4>
+                            <p>national & international</p>
+                        </div>
+                    </div>
+                    <div class="service-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Économique Card -->
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <img src="images/sqsq_1.png" alt="Économique">
+                        </div>
+                        <div class="service-text">
+                            <h4>Économique</h4>
+                            <p>Le meilleur rapport qualité / prix</p>
+                        </div>
+                    </div>
+                    <div class="service-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Besoin d'un devis Card -->
+                <div class="service-card service-card-dark">
+                    <div class="service-card-content">
+                        <div class="service-icon service-icon-phone">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M9 5L6 8C6 8 6 14 12 20C18 26 24 26 24 26L27 23L22 18L20 20C20 20 16 20 12 16C8 12 8 8 8 8L10 6L9 5Z" fill="#3EB550"/>
+                            </svg>
+                        </div>
+                        <div class="service-text">
+                            <h4>BESOIN D'UN DEVIS?</h4>
+                            <p>Contactez-nous dès maintenant<br>pour une offre personnalisée</p>
+                        </div>
+                    </div>
+                    <div class="service-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process-section">
+            <div class="process-header">
+                <h2 class="process-title">Number One</h2>
+                <p class="process-subtitle">de la réception à la livraison</p>
+                <div class="process-title-line"></div>
+            </div>
+
+            <div class="process-steps">
+                <!-- Step 1: Reception -->
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-image">
+                            <img src="images/reception.png" alt="Réception">
+                        </div>
+                        <div class="step-text">
+                            <h3>RECEPTION</h3>
+                            <div class="step-title-line"></div>
+                            <p>Gestion rapide de<br>vos marchandises à<br>l'arrivée !</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Envol & Préparation -->
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-image">
+                            <img src="images/preparation.png" alt="Envol & Préparation">
+                        </div>
+                        <div class="step-text">
+                            <h3>ENVOL &<br>PRÉPARATION</h3>
+                            <div class="step-title-line"></div>
+                            <p>Commandes traitées<br>avec précision !</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Livraison -->
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-image">
+                            <img src="images/livraison.png" alt="Livraison">
+                        </div>
+                        <div class="step-text">
+                            <h3>LIVRAISON</h3>
+                            <div class="step-title-line"></div>
+                            <p>Expédition efficace,<br>fiable et rapide !</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fleet Section -->
+        <section class="fleet-section">
+            <div class="fleet-header">
+                <h2 class="fleet-title">NOTRE FLOTTE</h2>
+                <h3 class="fleet-subtitle">DE VÉHICULES</h3>
+                <p class="fleet-tagline">Des solutions adaptées à chaque besoin<br>de transport</p>
+            </div>
+            
+            <div class="fleet-transition">
+                <p>CHOISISSEZ LE VÉHICULE<br>ADAPTÉ À VOTRE BESOIN</p>
+            </div>
+
+            <div class="fleet-vehicles">
+                <div class="vehicles-scroll">
+                    <!-- Voiture -->
+                    <div class="vehicle-card">
+                        <div class="vehicle-image">
+                            <img src="images/voiture.png" alt="Voiture">
+                        </div>
+                        <h4>VOITURE</h4>
+                        <p>Idéale pour les petits déplacements<br>et livraisons rapides.</p>
+                        <button class="vehicle-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Camionnette 9 M³ -->
+                    <div class="vehicle-card">
+                        <div class="vehicle-image">
+                            <img src="images/camionnette.png" alt="Camionnette 9 M³">
+                        </div>
+                        <h4>CAMIONNETTE 9 M³ / 4</h4>
+                        <p>Volume optimal pour transpo<br>plus, en toute sécurité.</p>
+                        <button class="vehicle-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Camionnette 2,70 m³ -->
+                    <div class="vehicle-card">
+                        <div class="vehicle-image">
+                            <img src="images/camionnette.png" alt="Camionnette 2,70 m³">
+                        </div>
+                        <h4>CAMIONNETTE 2,70 m³ / 450 kg</h4>
+                        <p>Parfaite pour les petits transports et<br>livraisons.</p>
+                        <button class="vehicle-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Camionnette 6 M³ -->
+                    <div class="vehicle-card">
+                        <div class="vehicle-image">
+                            <img src="images/camionnette.png" alt="Camionnette 6 M³">
+                        </div>
+                        <h4>CAMIONNETTE 6 M³ / 4</h4>
+                        <p>Idéale pour vos déménagem<br>livraisons du quotidien.</p>
+                        <button class="vehicle-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">100</div>
+                    <div class="stat-label">véhicules</div>
+                    <div class="stat-line"></div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">20<span class="stat-plus">+</span></div>
+                    <div class="stat-label">years of<br>experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">one only<br>solution</div>
+                    <div class="stat-line"></div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">400<span class="stat-plus">+</span></div>
+                    <div class="stat-label">Clients</div>
+                </div>
+            </div>
+
+            <!-- About Content -->
+            <div class="about-content">
+                <h2 class="about-title">
+                    QUI SOMMES<br>NOUS ?
+                    <img src="images/truck_icon.png" alt="Truck" class="title-icon">
+                </h2>
+                <div class="about-title-line"></div>
+
+                <div class="about-text">
+                    <p>Depuis plus de 20 ans, <span class="highlight">Number One</span> est spécialiste du transport express en Belgique et en Europe.</p>
+
+                    <p class="highlight-box"><span class="highlight">De 1 gramme à 30 tonnes</span>, nous prenons en charge tous vos envois, du courrier à la marchandise volumineuse.</p>
+
+                    <p>Nous proposons des <span class="highlight">solutions adaptées</span> à chaque besoin grâce à un <span class="highlight">service sur mesure</span></p>
+
+                    <p><span class="highlight">Fiabilité, rapidité</span> et suivi rigoureux font de Number One un partenaire de confiance pour les professionnels</p>
+                </div>
+
+                <button class="about-btn">En savoir plus</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>
