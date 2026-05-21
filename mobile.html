@@ -31,12 +31,34 @@
             <div class="logo">
                 <img src="images/logo_01.png" alt="Number One Transport">
             </div>
-            <button class="menu-btn">
+            <button class="menu-btn" id="menuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="menu-content">
+                <button class="menu-close" id="menuClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="#0F417B" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                
+                <nav class="menu-nav">
+                    <a href="#hero" class="menu-item active">ACCEUIL</a>
+                    <a href="#fleet" class="menu-item">VÉHICULES</a>
+                    <a href="#services" class="menu-item">NOS SERVICES</a>
+                    <a href="#about" class="menu-item">QUI SOMMES-NOUS ?</a>
+                    <a href="#" class="menu-item menu-item-outlined">ACCÈS CLIENT</a>
+                    <a href="#" class="menu-item">NEWS</a>
+                </nav>
+
+                <a href="tel:+32" class="menu-call-btn">APPELER</a>
+            </div>
+        </div>
 
         <!-- Hero Section -->
         <section class="hero">
@@ -338,4 +360,35 @@
         <footer class="footer"></footer>
     </div>
 </body>
+<script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const menuClose = document.getElementById('menuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    menuClose.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    })
+</script>
 </html>
