@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number One Transport - Qui Sommes Nous ?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="more.css">
+    <script>
+        // Auto-redirect to desktop if accessed from desktop device
+        (function() {
+            const width = window.innerWidth;
+            const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+            if (width >= 768 && !isMobile) {
+                window.location.href = 'desktop.html';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="flag">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'%3E%3Cpath fill='%23002395' d='M0 0h900v600H0z'/%3E%3Cpath fill='%23FFF' d='M300 0h600v600H300z'/%3E%3Cpath fill='%23ED2939' d='M600 0h300v600H600z'/%3E%3C/svg%3E" alt="France">
+            </div>
+            <div class="logo">
+                <img src="images/logo_01.png" alt="Number One Transport">
+            </div>
+            <button class="menu-btn" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="menu-content">
+                <button class="menu-close" id="menuClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="#0F417B" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+
+                <nav class="menu-nav">
+                    <a href="mobile.html" class="menu-item">ACCEUIL</a>
+                    <a href="mobile.html#fleet" class="menu-item">VÉHICULES</a>
+                    <a href="mobile.html#services" class="menu-item">NOS SERVICES</a>
+                    <a href="more.html" class="menu-item active">QUI SOMMES-NOUS ?</a>
+                    <a href="#" class="menu-item menu-item-outlined">ACCÈS CLIENT</a>
+                    <a href="#" class="menu-item">NEWS</a>
+                </nav>
+
+                <a href="tel:+32" class="menu-call-btn">APPELER</a>
+            </div>
+        </div>
+
+        <!-- Qui Sommes Nous Section -->
+        <section class="qsn">
+            <div class="qsn-head">
+                <a href="mobile.html" class="back-btn" aria-label="Retour">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 12H5M12 19l-7-7 7-7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <div class="qsn-title-block">
+                    <h1 class="qsn-title">Qui sommes<br>nous ?<img src="images/truck_icon.png" alt="" class="qsn-truck"></h1>
+                    <div class="qsn-title-line"></div>
+                </div>
+            </div>
+
+            <p class="qsn-intro">Nous nous occupons de vos envois les plus urgents vers/depuis la Belgique ou tous les pays européens !</p>
+
+            <div class="qsn-divider"></div>
+
+            <div class="qsn-photo">
+                <img src="images/image_1.png" alt="Number One Transport - chargement de marchandises">
+            </div>
+
+            <div class="qsn-divider"></div>
+
+            <div class="qsn-slogan">
+                <p class="qsn-slogan-label">Notre slogan :</p>
+                <div class="qsn-slogan-bar">«&nbsp;De 1 gramme à 30 tonnes&nbsp;» !</div>
+            </div>
+
+            <p class="qsn-text">Nous sommes une entreprise familiale, active dans le secteur du transport depuis plus de 25 ans. Le sérieux, la rigueur, la rapidité et le suivi administratif sont synonymes, pour notre société, de gage de confiance.</p>
+        </section>
+
+        <!-- Charroi Section -->
+        <section class="charroi">
+            <p class="charroi-text">Notre charroi de&nbsp;+/- 30 camions et camionnettes nous permet d'assurer les transports de plus de 400 clients fidèles, depuis l'artisan jusqu'à la multinationale en passant bien sûr par la PME.</p>
+            <div class="charroi-band"></div>
+            <img src="images/perso_1.png" alt="Livreur Number One" class="charroi-person">
+        </section>
+
+        <div class="qsn-divider"></div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const menuClose = document.getElementById('menuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>

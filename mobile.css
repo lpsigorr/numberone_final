@@ -955,19 +955,17 @@ body {
 }
 
 .about-btn {
-    width: 100%;
-    max-width: 280px;
-    height: 48px;
+    display: inline-block;      /* added */
     background: white;
-    color: #194483;
+    color: #0F417B;
     border: none;
-    border-radius: 24px;
-    font-size: 16px;
-    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;      /* added */
     cursor: pointer;
-    transition: transform 0.2s;
-    display: block;
-    margin: 0 auto;
+    transition: all 0.3s ease;
 }
 
 .about-btn:active {
