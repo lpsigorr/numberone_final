@@ -6,7 +6,6 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #0D3F79;
     overflow-x: hidden;
 }
 
@@ -30,7 +29,7 @@ body {
     justify-content: space-between;
     padding: 0 31px;
     z-index: 100;
-    background: linear-gradient(180deg, #FFFFFF 0%, #2B60AE 100%);
+    background: white;
 }
 
 .flag {
@@ -334,6 +333,189 @@ body {
     height: 400px;
     width: auto;
     z-index: 2;
+}
+
+/* Colis Section */
+.colis {
+    background: linear-gradient(180deg, #0D3F79 0%, #185499 50%, #144C8C 100%);
+    padding: 120px 24px 90px;
+}
+
+.colis-text {
+    margin: 0 auto;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.55;
+    text-align: center;
+}
+
+.colis-text strong {
+    font-weight: 800;
+}
+
+.colis-text--top {
+    max-width: 348px;
+}
+
+.colis-text--bottom {
+    max-width: 322px;
+}
+
+.colis-box {
+    text-align: center;
+    margin: 40px 0 32px;
+}
+
+.colis-box img {
+    width: 284px;
+    max-width: 80%;
+    height: auto;
+}
+
+/* Solution Section */
+.solution-banner-section {
+    background: white;
+    padding: 14px 0 16px;
+}
+
+.solution-banner {
+    width: 343px;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    background: #38A448;
+    padding: 5px 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.solution-banner p {
+    color: white;
+    font-size: 16.76px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.solution-banner strong {
+    font-weight: 700;
+}
+
+.solution-text-section {
+    background: white;
+    padding: 90px 24px 48px;
+}
+
+.solution-text {
+    max-width: 320px;
+    margin: 0 auto;
+    color: #174188;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.55;
+    text-align: center;
+}
+
+.solution-text strong {
+    font-weight: 800;
+}
+
+.solution-text + .solution-text {
+    margin-top: 22px;
+}
+
+.repondons-section {
+    background: linear-gradient(180deg, #0D3F79 0%, #185499 50%, #144C8C 100%);
+    padding: 28px 24px 24px;
+}
+
+.repondons-section p {
+    max-width: 342px;
+    margin: 0 auto;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.repondons-section .hl {
+    background: #38A448;
+    font-weight: 700;
+    padding: 2px 5px;
+    white-space: nowrap;
+}
+
+/* Persuadés Section */
+.persuades-section {
+    background: white;
+    padding: 105px 24px;
+}
+
+.persuades-text {
+    max-width: 320px;
+    margin: 0 auto;
+    color: #0D3F79;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.55;
+    text-align: center;
+}
+
+.persuades-text strong {
+    font-weight: 800;
+}
+
+.persuades-text b {
+    font-weight: 700;
+}
+
+.persuades-text + .persuades-text {
+    margin-top: 22px;
+}
+
+/* Footer */
+.site-footer {
+    background: linear-gradient(180deg, #0D3F79 0%, #185499 50%, #144C8C 100%);
+    padding: 34px 20px 120px;
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn {
+    flex: 1;
+    max-width: 152.24px;
+    height: 38px;
+    border-radius: 13.28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background: #2B60AE;
+}
+
+.btn-secondary {
+    background: #3EB550;
+}
+
+.btn-arrow {
+    margin-left: 6px;
+    width: 14px;
+    height: 14px;
 }
 
 /* Responsive adjustments */
