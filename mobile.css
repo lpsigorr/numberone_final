@@ -575,8 +575,7 @@ body {
     width: 180px;
     height: 3px;
     background: #3EB550;
-    margin: 0 auto;
-    margin-right: 10000px;
+    margin: 0;
 }
 
 .process-steps {
@@ -690,7 +689,7 @@ body {
 
 .fleet-subtitle {
     color: #3EB550;
-    font-size: 30px     ;
+    font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 16px;
@@ -753,7 +752,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-top: 50px
+    margin-top: 50px;
 }
 
 .vehicle-image {

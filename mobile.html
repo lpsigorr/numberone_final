@@ -48,7 +48,7 @@
                 </button>
                 
                 <nav class="menu-nav">
-                    <a href="#hero" class="menu-item active">ACCEUIL</a>
+                    <a href="#hero" class="menu-item active">ACCUEIL</a>
                     <a href="#fleet" class="menu-item">VÉHICULES</a>
                     <a href="#services" class="menu-item">NOS SERVICES</a>
                     <a href="#about" class="menu-item">QUI SOMMES-NOUS ?</a>
@@ -61,7 +61,7 @@
         </div>
 
         <!-- Hero Section -->
-        <section class="hero">
+        <section id="hero" class="hero">
             <div class="hero-bg"></div>
             <div class="hero-content">
                 <h1 class="hero-title">
@@ -83,13 +83,13 @@
                 <p>Besoin d'une solution rapide ?</p>
             </div>
             <div class="cta-buttons">
-                <a href="#" class="btn btn-primary">
+                <a href="#contact" class="btn btn-primary">
                     Faire un devis
                     <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M6 12L10 8L6 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
-                <a href="#" class="btn btn-secondary">
+                <a href="#contact" class="btn btn-secondary">
                     Nous contacter
                     <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M6 12L10 8L6 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -112,12 +112,12 @@
         <div class="ground-separator"></div>
 
         <!-- Services Section -->
-        <section class="services-section">
+        <section id="services" class="services-section">
             <div class="services-header">
                 <h2 class="services-title">NOS SERVICES</h2>
                 <div class="services-title-line"></div>
                 <h3 class="services-subtitle">NUMBER ONE</h3>
-                <p class="services-tagline">Des solutions de design adaptées<br>à vos besoin</p>
+                <p class="services-tagline">Des solutions adaptées<br>à vos besoins</p>
             </div>
 
             <div class="services-cards">
@@ -196,7 +196,7 @@
                             <img src="images/reception.png" alt="Réception">
                         </div>
                         <div class="step-text">
-                            <h3>RECEPTION</h3>
+                            <h3>RÉCEPTION</h3>
                             <div class="step-title-line"></div>
                             <p>Gestion rapide de<br>vos marchandises à<br>l'arrivée !</p>
                         </div>
@@ -236,7 +236,7 @@
         </section>
 
         <!-- Fleet Section -->
-        <section class="fleet-section">
+        <section id="fleet" class="fleet-section">
             <div class="fleet-header">
                 <h2 class="fleet-title">NOTRE FLOTTE</h2>
                 <h3 class="fleet-subtitle">DE VÉHICULES</h3>
@@ -269,7 +269,7 @@
                             <img src="images/camionnette.png" alt="Camionnette 9 M³">
                         </div>
                         <h4>CAMIONNETTE 9 M³ / 4</h4>
-                        <p>Volume optimal pour transpo<br>plus, en toute sécurité.</p>
+                        <p>Volume optimal pour transport<br>plus important, en toute sécurité.</p>
                         <button class="vehicle-arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -297,7 +297,7 @@
                             <img src="images/camionnette.png" alt="Camionnette 6 M³">
                         </div>
                         <h4>CAMIONNETTE 6 M³ / 4</h4>
-                        <p>Idéale pour vos déménagem<br>livraisons du quotidien.</p>
+                        <p>Idéale pour vos déménagements<br>et livraisons du quotidien.</p>
                         <button class="vehicle-arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -309,7 +309,7 @@
         </section>
 
         <!-- About Section -->
-        <section class="about-section">
+        <section id="about" class="about-section">
             <!-- Stats Grid -->
             <div class="stats-grid">
                 <div class="stat-item">
@@ -357,38 +357,38 @@
         </section>
 
         <!-- Footer -->
-        <footer class="footer"></footer>
+        <footer id="contact" class="footer"></footer>
     </div>
-</body>
-<script>
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const menuClose = document.getElementById('menuClose');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuItems = document.querySelectorAll('.menu-item');
 
-    menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const menuClose = document.getElementById('menuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuItems = document.querySelectorAll('.menu-item');
 
-    menuClose.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
-    });
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
 
-    menuItems.forEach(item => {
-        item.addEventListener('click', () => {
+        menuClose.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
         });
-    });
 
-    mobileMenu.addEventListener('click', (e) => {
-        if (e.target === mobileMenu) {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    })
-</script>
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
 </html>
