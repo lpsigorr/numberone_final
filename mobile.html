@@ -9,12 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="mobile.css">
     <script>
-        // Auto-redirect to desktop if accessed from desktop device
         (function() {
             const width = window.innerWidth;
             const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
-            
-            // If desktop screen size and not mobile device, redirect to desktop
             if (width >= 768 && !isMobile) {
                 window.location.href = 'desktop.html';
             }
@@ -46,7 +43,6 @@
                         <path d="M18 6L6 18M6 6L18 18" stroke="#0F417B" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </button>
-                
                 <nav class="menu-nav">
                     <a href="#hero" class="menu-item active">ACCUEIL</a>
                     <a href="#fleet" class="menu-item">VÉHICULES</a>
@@ -55,7 +51,6 @@
                     <a href="#" class="menu-item menu-item-outlined">ACCÈS CLIENT</a>
                     <a href="#" class="menu-item">NEWS</a>
                 </nav>
-
                 <a href="tel:+32" class="menu-call-btn">APPELER</a>
             </div>
         </div>
@@ -83,7 +78,7 @@
                 <p>Besoin d'une solution rapide ?</p>
             </div>
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">
+                <a href="https://lpsigorr.github.io/vehicle_calculator/" class="btn btn-primary">
                     Faire un devis
                     <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M6 12L10 8L6 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -121,7 +116,6 @@
             </div>
 
             <div class="services-cards">
-                <!-- Transport Card -->
                 <div class="service-card">
                     <div class="service-card-content">
                         <div class="service-icon">
@@ -139,7 +133,6 @@
                     </div>
                 </div>
 
-                <!-- Économique Card -->
                 <div class="service-card">
                     <div class="service-card-content">
                         <div class="service-icon">
@@ -157,7 +150,6 @@
                     </div>
                 </div>
 
-                <!-- Besoin d'un devis Card -->
                 <div class="service-card service-card-dark">
                     <div class="service-card-content">
                         <div class="service-icon service-icon-phone">
@@ -188,7 +180,6 @@
             </div>
 
             <div class="process-steps">
-                <!-- Step 1: Reception -->
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
@@ -203,7 +194,6 @@
                     </div>
                 </div>
 
-                <!-- Step 2: Envol & Préparation -->
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
@@ -218,7 +208,6 @@
                     </div>
                 </div>
 
-                <!-- Step 3: Livraison -->
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
@@ -249,7 +238,6 @@
 
             <div class="fleet-vehicles">
                 <div class="vehicles-scroll">
-                    <!-- Voiture -->
                     <div class="vehicle-card">
                         <div class="vehicle-image">
                             <img src="images/voiture.png" alt="Voiture">
@@ -263,7 +251,6 @@
                         </button>
                     </div>
 
-                    <!-- Camionnette 9 M³ -->
                     <div class="vehicle-card">
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 9 M³">
@@ -277,7 +264,6 @@
                         </button>
                     </div>
 
-                    <!-- Camionnette 2,70 m³ -->
                     <div class="vehicle-card">
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 2,70 m³">
@@ -291,7 +277,6 @@
                         </button>
                     </div>
 
-                    <!-- Camionnette 6 M³ -->
                     <div class="vehicle-card">
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 6 M³">
@@ -310,7 +295,6 @@
 
         <!-- About Section -->
         <section id="about" class="about-section">
-            <!-- Stats Grid -->
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">100</div>
@@ -334,7 +318,6 @@
                 </div>
             </div>
 
-            <!-- About Content -->
             <div class="about-content">
                 <h2 class="about-title">
                     QUI SOMMES<br>NOUS ?
@@ -344,11 +327,8 @@
 
                 <div class="about-text">
                     <p>Depuis plus de 20 ans, <span class="highlight">Number One</span> est spécialiste du transport express en Belgique et en Europe.</p>
-
                     <p class="highlight-box"><span class="highlight">De 1 gramme à 30 tonnes</span>, nous prenons en charge tous vos envois, du courrier à la marchandise volumineuse.</p>
-
                     <p>Nous proposons des <span class="highlight">solutions adaptées</span> à chaque besoin grâce à un <span class="highlight">service sur mesure</span></p>
-
                     <p><span class="highlight">Fiabilité, rapidité</span> et suivi rigoureux font de Number One un partenaire de confiance pour les professionnels</p>
                 </div>
 
