@@ -1,0 +1,424 @@
+(function () {
+    var FLAG_FR = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'%3E%3Cpath fill='%23002395' d='M0 0h900v600H0z'/%3E%3Cpath fill='%23FFF' d='M300 0h600v600H300z'/%3E%3Cpath fill='%23ED2939' d='M600 0h300v600H600z'/%3E%3C/svg%3E";
+    var FLAG_NL = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'%3E%3Cpath fill='%23AE1C28' d='M0 0h900v200H0z'/%3E%3Cpath fill='%23FFF' d='M0 200h900v200H0z'/%3E%3Cpath fill='%231E4785' d='M0 400h900v200H0z'/%3E%3C/svg%3E";
+    var FLAG_EN = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0 0L60 30M60 0L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E";
+    var FLAGS = { fr: FLAG_FR, nl: FLAG_NL, en: FLAG_EN };
+
+    var T = {
+        fr: {
+            /* ── Desktop nav ── */
+            'nav-services': 'Services',
+            'nav-process': 'Notre Process',
+            'nav-fleet': 'Notre Flotte',
+            'nav-about': 'Qui Sommes-Nous',
+            'nav-quote': 'Faire un devis',
+
+            /* ── Mobile menu ── */
+            'menu-home': 'ACCUEIL',
+            'menu-vehicles': 'VÉHICULES',
+            'menu-services': 'NOS SERVICES',
+            'menu-about': 'QUI SOMMES-NOUS ?',
+            'menu-client': 'ACCÈS CLIENT',
+            'menu-news': 'NEWS',
+            'menu-call': 'APPELER',
+
+            /* ── Hero ── */
+            'hero-subtitle': 'Solutions de transport fiables et efficaces<br>pour tous vos besoins logistiques',
+            'hero-subtitle-mobile': 'Solutions de transport<br>fiables et efficaces',
+
+            /* ── CTA ── */
+            'cta-info': 'Besoin d\'une solution rapide ?',
+            'btn-quote': 'Faire un devis',
+            'btn-contact': 'Nous contacter',
+
+            /* ── Services ── */
+            'services-title': 'NOS SERVICES',
+            'services-tagline': 'Des solutions adaptées à chaque besoin',
+            'services-tagline-mobile': 'Des solutions adaptées<br>à vos besoins',
+            'svc-transport-name': 'Transport',
+            'svc-transport-desc': 'Solutions de transport national et international adaptées à vos besoins',
+            'svc-transport-desc-mobile': 'national &amp; international',
+            'svc-eco-name': 'Économique',
+            'svc-eco-desc': 'Le meilleur rapport qualité/prix pour vos envois professionnels',
+            'svc-eco-desc-mobile': 'Le meilleur rapport qualité / prix',
+            'svc-quote-name': 'BESOIN D\'UN DEVIS ?',
+            'svc-quote-desc': 'Contactez-nous dès maintenant pour une offre personnalisée',
+            'svc-quote-desc-mobile': 'Contactez-nous dès maintenant<br>pour une offre personnalisée',
+
+            /* ── Process ── */
+            'process-subtitle': 'de la réception à la livraison',
+            'step1-name': 'RÉCEPTION',
+            'step1-desc': 'Gestion rapide de vos marchandises à l\'arrivée avec traçabilité complète',
+            'step1-desc-mobile': 'Gestion rapide de<br>vos marchandises à<br>l\'arrivée !',
+            'step2-name': 'PRÉPARATION',
+            'step2-name-mobile': 'ENVOL &amp;<br>PRÉPARATION',
+            'step2-desc': 'Commandes traitées avec précision par notre équipe d\'experts',
+            'step2-desc-mobile': 'Commandes traitées<br>avec précision !',
+            'step3-name': 'LIVRAISON',
+            'step3-desc': 'Expédition efficace, fiable et rapide partout en Europe',
+            'step3-desc-mobile': 'Expédition efficace,<br>fiable et rapide !',
+
+            /* ── Fleet ── */
+            'fleet-title': 'NOTRE FLOTTE',
+            'fleet-subtitle': 'DE VÉHICULES',
+            'fleet-tagline': 'Des solutions adaptées à chaque besoin de transport',
+            'fleet-tagline-mobile': 'Des solutions adaptées à chaque besoin<br>de transport',
+            'fleet-cta': 'CHOISISSEZ LE VÉHICULE ADAPTÉ À VOTRE BESOIN',
+            'fleet-cta-mobile': 'CHOISISSEZ LE VÉHICULE<br>ADAPTÉ À VOTRE BESOIN',
+            'veh1-name': 'VOITURE',
+            'veh1-desc': 'Idéale pour les petits déplacements et livraisons rapides en milieu urbain',
+            'veh1-desc-mobile': 'Idéale pour les petits déplacements<br>et livraisons rapides.',
+            'veh2-name': 'CAMIONNETTE 9 M³ / 4',
+            'veh2-desc': 'Volume optimal pour transport plus important, en toute sécurité',
+            'veh2-desc-mobile': 'Volume optimal pour transport<br>plus important, en toute sécurité.',
+            'veh3-name': 'CAMIONNETTE 2,70 m³ / 450 kg',
+            'veh3-desc': 'Parfaite pour les petits transports et livraisons quotidiennes',
+            'veh3-desc-mobile': 'Parfaite pour les petits transports et<br>livraisons.',
+            'veh4-name': 'CAMIONNETTE 6 M³ / 4',
+            'veh4-desc': 'Idéale pour vos déménagements et livraisons du quotidien',
+            'veh4-desc-mobile': 'Idéale pour vos déménagements<br>et livraisons du quotidien.',
+
+            /* ── About / Stats ── */
+            'stat-vehicles': 'Véhicules',
+            'stat-experience': 'Années d\'expérience',
+            'stat-solution': 'Solution unique',
+            'stat-clients': 'Clients satisfaits',
+            'stat-vehicles-m': 'véhicules',
+            'stat-exp-m': 'années<br>d\'expérience',
+            'stat-sol-m': 'solution<br>unique',
+            'stat-clients-m': 'Clients',
+            'about-title': 'QUI SOMMES-NOUS ?',
+            'about-title-mobile': 'QUI SOMMES<br>NOUS ?',
+            'about-p1': 'Depuis plus de 20 ans, <span class="highlight">Number One</span> est spécialiste du transport express en Belgique et en Europe.',
+            'about-p2': '<span class="highlight">De 1 gramme à 30 tonnes</span>, nous prenons en charge tous vos envois, du courrier à la marchandise volumineuse.',
+            'about-p3': 'Nous proposons des <span class="highlight">solutions adaptées</span> à chaque besoin grâce à un <span class="highlight">service sur mesure</span>',
+            'about-p4': '<span class="highlight">Fiabilité, rapidité</span> et suivi rigoureux font de Number One un partenaire de confiance pour les professionnels',
+            'about-btn': 'En savoir plus',
+
+            /* ── Footer (desktop) ── */
+            'footer-col1-p1': 'Solutions de transport professionnel de 1 gramme à 30 tonnes.',
+            'footer-col1-p2': 'Fiabilité, rapidité et expertise depuis plus de 20 ans.',
+            'footer-col2-title': 'Services',
+            'footer-nat': 'Transport National',
+            'footer-intl': 'Transport International',
+            'footer-fleet': 'Notre Flotte',
+            'footer-process': 'Notre Process',
+            'footer-col3-title': 'Entreprise',
+            'footer-about': 'Qui Sommes-Nous',
+            'footer-contact': 'Contact',
+            'footer-quote-link': 'Faire un Devis',
+            'footer-legal': 'Mentions Légales',
+            'footer-col4-title': 'Contact',
+            'footer-location': 'Brussels Airport<br>Machelen, Belgique',
+            'footer-copy': '© 2026 Number One Transport. Tous droits réservés.',
+
+            /* ── more.html ── */
+            'back-label': 'Retour',
+            'qsn-title': 'Qui sommes<br>nous ?',
+            'qsn-intro': 'Nous nous occupons de vos envois les plus urgents vers/depuis la Belgique ou tous les pays européens !',
+            'qsn-slogan-label': 'Notre slogan :',
+            'qsn-slogan-bar': '« De 1 gramme à 30 tonnes » !',
+            'qsn-text': 'Nous sommes une entreprise familiale, active dans le secteur du transport depuis plus de 25 ans. Le sérieux, la rigueur, la rapidité et le suivi administratif sont synonymes, pour notre société, de gage de confiance.',
+            'charroi-text': 'Notre charroi de +/- 30 camions et camionnettes nous permet d\'assurer les transports de plus de 400 clients fidèles, depuis l\'artisan jusqu\'à la multinationale en passant bien sûr par la PME.',
+            'colis-top': 'Nous nous occupons de vos envois les plus urgents vers/depuis la Belgique ou tous les <strong>pays européens.</strong>',
+            'colis-bottom': 'Vos plis et enveloppes, palettes ou autres colis sont retirés et livrés <strong>immédiatement</strong> et dans la foulée.',
+            'solution-banner': 'Quelle que soit <strong>votre demande,</strong><br>nous avons <strong>Votre Solution.</strong>',
+            'solution-p1': 'Les <strong>compétences</strong> de notre équipe expérimentée permettent à Number One de vous accompagner pour toutes vos activités.',
+            'solution-p2': 'Nous vous proposons des <strong>solutions</strong> sur mesure, <strong>adaptées à vos besoins</strong> spécifiques.',
+            'repondons': 'Nous répondons, <span class="hl">depuis plus de 25 ans</span> déjà, aux demandes de nos clients issus des secteurs les plus variés',
+            'persuades-p1': 'Nous sommes <strong>persuadés</strong> qu\'une collaboration avec un partenaire de transport fiable pour vous accompagner, ne peut qu\'apporter une <strong>plus-value importante</strong> à votre société.',
+            'persuades-p2': 'Notre site Internet remanié est destiné à vous offrir un outil que nous voulons <b>pratique, convivial</b> et <b>interactif</b> particulièrement, grâce à notre « portail clients ».'
+        },
+
+        en: {
+            'nav-services': 'Services',
+            'nav-process': 'Our Process',
+            'nav-fleet': 'Our Fleet',
+            'nav-about': 'About Us',
+            'nav-quote': 'Get a Quote',
+
+            'menu-home': 'HOME',
+            'menu-vehicles': 'VEHICLES',
+            'menu-services': 'OUR SERVICES',
+            'menu-about': 'ABOUT US',
+            'menu-client': 'CLIENT PORTAL',
+            'menu-news': 'NEWS',
+            'menu-call': 'CALL US',
+
+            'hero-subtitle': 'Reliable and efficient transport solutions<br>for all your logistics needs',
+            'hero-subtitle-mobile': 'Reliable and efficient<br>transport solutions',
+
+            'cta-info': 'Need a quick solution?',
+            'btn-quote': 'Get a Quote',
+            'btn-contact': 'Contact Us',
+
+            'services-title': 'OUR SERVICES',
+            'services-tagline': 'Solutions tailored to every need',
+            'services-tagline-mobile': 'Solutions tailored<br>to every need',
+            'svc-transport-name': 'Transport',
+            'svc-transport-desc': 'National and international transport solutions tailored to your needs',
+            'svc-transport-desc-mobile': 'national &amp; international',
+            'svc-eco-name': 'Economical',
+            'svc-eco-desc': 'The best value for money for your professional shipments',
+            'svc-eco-desc-mobile': 'The best value for money',
+            'svc-quote-name': 'NEED A QUOTE?',
+            'svc-quote-desc': 'Contact us now for a personalised offer',
+            'svc-quote-desc-mobile': 'Contact us now<br>for a personalised offer',
+
+            'process-subtitle': 'from reception to delivery',
+            'step1-name': 'RECEPTION',
+            'step1-desc': 'Fast handling of your goods upon arrival with full traceability',
+            'step1-desc-mobile': 'Fast handling of<br>your goods upon<br>arrival!',
+            'step2-name': 'PREPARATION',
+            'step2-name-mobile': 'DISPATCH &amp;<br>PREPARATION',
+            'step2-desc': 'Orders processed with precision by our team of experts',
+            'step2-desc-mobile': 'Orders processed<br>with precision!',
+            'step3-name': 'DELIVERY',
+            'step3-desc': 'Efficient, reliable and fast shipping across Europe',
+            'step3-desc-mobile': 'Efficient, reliable<br>and fast shipping!',
+
+            'fleet-title': 'OUR FLEET',
+            'fleet-subtitle': 'OF VEHICLES',
+            'fleet-tagline': 'Solutions tailored to every transport need',
+            'fleet-tagline-mobile': 'Solutions tailored to every<br>transport need',
+            'fleet-cta': 'CHOOSE THE VEHICLE SUITED TO YOUR NEED',
+            'fleet-cta-mobile': 'CHOOSE THE VEHICLE<br>SUITED TO YOUR NEED',
+            'veh1-name': 'CAR',
+            'veh1-desc': 'Ideal for small trips and fast deliveries in urban areas',
+            'veh1-desc-mobile': 'Ideal for small trips<br>and fast deliveries.',
+            'veh2-name': 'VAN 9 M³ / 4',
+            'veh2-desc': 'Optimal volume for larger loads, transported safely',
+            'veh2-desc-mobile': 'Optimal volume for larger<br>loads, transported safely.',
+            'veh3-name': 'VAN 2.70 m³ / 450 kg',
+            'veh3-desc': 'Perfect for small transports and daily deliveries',
+            'veh3-desc-mobile': 'Perfect for small transports<br>and daily deliveries.',
+            'veh4-name': 'VAN 6 M³ / 4',
+            'veh4-desc': 'Ideal for removals and everyday deliveries',
+            'veh4-desc-mobile': 'Ideal for removals<br>and everyday deliveries.',
+
+            'stat-vehicles': 'Vehicles',
+            'stat-experience': 'Years of experience',
+            'stat-solution': 'Unique solution',
+            'stat-clients': 'Satisfied clients',
+            'stat-vehicles-m': 'vehicles',
+            'stat-exp-m': 'years of<br>experience',
+            'stat-sol-m': 'one only<br>solution',
+            'stat-clients-m': 'Clients',
+            'about-title': 'WHO ARE WE?',
+            'about-title-mobile': 'WHO ARE<br>WE?',
+            'about-p1': 'For over 20 years, <span class="highlight">Number One</span> has been a specialist in express transport in Belgium and across Europe.',
+            'about-p2': '<span class="highlight">From 1 gram to 30 tonnes</span>, we handle all your shipments, from letters to oversized freight.',
+            'about-p3': 'We offer <span class="highlight">tailored solutions</span> for every need, backed by a <span class="highlight">bespoke service</span>',
+            'about-p4': '<span class="highlight">Reliability and speed</span>, combined with rigorous tracking, make Number One a trusted partner for professionals',
+            'about-btn': 'Learn more',
+
+            'footer-col1-p1': 'Professional transport solutions from 1 gram to 30 tonnes.',
+            'footer-col1-p2': 'Reliability, speed and expertise for over 20 years.',
+            'footer-col2-title': 'Services',
+            'footer-nat': 'National Transport',
+            'footer-intl': 'International Transport',
+            'footer-fleet': 'Our Fleet',
+            'footer-process': 'Our Process',
+            'footer-col3-title': 'Company',
+            'footer-about': 'About Us',
+            'footer-contact': 'Contact',
+            'footer-quote-link': 'Get a Quote',
+            'footer-legal': 'Legal Notice',
+            'footer-col4-title': 'Contact',
+            'footer-location': 'Brussels Airport<br>Machelen, Belgium',
+            'footer-copy': '© 2026 Number One Transport. All rights reserved.',
+
+            'back-label': 'Back',
+            'qsn-title': 'Who are<br>we?',
+            'qsn-intro': 'We handle your most urgent shipments to/from Belgium or any European country!',
+            'qsn-slogan-label': 'Our slogan:',
+            'qsn-slogan-bar': '"From 1 gram to 30 tonnes"!',
+            'qsn-text': 'We are a family business, active in the transport sector for over 25 years. Professionalism, rigour, speed and administrative follow-up are, for our company, synonymous with trust.',
+            'charroi-text': 'Our fleet of +/- 30 lorries and vans enables us to serve over 400 loyal clients, from craftsmen to multinationals, and of course SMEs.',
+            'colis-top': 'We handle your most urgent shipments to/from Belgium or any <strong>European country.</strong>',
+            'colis-bottom': 'Your letters, envelopes, pallets or other parcels are collected and delivered <strong>immediately</strong> and without delay.',
+            'solution-banner': 'Whatever your <strong>request,</strong><br>we have <strong>Your Solution.</strong>',
+            'solution-p1': 'The <strong>expertise</strong> of our experienced team allows Number One to support you in all your activities.',
+            'solution-p2': 'We offer <strong>tailored solutions</strong>, <strong>adapted to your specific needs</strong>.',
+            'repondons': 'We have been responding, <span class="hl">for over 25 years</span>, to the needs of our clients from the most diverse sectors',
+            'persuades-p1': 'We are <strong>convinced</strong> that working with a reliable transport partner can only bring <strong>significant added value</strong> to your business.',
+            'persuades-p2': 'Our redesigned website aims to offer you a tool that is <b>practical, user-friendly</b> and <b>interactive</b>, particularly through our "client portal".'
+        },
+
+        nl: {
+            'nav-services': 'Diensten',
+            'nav-process': 'Ons Proces',
+            'nav-fleet': 'Onze Vloot',
+            'nav-about': 'Over Ons',
+            'nav-quote': 'Offerte aanvragen',
+
+            'menu-home': 'STARTPAGINA',
+            'menu-vehicles': 'VOERTUIGEN',
+            'menu-services': 'ONZE DIENSTEN',
+            'menu-about': 'OVER ONS',
+            'menu-client': 'KLANTENPORTAAL',
+            'menu-news': 'NIEUWS',
+            'menu-call': 'BELLEN',
+
+            'hero-subtitle': 'Betrouwbare en efficiënte transportoplossingen<br>voor al uw logistieke behoeften',
+            'hero-subtitle-mobile': 'Betrouwbare en efficiënte<br>transportoplossingen',
+
+            'cta-info': 'Heeft u snel een oplossing nodig?',
+            'btn-quote': 'Offerte aanvragen',
+            'btn-contact': 'Neem contact op',
+
+            'services-title': 'ONZE DIENSTEN',
+            'services-tagline': 'Oplossingen op maat van elke behoefte',
+            'services-tagline-mobile': 'Oplossingen op maat<br>van elke behoefte',
+            'svc-transport-name': 'Transport',
+            'svc-transport-desc': 'Nationale en internationale transportoplossingen op maat van uw behoeften',
+            'svc-transport-desc-mobile': 'nationaal &amp; internationaal',
+            'svc-eco-name': 'Economisch',
+            'svc-eco-desc': 'De beste prijs-kwaliteitsverhouding voor uw professionele zendingen',
+            'svc-eco-desc-mobile': 'De beste prijs-kwaliteitsverhouding',
+            'svc-quote-name': 'OFFERTE NODIG?',
+            'svc-quote-desc': 'Neem nu contact met ons op voor een persoonlijk aanbod',
+            'svc-quote-desc-mobile': 'Neem nu contact op<br>voor een persoonlijk aanbod',
+
+            'process-subtitle': 'van ontvangst tot levering',
+            'step1-name': 'ONTVANGST',
+            'step1-desc': 'Snelle verwerking van uw goederen bij aankomst met volledige traceerbaarheid',
+            'step1-desc-mobile': 'Snelle verwerking van<br>uw goederen bij<br>aankomst!',
+            'step2-name': 'VOORBEREIDING',
+            'step2-name-mobile': 'VERZENDING &amp;<br>VOORBEREIDING',
+            'step2-desc': 'Bestellingen nauwkeurig verwerkt door ons team van experts',
+            'step2-desc-mobile': 'Bestellingen nauwkeurig<br>verwerkt!',
+            'step3-name': 'LEVERING',
+            'step3-desc': 'Efficiënte, betrouwbare en snelle verzending door heel Europa',
+            'step3-desc-mobile': 'Efficiënte, betrouwbare<br>en snelle levering!',
+
+            'fleet-title': 'ONZE VLOOT',
+            'fleet-subtitle': 'VAN VOERTUIGEN',
+            'fleet-tagline': 'Oplossingen op maat van elke transportbehoefte',
+            'fleet-tagline-mobile': 'Oplossingen op maat van elke<br>transportbehoefte',
+            'fleet-cta': 'KIES HET VOERTUIG DAT PAST BIJ UW BEHOEFTE',
+            'fleet-cta-mobile': 'KIES HET VOERTUIG<br>DAT PAST BIJ UW BEHOEFTE',
+            'veh1-name': 'PERSONENWAGEN',
+            'veh1-desc': 'Ideaal voor kleine verplaatsingen en snelle leveringen in stedelijk gebied',
+            'veh1-desc-mobile': 'Ideaal voor kleine verplaatsingen<br>en snelle leveringen.',
+            'veh2-name': 'BESTELWAGEN 9 M³ / 4',
+            'veh2-desc': 'Optimaal volume voor grotere ladingen, veilig vervoerd',
+            'veh2-desc-mobile': 'Optimaal volume voor grotere<br>ladingen, veilig vervoerd.',
+            'veh3-name': 'BESTELWAGEN 2,70 m³ / 450 kg',
+            'veh3-desc': 'Perfect voor kleine transporten en dagelijkse leveringen',
+            'veh3-desc-mobile': 'Perfect voor kleine transporten<br>en dagelijkse leveringen.',
+            'veh4-name': 'BESTELWAGEN 6 M³ / 4',
+            'veh4-desc': 'Ideaal voor verhuizingen en dagelijkse leveringen',
+            'veh4-desc-mobile': 'Ideaal voor verhuizingen<br>en dagelijkse leveringen.',
+
+            'stat-vehicles': 'Voertuigen',
+            'stat-experience': 'Jaar ervaring',
+            'stat-solution': 'Unieke oplossing',
+            'stat-clients': 'Tevreden klanten',
+            'stat-vehicles-m': 'voertuigen',
+            'stat-exp-m': 'jaar<br>ervaring',
+            'stat-sol-m': 'unieke<br>oplossing',
+            'stat-clients-m': 'Klanten',
+            'about-title': 'WIE ZIJN WIJ?',
+            'about-title-mobile': 'WIE ZIJN<br>WIJ?',
+            'about-p1': 'Sinds meer dan 20 jaar is <span class="highlight">Number One</span> specialist in expresvervoer in België en Europa.',
+            'about-p2': '<span class="highlight">Van 1 gram tot 30 ton</span>, wij verwerken al uw zendingen, van brieven tot volumineuze goederen.',
+            'about-p3': 'Wij bieden <span class="highlight">oplossingen op maat</span> voor elke behoefte, dankzij een <span class="highlight">persoonlijke service</span>',
+            'about-p4': '<span class="highlight">Betrouwbaarheid en snelheid</span>, gecombineerd met nauwgezette opvolging, maken Number One een vertrouwde partner voor professionals',
+            'about-btn': 'Meer informatie',
+
+            'footer-col1-p1': 'Professionele transportoplossingen van 1 gram tot 30 ton.',
+            'footer-col1-p2': 'Betrouwbaarheid, snelheid en expertise al meer dan 20 jaar.',
+            'footer-col2-title': 'Diensten',
+            'footer-nat': 'Nationaal Transport',
+            'footer-intl': 'Internationaal Transport',
+            'footer-fleet': 'Onze Vloot',
+            'footer-process': 'Ons Proces',
+            'footer-col3-title': 'Bedrijf',
+            'footer-about': 'Over Ons',
+            'footer-contact': 'Contact',
+            'footer-quote-link': 'Offerte aanvragen',
+            'footer-legal': 'Juridische Informatie',
+            'footer-col4-title': 'Contact',
+            'footer-location': 'Brussels Airport<br>Machelen, België',
+            'footer-copy': '© 2026 Number One Transport. Alle rechten voorbehouden.',
+
+            'back-label': 'Terug',
+            'qsn-title': 'Wie zijn<br>wij?',
+            'qsn-intro': 'Wij verzorgen uw meest urgente zendingen naar/vanuit België of alle Europese landen!',
+            'qsn-slogan-label': 'Onze slogan:',
+            'qsn-slogan-bar': '"Van 1 gram tot 30 ton"!',
+            'qsn-text': 'Wij zijn een familiebedrijf, actief in de transportsector al meer dan 25 jaar. Ernst, nauwgezetheid, snelheid en administratieve opvolging zijn voor ons bedrijf synoniem met vertrouwen.',
+            'charroi-text': 'Ons wagenpark van +/- 30 vrachtwagens en bestelwagens stelt ons in staat meer dan 400 trouwe klanten te bedienen, van ambachtslieden tot multinationals, en uiteraard ook kmo\'s.',
+            'colis-top': 'Wij verzorgen uw meest urgente zendingen naar/vanuit België of alle <strong>Europese landen.</strong>',
+            'colis-bottom': 'Uw brieven, enveloppen, paletten of andere pakketten worden <strong>onmiddellijk</strong> opgehaald en geleverd.',
+            'solution-banner': 'Wat ook uw <strong>vraag is,</strong><br>wij hebben <strong>Uw Oplossing.</strong>',
+            'solution-p1': 'De <strong>expertise</strong> van ons ervaren team stelt Number One in staat u bij al uw activiteiten te ondersteunen.',
+            'solution-p2': 'Wij bieden <strong>oplossingen op maat</strong>, <strong>aangepast aan uw specifieke behoeften</strong>.',
+            'repondons': 'Al meer dan <span class="hl">25 jaar</span> beantwoorden wij de vragen van onze klanten uit de meest uiteenlopende sectoren',
+            'persuades-p1': 'Wij zijn er <strong>van overtuigd</strong> dat samenwerken met een betrouwbare transportpartner enkel een <strong>belangrijke meerwaarde</strong> voor uw bedrijf kan opleveren.',
+            'persuades-p2': 'Onze vernieuwde website wil u een tool bieden die <b>praktisch, gebruiksvriendelijk</b> en <b>interactief</b> is, met name dankzij ons "klantenportaal".'
+        }
+    };
+
+    function applyLang(lang) {
+        if (!T[lang]) lang = 'fr';
+        var t = T[lang];
+        localStorage.setItem('lang', lang);
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) el.innerHTML = t[key];
+        });
+
+        document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n-aria');
+            if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+        });
+
+        var flagEl = document.getElementById('currentFlag');
+        if (flagEl) flagEl.src = FLAGS[lang];
+
+        var codeEl = document.getElementById('currentLangCode');
+        if (codeEl) codeEl.textContent = lang.toUpperCase();
+
+        document.querySelectorAll('[data-lang]').forEach(function (btn) {
+            btn.classList.toggle('lang-active', btn.getAttribute('data-lang') === lang);
+        });
+    }
+
+    function initPicker() {
+        var btn = document.getElementById('langBtn');
+        var dropdown = document.getElementById('langDropdown');
+        if (!btn || !dropdown) return;
+
+        /* Inject flag images into dropdown options */
+        ['fr', 'nl', 'en'].forEach(function (l) {
+            document.querySelectorAll('.lang-flag-' + l).forEach(function (img) {
+                img.src = FLAGS[l];
+            });
+        });
+
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            dropdown.classList.toggle('open');
+        });
+
+        document.querySelectorAll('[data-lang]').forEach(function (opt) {
+            opt.addEventListener('click', function () {
+                applyLang(opt.getAttribute('data-lang'));
+                dropdown.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', function () {
+            dropdown.classList.remove('open');
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        initPicker();
+        applyLang(localStorage.getItem('lang') || 'fr');
+    });
+})();

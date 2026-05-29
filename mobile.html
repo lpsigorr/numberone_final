@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="mobile.css">
     <script>
         (function() {
-            const width = window.innerWidth;
-            const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+            var width = window.innerWidth;
+            var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
             if (width >= 768 && !isMobile) {
                 window.location.href = 'desktop.html';
             }
@@ -22,8 +22,19 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <div class="flag">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'%3E%3Cpath fill='%23002395' d='M0 0h900v600H0z'/%3E%3Cpath fill='%23FFF' d='M300 0h600v600H300z'/%3E%3Cpath fill='%23ED2939' d='M600 0h300v600H600z'/%3E%3C/svg%3E" alt="France">
+            <!-- Language Picker -->
+            <div class="lang-picker" id="langPicker">
+                <button class="lang-btn" id="langBtn" aria-label="Change language">
+                    <img id="currentFlag" class="lang-flag" src="" alt="">
+                    <svg class="lang-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="#0F417B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-option" data-lang="fr"><img class="lang-flag lang-flag-fr" src="" alt=""> FR</button>
+                    <button class="lang-option" data-lang="nl"><img class="lang-flag lang-flag-nl" src="" alt=""> NL</button>
+                    <button class="lang-option" data-lang="en"><img class="lang-flag lang-flag-en" src="" alt=""> EN</button>
+                </div>
             </div>
             <div class="logo">
                 <img src="images/logo_01.png" alt="Number One Transport">
@@ -44,14 +55,14 @@
                     </svg>
                 </button>
                 <nav class="menu-nav">
-                    <a href="#hero" class="menu-item active">ACCUEIL</a>
-                    <a href="#fleet" class="menu-item">VÉHICULES</a>
-                    <a href="#services" class="menu-item">NOS SERVICES</a>
-                    <a href="#about" class="menu-item">QUI SOMMES-NOUS ?</a>
-                    <a href="#" class="menu-item menu-item-outlined">ACCÈS CLIENT</a>
-                    <a href="#" class="menu-item">NEWS</a>
+                    <a href="#hero" class="menu-item active" data-i18n="menu-home">ACCUEIL</a>
+                    <a href="#fleet" class="menu-item" data-i18n="menu-vehicles">VÉHICULES</a>
+                    <a href="#services" class="menu-item" data-i18n="menu-services">NOS SERVICES</a>
+                    <a href="#about" class="menu-item" data-i18n="menu-about">QUI SOMMES-NOUS ?</a>
+                    <a href="#" class="menu-item menu-item-outlined" data-i18n="menu-client">ACCÈS CLIENT</a>
+                    <a href="#" class="menu-item" data-i18n="menu-news">NEWS</a>
                 </nav>
-                <a href="tel:+32" class="menu-call-btn">APPELER</a>
+                <a href="tel:+32" class="menu-call-btn" data-i18n="menu-call">APPELER</a>
             </div>
         </div>
 
@@ -68,24 +79,24 @@
                     <span class="text-white-large"> tons</span>
                 </h1>
                 <div class="hero-line"></div>
-                <p class="hero-subtitle">Reliable and efficient<br>transport solutions</p>
+                <p class="hero-subtitle" data-i18n="hero-subtitle-mobile">Solutions de transport<br>fiables et efficaces</p>
             </div>
         </section>
 
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="cta-info-box">
-                <p>Besoin d'une solution rapide ?</p>
+                <p data-i18n="cta-info">Besoin d'une solution rapide ?</p>
             </div>
             <div class="cta-buttons">
                 <a href="https://lpsigorr.github.io/vehicle_calculator/" class="btn btn-primary">
-                    Faire un devis
+                    <span data-i18n="btn-quote">Faire un devis</span>
                     <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M6 12L10 8L6 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
                 <a href="#contact" class="btn btn-secondary">
-                    Nous contacter
+                    <span data-i18n="btn-contact">Nous contacter</span>
                     <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M6 12L10 8L6 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -109,10 +120,10 @@
         <!-- Services Section -->
         <section id="services" class="services-section">
             <div class="services-header">
-                <h2 class="services-title">NOS SERVICES</h2>
+                <h2 class="services-title" data-i18n="services-title">NOS SERVICES</h2>
                 <div class="services-title-line"></div>
                 <h3 class="services-subtitle">NUMBER ONE</h3>
-                <p class="services-tagline">Des solutions adaptées<br>à vos besoins</p>
+                <p class="services-tagline" data-i18n="services-tagline-mobile">Des solutions adaptées<br>à vos besoins</p>
             </div>
 
             <div class="services-cards">
@@ -122,8 +133,8 @@
                             <img src="images/image_25.png" alt="Transport">
                         </div>
                         <div class="service-text">
-                            <h4>Transport</h4>
-                            <p>national & international</p>
+                            <h4 data-i18n="svc-transport-name">Transport</h4>
+                            <p data-i18n="svc-transport-desc-mobile">national &amp; international</p>
                         </div>
                     </div>
                     <div class="service-arrow">
@@ -139,8 +150,8 @@
                             <img src="images/sqsq_1.png" alt="Économique">
                         </div>
                         <div class="service-text">
-                            <h4>Économique</h4>
-                            <p>Le meilleur rapport qualité / prix</p>
+                            <h4 data-i18n="svc-eco-name">Économique</h4>
+                            <p data-i18n="svc-eco-desc-mobile">Le meilleur rapport qualité / prix</p>
                         </div>
                     </div>
                     <div class="service-arrow">
@@ -158,8 +169,8 @@
                             </svg>
                         </div>
                         <div class="service-text">
-                            <h4>BESOIN D'UN DEVIS?</h4>
-                            <p>Contactez-nous dès maintenant<br>pour une offre personnalisée</p>
+                            <h4 data-i18n="svc-quote-name">BESOIN D'UN DEVIS ?</h4>
+                            <p data-i18n="svc-quote-desc-mobile">Contactez-nous dès maintenant<br>pour une offre personnalisée</p>
                         </div>
                     </div>
                     <div class="service-arrow">
@@ -175,7 +186,7 @@
         <section class="process-section">
             <div class="process-header">
                 <h2 class="process-title">Number One</h2>
-                <p class="process-subtitle">de la réception à la livraison</p>
+                <p class="process-subtitle" data-i18n="process-subtitle">de la réception à la livraison</p>
                 <div class="process-title-line"></div>
             </div>
 
@@ -187,9 +198,9 @@
                             <img src="images/reception.png" alt="Réception">
                         </div>
                         <div class="step-text">
-                            <h3>RÉCEPTION</h3>
+                            <h3 data-i18n="step1-name">RÉCEPTION</h3>
                             <div class="step-title-line"></div>
-                            <p>Gestion rapide de<br>vos marchandises à<br>l'arrivée !</p>
+                            <p data-i18n="step1-desc-mobile">Gestion rapide de<br>vos marchandises à<br>l'arrivée !</p>
                         </div>
                     </div>
                 </div>
@@ -198,12 +209,12 @@
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <div class="step-image">
-                            <img src="images/preparation.png" alt="Envol & Préparation">
+                            <img src="images/preparation.png" alt="Envol &amp; Préparation">
                         </div>
                         <div class="step-text">
-                            <h3>ENVOL &<br>PRÉPARATION</h3>
+                            <h3 data-i18n="step2-name-mobile">ENVOL &amp;<br>PRÉPARATION</h3>
                             <div class="step-title-line"></div>
-                            <p>Commandes traitées<br>avec précision !</p>
+                            <p data-i18n="step2-desc-mobile">Commandes traitées<br>avec précision !</p>
                         </div>
                     </div>
                 </div>
@@ -215,9 +226,9 @@
                             <img src="images/livraison.png" alt="Livraison">
                         </div>
                         <div class="step-text">
-                            <h3>LIVRAISON</h3>
+                            <h3 data-i18n="step3-name">LIVRAISON</h3>
                             <div class="step-title-line"></div>
-                            <p>Expédition efficace,<br>fiable et rapide !</p>
+                            <p data-i18n="step3-desc-mobile">Expédition efficace,<br>fiable et rapide !</p>
                         </div>
                     </div>
                 </div>
@@ -227,13 +238,13 @@
         <!-- Fleet Section -->
         <section id="fleet" class="fleet-section">
             <div class="fleet-header">
-                <h2 class="fleet-title">NOTRE FLOTTE</h2>
-                <h3 class="fleet-subtitle">DE VÉHICULES</h3>
-                <p class="fleet-tagline">Des solutions adaptées à chaque besoin<br>de transport</p>
+                <h2 class="fleet-title" data-i18n="fleet-title">NOTRE FLOTTE</h2>
+                <h3 class="fleet-subtitle" data-i18n="fleet-subtitle">DE VÉHICULES</h3>
+                <p class="fleet-tagline" data-i18n="fleet-tagline-mobile">Des solutions adaptées à chaque besoin<br>de transport</p>
             </div>
-            
+
             <div class="fleet-transition">
-                <p>CHOISISSEZ LE VÉHICULE<br>ADAPTÉ À VOTRE BESOIN</p>
+                <p data-i18n="fleet-cta-mobile">CHOISISSEZ LE VÉHICULE<br>ADAPTÉ À VOTRE BESOIN</p>
             </div>
 
             <div class="fleet-vehicles">
@@ -242,8 +253,8 @@
                         <div class="vehicle-image">
                             <img src="images/voiture.png" alt="Voiture">
                         </div>
-                        <h4>VOITURE</h4>
-                        <p>Idéale pour les petits déplacements<br>et livraisons rapides.</p>
+                        <h4 data-i18n="veh1-name">VOITURE</h4>
+                        <p data-i18n="veh1-desc-mobile">Idéale pour les petits déplacements<br>et livraisons rapides.</p>
                         <button class="vehicle-arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -255,8 +266,8 @@
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 9 M³">
                         </div>
-                        <h4>CAMIONNETTE 9 M³ / 4</h4>
-                        <p>Volume optimal pour transport<br>plus important, en toute sécurité.</p>
+                        <h4 data-i18n="veh2-name">CAMIONNETTE 9 M³ / 4</h4>
+                        <p data-i18n="veh2-desc-mobile">Volume optimal pour transport<br>plus important, en toute sécurité.</p>
                         <button class="vehicle-arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -268,8 +279,8 @@
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 2,70 m³">
                         </div>
-                        <h4>CAMIONNETTE 2,70 m³ / 450 kg</h4>
-                        <p>Parfaite pour les petits transports et<br>livraisons.</p>
+                        <h4 data-i18n="veh3-name">CAMIONNETTE 2,70 m³ / 450 kg</h4>
+                        <p data-i18n="veh3-desc-mobile">Parfaite pour les petits transports et<br>livraisons.</p>
                         <button class="vehicle-arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -281,8 +292,8 @@
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 6 M³">
                         </div>
-                        <h4>CAMIONNETTE 6 M³ / 4</h4>
-                        <p>Idéale pour vos déménagements<br>et livraisons du quotidien.</p>
+                        <h4 data-i18n="veh4-name">CAMIONNETTE 6 M³ / 4</h4>
+                        <p data-i18n="veh4-desc-mobile">Idéale pour vos déménagements<br>et livraisons du quotidien.</p>
                         <button class="vehicle-arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -298,41 +309,41 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">100</div>
-                    <div class="stat-label">véhicules</div>
+                    <div class="stat-label" data-i18n="stat-vehicles-m">véhicules</div>
                     <div class="stat-line"></div>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
                     <div class="stat-number">20<span class="stat-plus">+</span></div>
-                    <div class="stat-label">years of<br>experience</div>
+                    <div class="stat-label" data-i18n="stat-exp-m">années<br>d'expérience</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">1</div>
-                    <div class="stat-label">one only<br>solution</div>
+                    <div class="stat-label" data-i18n="stat-sol-m">solution<br>unique</div>
                     <div class="stat-line"></div>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
                     <div class="stat-number">400<span class="stat-plus">+</span></div>
-                    <div class="stat-label">Clients</div>
+                    <div class="stat-label" data-i18n="stat-clients-m">Clients</div>
                 </div>
             </div>
 
             <div class="about-content">
                 <h2 class="about-title">
-                    QUI SOMMES<br>NOUS ?
+                    <span data-i18n="about-title-mobile">QUI SOMMES<br>NOUS ?</span>
                     <img src="images/dtruck.png" alt="Truck" class="title-icon">
                 </h2>
                 <div class="about-title-line"></div>
 
                 <div class="about-text">
-                    <p>Depuis plus de 20 ans, <span class="highlight">Number One</span> est spécialiste du transport express en Belgique et en Europe.</p>
-                    <p class="highlight-box"><span class="highlight">De 1 gramme à 30 tonnes</span>, nous prenons en charge tous vos envois, du courrier à la marchandise volumineuse.</p>
-                    <p>Nous proposons des <span class="highlight">solutions adaptées</span> à chaque besoin grâce à un <span class="highlight">service sur mesure</span></p>
-                    <p><span class="highlight">Fiabilité, rapidité</span> et suivi rigoureux font de Number One un partenaire de confiance pour les professionnels</p>
+                    <p data-i18n="about-p1">Depuis plus de 20 ans, <span class="highlight">Number One</span> est spécialiste du transport express en Belgique et en Europe.</p>
+                    <p class="highlight-box" data-i18n="about-p2"><span class="highlight">De 1 gramme à 30 tonnes</span>, nous prenons en charge tous vos envois, du courrier à la marchandise volumineuse.</p>
+                    <p data-i18n="about-p3">Nous proposons des <span class="highlight">solutions adaptées</span> à chaque besoin grâce à un <span class="highlight">service sur mesure</span></p>
+                    <p data-i18n="about-p4"><span class="highlight">Fiabilité, rapidité</span> et suivi rigoureux font de Number One un partenaire de confiance pour les professionnels</p>
                 </div>
 
-                <a href="more.html" class="about-btn">En savoir plus</a>
+                <a href="more.html" class="about-btn" data-i18n="about-btn">En savoir plus</a>
             </div>
         </section>
 
@@ -340,30 +351,31 @@
         <footer id="contact" class="footer"></footer>
     </div>
 
+    <script src="lang.js"></script>
     <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const menuClose = document.getElementById('menuClose');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuItems = document.querySelectorAll('.menu-item');
+        var menuToggle = document.getElementById('menuToggle');
+        var menuClose = document.getElementById('menuClose');
+        var mobileMenu = document.getElementById('mobileMenu');
+        var menuItems = document.querySelectorAll('.menu-item');
 
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', function() {
             mobileMenu.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
 
-        menuClose.addEventListener('click', () => {
+        menuClose.addEventListener('click', function() {
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
         });
 
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
+        menuItems.forEach(function(item) {
+            item.addEventListener('click', function() {
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
             });
         });
 
-        mobileMenu.addEventListener('click', (e) => {
+        mobileMenu.addEventListener('click', function(e) {
             if (e.target === mobileMenu) {
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
