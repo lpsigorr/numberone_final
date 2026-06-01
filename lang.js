@@ -6,6 +6,9 @@
 
     var T = {
         fr: {
+            /* ── Logo subtitle ── */
+            'logo-subtitle': 'Du groupe FB logistic',
+
             /* ── Desktop nav ── */
             'nav-services': 'Services',
             'nav-process': 'Notre Process',
@@ -131,6 +134,8 @@
         },
 
         en: {
+            'logo-subtitle': 'From the FB Logistic Group',
+
             'nav-services': 'Services',
             'nav-process': 'Our Process',
             'nav-fleet': 'Our Fleet',
@@ -246,6 +251,8 @@
         },
 
         nl: {
+            'logo-subtitle': 'Van de FB Logistic Groep',
+
             'nav-services': 'Diensten',
             'nav-process': 'Ons Proces',
             'nav-fleet': 'Onze Vloot',
