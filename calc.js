@@ -266,6 +266,7 @@ function goToStep(n) {
 }
 
 function goToSummary() {
+  currentStep = "summary";
   runCalculation();
   document.querySelectorAll(".step-content").forEach(el => { el.style.display = "none"; });
   document.getElementById("step-summary").style.display = "block";
@@ -317,10 +318,17 @@ function updateHero(stepIndex) {
   }
 }
 
-/* Re-render hero when language changes */
+/* Translation helper — reads from lang.js exposed window._T */
+function tr(key) {
+  var lang = localStorage.getItem('lang') || 'fr';
+  return (window._T && window._T[lang] && window._T[lang][key]) || key;
+}
+
+/* Re-render hero and summary when language changes */
 window.onLangChange = function() {
   var idx = currentStep === "summary" ? 5 : currentStep - 1;
   updateHero(idx);
+  if (currentStep === "summary") runCalculation();
 };
 
 function updateProgress(activeStep) {
@@ -622,18 +630,18 @@ function calculateSupplements(opts) {
   const s = TARIFF_DATA.SUPPLEMENTS;
   let total = 0;
   const lines = [];
-  if (opts.nightBase)      { total += s.nightBase;          lines.push({ label: "Supplément nuit",          amount: s.nightBase }); }
-  if (opts.nightFrigo12)   { total += s.nightFrigo12_0;     lines.push({ label: "Nuit frigo -12°C/0°C",     amount: s.nightFrigo12_0 }); }
-  if (opts.nightFrigo20)   { total += s.nightFrigo0_20;     lines.push({ label: "Nuit frigo 0°C/-20°C",     amount: s.nightFrigo0_20 }); }
+  if (opts.nightBase)      { total += s.nightBase;          lines.push({ label: tr('calc-sum-supp-night'),  amount: s.nightBase }); }
+  if (opts.nightFrigo12)   { total += s.nightFrigo12_0;     lines.push({ label: tr('calc-sum-frigo12'),     amount: s.nightFrigo12_0 }); }
+  if (opts.nightFrigo20)   { total += s.nightFrigo0_20;     lines.push({ label: tr('calc-sum-frigo20'),     amount: s.nightFrigo0_20 }); }
   if (opts.convoyeurHours > 0) {
     const amt = s.convoyeurPerHour * opts.convoyeurHours;
     total += amt;
-    lines.push({ label: "Convoyeur (" + opts.convoyeurHours + "h × " + fmt(s.convoyeurPerHour) + ")", amount: amt });
+    lines.push({ label: tr('calc-sum-convoyeur') + " (" + opts.convoyeurHours + "h × " + fmt(s.convoyeurPerHour) + ")", amount: amt });
   }
   if (opts.chauffeurHours > 0) {
     const amt = s.chauffeurPerHour * opts.chauffeurHours;
     total += amt;
-    lines.push({ label: "2° Chauffeur (" + opts.chauffeurHours + "h × " + fmt(s.chauffeurPerHour) + ")", amount: amt });
+    lines.push({ label: tr('calc-sum-chauffeur') + " (" + opts.chauffeurHours + "h × " + fmt(s.chauffeurPerHour) + ")", amount: amt });
   }
   return { total, lines };
 }
@@ -659,22 +667,22 @@ function runCalculation() {
 
   if (overrideEnabled) {
     vehicleId = document.getElementById("vehicleSelect")?.value;
-    vehicleSelectionNote = "⚠ Sélection manuelle (override opérateur)";
-    warnings.push("Véhicule sélectionné manuellement — vérifier la conformité aux exigences du chargement.");
+    vehicleSelectionNote = tr('calc-sum-manual-sel');
+    warnings.push(tr('calc-sum-manual-sel'));
   } else {
     vehicleId = selectBestVehicle(candidates);
     vehicleSelectionNote = vehicleId
-      ? "Sélection automatique — plus petit véhicule valide"
-      : "⚠ Aucun véhicule trouvé";
-    if (!vehicleId) warnings.push("Aucun véhicule ne correspond aux exigences. Sélection manuelle requise.");
+      ? tr('calc-sum-auto-sel')
+      : "⚠ " + tr('calc-sum-no-vehicle');
+    if (!vehicleId) warnings.push(tr('calc-sum-no-vehicle-sub'));
   }
 
   const warnBanner = document.getElementById("result-warning-banner");
   if (!vehicleId) {
     warnBanner.innerHTML = warnings.map(w => "⚠ " + w).join("<br>");
     warnBanner.style.display = "block";
-    document.getElementById("result-vehicle-name").textContent = "Aucun véhicule compatible";
-    document.getElementById("result-vehicle-reason").textContent = "Ajustez les paramètres ou utilisez la sélection manuelle";
+    document.getElementById("result-vehicle-name").textContent = tr('calc-sum-no-vehicle');
+    document.getElementById("result-vehicle-reason").textContent = tr('calc-sum-no-vehicle-sub');
     document.getElementById("breakdown-table").innerHTML = "";
     document.getElementById("totals-block").innerHTML = "";
     return;
@@ -706,7 +714,7 @@ function runCalculation() {
   // Update waiting helper
   const waitInfo = TARIFF_DATA.WAITING[vehicleId];
   const wHelper = document.getElementById("waitingHelper");
-  if (wHelper) wHelper.textContent = "Temps inclus: " + (waitInfo ? waitInfo.includedMin : "—") + " min";
+  if (wHelper) wHelper.textContent = tr('calc-sum-temps-incl') + " " + (waitInfo ? waitInfo.includedMin : "—") + " min";
 
   let baseTotal = 0;
   let manualQuote = false;
@@ -720,7 +728,7 @@ function runCalculation() {
       warnings.push("Export sur demande — cotation manuelle requise.");
     } else {
       baseTotal = navette.price;
-      breakdownSections.push({ title: "NAVETTE", rows: [{ label: "Navette — " + navette.label, value: navette.price }] });
+      breakdownSections.push({ title: tr('calc-sum-sect-navette'), rows: [{ label: tr('calc-sum-sect-navette') + " — " + navette.label, value: navette.price }] });
     }
 
   } else if (isDispo) {
@@ -731,15 +739,15 @@ function runCalculation() {
 
     if (dispo.unavailable) {
       warnings.push("Dispo/Tournée non disponible pour: " + vehicle.label);
-      breakdownSections.push({ title: "TOURNÉE / DISPO", rows: [{ label: "Non disponible pour ce véhicule", value: null, note: true }] });
+      breakdownSections.push({ title: tr('calc-sum-sect-dispo'), rows: [{ label: tr('calc-sum-dispo-na'), value: null, note: true }] });
     } else {
       baseTotal = dispo.amount + dispo.kmCost;
-      const durationLabel = duration === "under6" ? "Moins de 6h" : "6h ou plus";
+      const durationLabel = duration === "under6" ? tr('calc-duree-under6') : tr('calc-duree-over6');
       breakdownSections.push({
-        title: "TOURNÉE / DISPO",
+        title: tr('calc-sum-sect-dispo'),
         rows: [
           { label: durationLabel + " — " + hours + "h × " + fmt(dispo.hourlyRate), value: dispo.amount },
-          dispo.extraKm > 0 ? { label: "Km supp. — " + extraKm + " km × " + fmt(dispo.kmRate), value: dispo.kmCost } : null,
+          dispo.extraKm > 0 ? { label: tr('calc-sum-km-supp') + " — " + extraKm + " km × " + fmt(dispo.kmRate), value: dispo.kmCost } : null,
         ].filter(Boolean),
       });
     }
@@ -750,17 +758,17 @@ function runCalculation() {
     const kmTax  = getKmTax(vehicleId, mode, base.price);
     baseTotal    = base.price;
 
-    const modeLabelMap = { bxl: "Prix Bruxelles", rand: "Prix Rand / Banlieue", prov_min: "Prix Province min.", prov_km: "Prix Province / km" };
+    const modeLabelMap = { bxl: tr('calc-sum-prix-bxl'), rand: tr('calc-sum-prix-rand'), prov_min: tr('calc-sum-prix-prov-min'), prov_km: tr('calc-sum-prix-prov-km') };
     const baseRows = [{ label: (modeLabelMap[mode] || mode) + (base.note ? " (" + base.note + ")" : ""), value: base.price }];
 
     if (kmTax.pct !== null) {
       baseTotal += kmTax.amount;
-      baseRows.push({ label: "Taxe kilométrique (" + (kmTax.pct * 100).toFixed(2) + "% × " + fmt(base.price) + ")", value: kmTax.amount });
+      baseRows.push({ label: tr('calc-sum-taxe-km') + " (" + (kmTax.pct * 100).toFixed(2) + "% × " + fmt(base.price) + ")", value: kmTax.amount });
     } else {
-      baseRows.push({ label: "Taxe kilométrique", value: null, noteText: "Non applicable pour ce véhicule" });
+      baseRows.push({ label: tr('calc-sum-taxe-km'), value: null, noteText: tr('calc-sum-taxe-km-na') });
     }
 
-    breakdownSections.push({ title: "TARIF DE BASE", rows: baseRows });
+    breakdownSections.push({ title: tr('calc-sum-sect-base'), rows: baseRows });
   }
 
   // ---- WAITING ----
@@ -768,12 +776,12 @@ function runCalculation() {
     const waitCost = calculateWaitingCost(vehicleId, waitingMinutes);
     const waitRows = [];
     if (waitCost.amount > 0) {
-      waitRows.push({ label: "Attente — " + waitCost.note, value: waitCost.amount });
+      waitRows.push({ label: tr('calc-sum-attente') + " — " + waitCost.note, value: waitCost.amount });
     } else {
-      waitRows.push({ label: "Attente (" + waitingMinutes + " min, " + waitCost.included + " min inclus)", value: 0, zero: true });
+      waitRows.push({ label: tr('calc-sum-attente') + " (" + waitingMinutes + " min, " + waitCost.included + " " + tr('calc-sum-min-incl') + ")", value: 0, zero: true });
     }
     baseTotal += waitCost.amount;
-    breakdownSections.push({ title: "TEMPS D'ATTENTE", rows: waitRows });
+    breakdownSections.push({ title: tr('calc-sum-sect-waiting'), rows: waitRows });
   }
 
   // ---- EXTRA STOPS ----
@@ -781,33 +789,33 @@ function runCalculation() {
     const stops = calculateExtraStops(vehicleId, extraStopsBxl, extraStopsOther);
     const stopRows = [];
     if (extraStopsBxl > 0) {
-      stopRows.push({ label: "Extra arrêts Bruxelles — " + extraStopsBxl + " × " + fmt(stops.bxlRate), value: stops.bxlCost });
+      stopRows.push({ label: tr('calc-sum-stops-bxl') + " — " + extraStopsBxl + " × " + fmt(stops.bxlRate), value: stops.bxlCost });
     }
     if (extraStopsOther > 0) {
-      stopRows.push({ label: "Extra arrêts autres — " + extraStopsOther + " × " + fmt(stops.otherRate), value: stops.otherCost });
+      stopRows.push({ label: tr('calc-sum-stops-other') + " — " + extraStopsOther + " × " + fmt(stops.otherRate), value: stops.otherCost });
       const otherKmTax = getExtraStopKmTax(vehicleId, stops.otherCost);
       if (otherKmTax.pct !== null) {
-        stopRows.push({ label: "Taxe km extra arrêts autres (" + (otherKmTax.pct * 100).toFixed(2) + "%)", value: otherKmTax.amount });
+        stopRows.push({ label: tr('calc-sum-taxe-stops') + " (" + (otherKmTax.pct * 100).toFixed(2) + "%)", value: otherKmTax.amount });
         baseTotal += otherKmTax.amount;
       }
     }
     baseTotal += stops.totalStopCost;
-    breakdownSections.push({ title: "EXTRA ARRÊTS", rows: stopRows });
+    breakdownSections.push({ title: tr('calc-sum-sect-stops'), rows: stopRows });
   }
 
   // ---- SUPPLEMENTS ----
   const suppResult = calculateSupplements({ nightBase: suppNight, nightFrigo12: suppNightFrigo12, nightFrigo20: suppNightFrigo20, convoyeurHours, chauffeurHours });
   if (suppResult.total > 0) {
     baseTotal += suppResult.total;
-    breakdownSections.push({ title: "SUPPLÉMENTS", rows: suppResult.lines.map(l => ({ label: l.label, value: l.amount })) });
+    breakdownSections.push({ title: tr('calc-sum-sect-supps'), rows: suppResult.lines.map(l => ({ label: l.label, value: l.amount })) });
   }
 
   // ---- FUEL ----
   const fuelAmount = fuelPct > 0 ? baseTotal * (fuelPct / 100) : 0;
   if (fuelAmount > 0) {
     breakdownSections.push({
-      title: "SURCHARGE CARBURANT",
-      rows: [{ label: "Surcharge carburant (" + fuelPct + "% — variable, vérifier mensuellement)", value: fuelAmount, noteText: "⚠ % variable — exemple nov. 2020: 7.75%" }],
+      title: tr('calc-sum-sect-fuel'),
+      rows: [{ label: tr('calc-sum-fuel-label') + " (" + fuelPct + "% — " + tr('calc-sum-fuel-note').replace('⚠ % variable — ', '') + ")", value: fuelAmount }],
     });
   }
 
@@ -848,14 +856,14 @@ function renderBreakdown(sections) {
 
 function renderTotals(subtotal, vatAmount, totalWithVAT, showVAT) {
   const container = document.getElementById("totals-block");
-  let html = '<div class="total-row subtotal"><span class="total-label">Sous-total HTVA</span><span class="total-value">' + fmt(subtotal) + "</span></div>";
+  let html = '<div class="total-row subtotal"><span class="total-label">' + tr('calc-sum-subtotal') + '</span><span class="total-value">' + fmt(subtotal) + "</span></div>";
 
   if (showVAT) {
-    html += '<div class="total-row vat-row"><span class="total-label">TVA 21%</span><span class="total-value">' + fmt(vatAmount) + '</span></div>';
-    html += '<div class="total-row grand-total"><span class="total-label">TOTAL TTC</span><span class="total-value">' + fmt(totalWithVAT) + "</span></div>";
+    html += '<div class="total-row vat-row"><span class="total-label">' + tr('calc-sum-vat') + '</span><span class="total-value">' + fmt(vatAmount) + '</span></div>';
+    html += '<div class="total-row grand-total"><span class="total-label">' + tr('calc-sum-total-ttc') + '</span><span class="total-value">' + fmt(totalWithVAT) + "</span></div>";
   } else {
-    html += '<div class="total-row grand-total"><span class="total-label">TOTAL HTVA</span><span class="total-value">' + fmt(subtotal) + '</span></div>';
-    html += '<div class="total-row vat-row"><span class="total-label">TVA 21% (non incluse)</span><span class="total-value">' + fmt(vatAmount) + "</span></div>";
+    html += '<div class="total-row grand-total"><span class="total-label">' + tr('calc-sum-total-htva') + '</span><span class="total-value">' + fmt(subtotal) + '</span></div>';
+    html += '<div class="total-row vat-row"><span class="total-label">' + tr('calc-sum-vat-excl') + '</span><span class="total-value">' + fmt(vatAmount) + "</span></div>";
   }
 
   container.innerHTML = html;
