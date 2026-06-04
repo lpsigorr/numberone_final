@@ -98,6 +98,10 @@
             'about-p4': '<span class="highlight">Fiabilité, rapidité</span> et suivi rigoureux font de Number One un partenaire de confiance pour les professionnels',
             'about-btn': 'En savoir plus',
 
+            /* ── Contact footer ── */
+            'menu-services-link': 'Nos services',
+            'menu-about-link': 'Qui sommes-nous ?',
+
             /* ── Footer (desktop) ── */
             'footer-col1-p1': 'Solutions de transport professionnel de 1 gramme à 30 tonnes.',
             'footer-col1-p2': 'Fiabilité, rapidité et expertise depuis plus de 20 ans.',
@@ -217,6 +221,10 @@
             'about-p4': '<span class="highlight">Reliability and speed</span>, combined with rigorous tracking, make Number One a trusted partner for professionals',
             'about-btn': 'Learn more',
 
+            /* ── Contact footer ── */
+            'menu-services-link': 'Our services',
+            'menu-about-link': 'About us',
+
             'footer-col1-p1': 'Professional transport solutions from 1 gram to 30 tonnes.',
             'footer-col1-p2': 'Reliability, speed and expertise for over 20 years.',
             'footer-col2-title': 'Services',
@@ -333,6 +341,10 @@
             'about-p3': 'Wij bieden <span class="highlight">oplossingen op maat</span> voor elke behoefte, dankzij een <span class="highlight">persoonlijke service</span>',
             'about-p4': '<span class="highlight">Betrouwbaarheid en snelheid</span>, gecombineerd met nauwgezette opvolging, maken Number One een vertrouwde partner voor professionals',
             'about-btn': 'Meer informatie',
+
+            /* ── Contact footer ── */
+            'menu-services-link': 'Onze diensten',
+            'menu-about-link': 'Over ons',
 
             'footer-col1-p1': 'Professionele transportoplossingen van 1 gram tot 30 ton.',
             'footer-col1-p2': 'Betrouwbaarheid, snelheid en expertise al meer dan 20 jaar.',
