@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Number One — Calculateur Tarifs 2021</title>
+  <title>Number One — Calculateur Tarifs 2026</title>
   <link rel="stylesheet" href="calc.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,10 +11,25 @@
 <body>
 
   <header class="app-header">
-    <div class="header-flag">🇫🇷</div>
-    <div class="logo">
-      <img src="images/n1_logo.png" alt="Number One" class="logo-img" />
+    <!-- Language Picker -->
+    <div class="lang-picker" id="langPicker">
+      <button class="lang-btn" id="langBtn" aria-label="Change language">
+        <img id="currentFlag" class="lang-flag" src="" alt="">
+        <svg class="lang-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+          <path d="M1 1L5 5L9 1" stroke="#0F417B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-option" data-lang="fr"><img class="lang-flag lang-flag-fr" src="" alt=""> FR</button>
+        <button class="lang-option" data-lang="nl"><img class="lang-flag lang-flag-nl" src="" alt=""> NL</button>
+        <button class="lang-option" data-lang="en"><img class="lang-flag lang-flag-en" src="" alt=""> EN</button>
+      </div>
     </div>
+
+    <div class="logo">
+      <img src="images/logo_01.png" alt="Number One" class="logo-img" />
+    </div>
+
     <button class="menu-btn" id="menuToggle">
       <span></span>
       <span></span>
@@ -31,14 +46,14 @@
         </svg>
       </button>
       <nav class="menu-nav">
-        <a href="mobile.html#hero" class="menu-item active">ACCUEIL</a>
-        <a href="mobile.html#fleet" class="menu-item">VÉHICULES</a>
-        <a href="mobile.html#services" class="menu-item">NOS SERVICES</a>
-        <a href="mobile.html#about" class="menu-item">QUI SOMMES-NOUS ?</a>
-        <a href="#" class="menu-item menu-item-outlined">ACCÈS CLIENT</a>
-        <a href="#" class="menu-item">NEWS</a>
+        <a href="mobile.html#hero"     class="menu-item active"        data-i18n="menu-home">ACCUEIL</a>
+        <a href="mobile.html#fleet"    class="menu-item"               data-i18n="menu-vehicles">VÉHICULES</a>
+        <a href="mobile.html#services" class="menu-item"               data-i18n="menu-services">NOS SERVICES</a>
+        <a href="mobile.html#about"    class="menu-item"               data-i18n="menu-about">QUI SOMMES-NOUS ?</a>
+        <a href="#"                    class="menu-item menu-item-outlined" data-i18n="menu-client">ACCÈS CLIENT</a>
+        <a href="#"                    class="menu-item"               data-i18n="menu-news">NEWS</a>
       </nav>
-      <a href="tel:+3224276004" class="menu-call-btn">APPELER</a>
+      <a href="tel:+3224276004" class="menu-call-btn" data-i18n="menu-call">APPELER</a>
     </div>
   </div>
 
@@ -67,8 +82,8 @@
             <input type="radio" name="pricingMode" value="bxl" checked />
             <img class="mode-emoji" src="images/calc/icon_brux.png" alt="Bruxelles" />
             <div class="mode-info">
-              <strong>Bruxelles / Brussel</strong>
-              <small>Prix fixe ville</small>
+              <strong data-i18n="calc-mode-bxl">Bruxelles / Brussel</strong>
+              <small data-i18n="calc-mode-bxl-sub">Prix fixe ville</small>
             </div>
             <span class="radio-circle"></span>
           </label>
@@ -77,8 +92,8 @@
             <input type="radio" name="pricingMode" value="prov_min" />
             <img class="mode-emoji" src="images/calc/icon_prov_min.png" alt="Province min." />
             <div class="mode-info">
-              <strong>Province min.</strong>
-              <small>Tarif provincial fixe</small>
+              <strong data-i18n="calc-mode-prov-min">Province min.</strong>
+              <small data-i18n="calc-mode-prov-min-sub">Tarif provincial fixe</small>
             </div>
             <span class="radio-circle"></span>
           </label>
@@ -87,8 +102,8 @@
             <input type="radio" name="pricingMode" value="rand" />
             <img class="mode-emoji" src="images/calc/icon_rand.png" alt="Rand" />
             <div class="mode-info">
-              <strong>Rand / Banlieue</strong>
-              <small>Prix périphérie</small>
+              <strong data-i18n="calc-mode-rand">Rand / Banlieue</strong>
+              <small data-i18n="calc-mode-rand-sub">Prix périphérie</small>
             </div>
             <span class="radio-circle"></span>
           </label>
@@ -97,8 +112,8 @@
             <input type="radio" name="pricingMode" value="prov_km" />
             <img class="mode-emoji" src="images/calc/icon_prov_km.png" alt="Province km" />
             <div class="mode-info">
-              <strong>Province / Km</strong>
-              <small>Tarif par kilomètre</small>
+              <strong data-i18n="calc-mode-prov-km">Province / Km</strong>
+              <small data-i18n="calc-mode-prov-km-sub">Tarif par kilomètre</small>
             </div>
             <span class="radio-circle"></span>
           </label>
@@ -107,8 +122,8 @@
             <input type="radio" name="pricingMode" value="navette" />
             <img class="mode-emoji" src="images/calc/icon_car.png" alt="Navette" />
             <div class="mode-info">
-              <strong>Navette</strong>
-              <small>Prix fixe Navette</small>
+              <strong data-i18n="calc-mode-navette">Navette</strong>
+              <small data-i18n="calc-mode-navette-sub">Prix fixe navette</small>
             </div>
             <span class="radio-circle"></span>
           </label>
@@ -117,8 +132,8 @@
             <input type="radio" name="pricingMode" value="dispo" />
             <img class="mode-emoji" src="images/calc/icon_tourne.png" alt="Tournée" />
             <div class="mode-info">
-              <strong>Tournée / Dispo</strong>
-              <small>Prix Horaire</small>
+              <strong data-i18n="calc-mode-dispo">Tournée / Dispo</strong>
+              <small data-i18n="calc-mode-dispo-sub">Prix horaire</small>
             </div>
             <span class="radio-circle"></span>
           </label>
@@ -126,43 +141,43 @@
         </div>
 
         <div class="cond-block" id="block-prov-km">
-          <label class="field-label">Distance (km)
+          <label class="field-label"><span data-i18n="calc-distance">Distance (km)</span>
             <input type="number" id="provKmDistance" class="field-input" min="0" value="50" placeholder="km" />
           </label>
         </div>
 
         <div class="cond-block" id="block-navette">
-          <label class="field-label">Zone navette
+          <label class="field-label"><span data-i18n="calc-zone-navette">Zone navette</span>
             <select id="navetteZone" class="field-select">
-              <option value="bxl">Bxl / Brussel — €6.65</option>
-              <option value="rand">Banl. / Rand — €7.76</option>
-              <option value="brabant">Brabant — €12.20</option>
-              <option value="prov">Prov. — €15.25</option>
-              <option value="prov_lux">Prov. Lux. — €24.40</option>
-              <option value="export">Export (sur demande)</option>
+              <option value="bxl"      data-i18n="calc-nav-bxl">Bxl / Brussel — €8.71</option>
+              <option value="rand"     data-i18n="calc-nav-rand">Banl. / Rand — €10.15</option>
+              <option value="brabant"  data-i18n="calc-nav-brabant">Brabant — €15.94</option>
+              <option value="prov"     data-i18n="calc-nav-prov">Prov. — €19.93</option>
+              <option value="prov_lux" data-i18n="calc-nav-prov-lux">Prov. Lux. — €31.90</option>
+              <option value="export"   data-i18n="calc-nav-export">Export (sur demande)</option>
             </select>
           </label>
         </div>
 
         <div class="cond-block" id="block-dispo">
           <div class="two-col">
-            <label class="field-label">Durée
+            <label class="field-label"><span data-i18n="calc-duree">Durée</span>
               <select id="dispoDuration" class="field-select">
-                <option value="under6">Moins de 6h</option>
-                <option value="over6">6h ou plus</option>
+                <option value="under6" data-i18n="calc-duree-under6">Moins de 6h</option>
+                <option value="over6"  data-i18n="calc-duree-over6">6h ou plus</option>
               </select>
             </label>
-            <label class="field-label">Heures
+            <label class="field-label"><span data-i18n="calc-heures">Heures</span>
               <input type="number" id="dispoHours" class="field-input" min="0.5" step="0.5" value="4" />
             </label>
           </div>
-          <label class="field-label" style="margin-top:10px;">Km supplémentaires
+          <label class="field-label" style="margin-top:10px;"><span data-i18n="calc-km-supp">Km supplémentaires</span>
             <input type="number" id="dispoExtraKm" class="field-input" min="0" value="0" />
           </label>
         </div>
 
         <div class="step-nav">
-          <button class="btn-next" onclick="goToStep(2)">Suivant <span>→</span></button>
+          <button class="btn-next" onclick="goToStep(2)"><span data-i18n="calc-next">Suivant</span> <span>→</span></button>
         </div>
       </div>
 
@@ -171,14 +186,14 @@
 
         <div class="field-card">
           <img class="field-card-icon" src="images/calc/i_pal.png" alt="Palettes" />
-          <label class="field-label">PALETTES (PAL)
+          <label class="field-label"><span data-i18n="calc-palettes">PALETTES (PAL)</span>
             <input type="number" id="reqPallets" class="field-input" min="0" value="2" />
           </label>
         </div>
 
         <div class="field-card">
           <img class="field-card-icon" src="images/calc/i_poids.png" alt="Poids" />
-          <label class="field-label">POIDS / GEWICHT (Kg)
+          <label class="field-label"><span data-i18n="calc-poids">POIDS (Kg)</span>
             <input type="number" id="reqWeight" class="field-input" min="0" value="300" />
           </label>
         </div>
@@ -187,7 +202,7 @@
           <div class="dims-grid">
             <div class="dim-item">
               <img class="dim-icon" src="images/calc/i_hauteur.png" alt="Hauteur" />
-              <label class="field-label">HAUTEUR / HOOGTE
+              <label class="field-label"><span data-i18n="calc-hauteur">HAUTEUR</span>
                 <div class="input-unit-row">
                   <input type="number" id="reqHeight" class="field-input" min="0" step="0.01" value="1.2" />
                   <select id="reqHeightUnit" class="unit-sel">
@@ -199,7 +214,7 @@
             </div>
             <div class="dim-item">
               <img class="dim-icon" src="images/calc/i_longeur.png" alt="Longueur" />
-              <label class="field-label">LONGUEUR / LENGTE
+              <label class="field-label"><span data-i18n="calc-longueur">LONGUEUR</span>
                 <div class="input-unit-row">
                   <input type="number" id="reqLength" class="field-input" min="0" step="0.01" value="2.0" />
                   <select id="reqLengthUnit" class="unit-sel">
@@ -211,7 +226,7 @@
             </div>
             <div class="dim-item">
               <img class="dim-icon" src="images/calc/i_largeur.png" alt="Largeur" />
-              <label class="field-label">LARGEUR / BREEDTE
+              <label class="field-label"><span data-i18n="calc-largeur">LARGEUR</span>
                 <div class="input-unit-row">
                   <input type="number" id="reqWidth" class="field-input" min="0" step="0.01" value="1.1" />
                   <select id="reqWidthUnit" class="unit-sel">
@@ -226,20 +241,20 @@
 
         <div class="field-card">
           <img class="field-card-icon" src="images/calc/i_volume.png" alt="Volume" />
-          <label class="field-label">VOLUME (M³) <span class="optional">(optionnel)</span>
+          <label class="field-label"><span data-i18n="calc-volume">VOLUME (M³)</span> <span class="optional" data-i18n="calc-optional">(optionnel)</span>
             <input type="number" id="reqVolume" class="field-input" min="0" step="0.1" value="0" placeholder="0.0" />
           </label>
         </div>
 
         <label class="toggle-card">
           <img class="toggle-icon" src="images/calc/i_frigo.png" alt="Frigo" />
-          <span class="toggle-label">Transport frigorifique</span>
+          <span class="toggle-label" data-i18n="calc-frigo">Transport frigorifique</span>
           <input type="checkbox" id="reqRefrigerated" class="toggle-input" />
           <span class="toggle-track"></span>
         </label>
 
         <div class="cond-block" id="block-temp">
-          <label class="field-label">Plage de température
+          <label class="field-label"><span data-i18n="calc-temp-range">Plage de température</span>
             <select id="reqTempRange" class="field-select">
               <option value="minus12_0">-12°C / 0°C</option>
               <option value="0_minus20">0°C / -20°C</option>
@@ -249,14 +264,14 @@
 
         <label class="toggle-card">
           <img class="toggle-icon" src="images/calc/i_hayon.png" alt="Hayon" />
-          <span class="toggle-label">Hayon / Laadklep requis</span>
+          <span class="toggle-label" data-i18n="calc-hayon">Hayon requis</span>
           <input type="checkbox" id="reqTailLift" class="toggle-input" />
           <span class="toggle-track"></span>
         </label>
 
         <div class="step-nav">
-          <button class="btn-next" onclick="goToStep(3)">Suivant <span>→</span></button>
-          <button class="btn-back" onclick="goToStep(1)">← Retour</button>
+          <button class="btn-next" onclick="goToStep(3)"><span data-i18n="calc-next">Suivant</span> <span>→</span></button>
+          <button class="btn-back" onclick="goToStep(1)" data-i18n="calc-back">← Retour</button>
         </div>
       </div>
 
@@ -265,14 +280,14 @@
 
         <div id="recommended-card" class="recommended-card"></div>
 
-        <h3 class="vehicles-heading">CHOISISSEZ LE VÉHICULE ADAPTÉ À VOTRE BESOIN</h3>
+        <h3 class="vehicles-heading" data-i18n="calc-choose-vehicle">CHOISISSEZ LE VÉHICULE ADAPTÉ À VOTRE BESOIN</h3>
 
         <div id="vehicle-grid" class="vehicle-grid"></div>
 
         <div class="override-section">
           <label class="check-label">
             <input type="checkbox" id="vehicleOverride" />
-            <span>Sélection manuelle (override)</span>
+            <span data-i18n="calc-override">Sélection manuelle (override)</span>
           </label>
           <div class="cond-block" id="block-vehicle-override">
             <select id="vehicleSelect" class="field-select"></select>
@@ -280,13 +295,13 @@
         </div>
 
         <div class="debug-panel">
-          <div class="debug-header" id="debug-toggle">▶ Détails de sélection (afficher/masquer)</div>
+          <div class="debug-header" id="debug-toggle" data-i18n="calc-debug">▶ Détails de sélection (afficher/masquer)</div>
           <div class="debug-body" id="debug-body" style="display:none;"></div>
         </div>
 
         <div class="step-nav">
-          <button class="btn-next" onclick="goToStep(4)">Suivant <span>→</span></button>
-          <button class="btn-back" onclick="goToStep(2)">← Retour</button>
+          <button class="btn-next" onclick="goToStep(4)"><span data-i18n="calc-next">Suivant</span> <span>→</span></button>
+          <button class="btn-back" onclick="goToStep(2)" data-i18n="calc-back">← Retour</button>
         </div>
       </div>
 
@@ -295,7 +310,7 @@
 
         <div class="field-card">
           <img class="field-card-icon" src="images/calc/i_temps.png" alt="Temps" />
-          <label class="field-label">TEMPS D'ATTENTE TOTAL (MIN)
+          <label class="field-label"><span data-i18n="calc-waiting">TEMPS D'ATTENTE TOTAL (MIN)</span>
             <input type="number" id="waitingMinutes" class="field-input" min="0" value="0" />
             <small class="helper" id="waitingHelper">Temps inclus: — min</small>
           </label>
@@ -304,13 +319,13 @@
         <div class="two-col-cards">
           <div class="field-card">
             <img class="field-card-icon" src="images/calc/i_arrets.png" alt="Arrêts" />
-            <label class="field-label">EXTRA ARRÊT BRUXELLES
+            <label class="field-label"><span data-i18n="calc-stops-bxl">EXTRA ARRÊT BRUXELLES</span>
               <input type="number" id="extraStopsBxl" class="field-input" min="0" value="0" />
             </label>
           </div>
           <div class="field-card">
             <img class="field-card-icon" src="images/calc/i_arrets.png" alt="Arrêts" />
-            <label class="field-label">EXTRA ARRÊT AUTRES
+            <label class="field-label"><span data-i18n="calc-stops-other">EXTRA ARRÊT AUTRES</span>
               <input type="number" id="extraStopsOther" class="field-input" min="0" value="0" />
             </label>
           </div>
@@ -319,8 +334,8 @@
         <label class="toggle-card">
           <img class="toggle-icon" src="images/calc/i_nuit.png" alt="Nuit" />
           <div class="toggle-label-group">
-            <span class="toggle-label">Supplément nuit</span>
-            <small>(€67.22)</small>
+            <span class="toggle-label" data-i18n="calc-supp-night">Supplément nuit</span>
+            <small>(€87.89)</small>
           </div>
           <input type="checkbox" id="suppNight" class="toggle-input" />
           <span class="toggle-track"></span>
@@ -329,8 +344,8 @@
         <label class="toggle-card">
           <img class="toggle-icon" src="images/calc/i_nuit_frigo.png" alt="Nuit frigo" />
           <div class="toggle-label-group">
-            <span class="toggle-label">Nuit frigo -12/0°C</span>
-            <small>(€79.44)</small>
+            <span class="toggle-label" data-i18n="calc-frigo-night-12">Nuit frigo -12/0°C</span>
+            <small>(€103.87)</small>
           </div>
           <input type="checkbox" id="suppNightFrigo12" class="toggle-input" />
           <span class="toggle-track"></span>
@@ -339,8 +354,8 @@
         <label class="toggle-card">
           <img class="toggle-icon" src="images/calc/i_nuit_frigo.png" alt="Nuit frigo" />
           <div class="toggle-label-group">
-            <span class="toggle-label">Nuit frigo 0/-20°C</span>
-            <small>(€91.67)</small>
+            <span class="toggle-label" data-i18n="calc-frigo-night-20">Nuit frigo 0/-20°C</span>
+            <small>(€119.85)</small>
           </div>
           <input type="checkbox" id="suppNightFrigo20" class="toggle-input" />
           <span class="toggle-track"></span>
@@ -349,23 +364,23 @@
         <div class="two-col-cards">
           <div class="field-card">
             <img class="field-card-icon" src="images/calc/i_convoyeur.png" alt="Convoyeur" />
-            <label class="field-label">CONVOYEUR (HEURES)
+            <label class="field-label"><span data-i18n="calc-convoyeur">CONVOYEUR (HEURES)</span>
               <input type="number" id="convoyeurHours" class="field-input" min="0" step="0.5" value="0" />
-              <small class="helper">€31.27 / heure</small>
+              <small class="helper" data-i18n="calc-convoyeur-rate">€31.27 / heure</small>
             </label>
           </div>
           <div class="field-card">
             <img class="field-card-icon" src="images/calc/i_2chauf.png" alt="2e Chauffeur" />
-            <label class="field-label">2e CHAUFFEUR (HEURES)
+            <label class="field-label"><span data-i18n="calc-chauffeur">2e CHAUFFEUR (HEURES)</span>
               <input type="number" id="chauffeurHours" class="field-input" min="0" step="0.5" value="0" />
-              <small class="helper">€36.66 / heure</small>
+              <small class="helper" data-i18n="calc-chauffeur-rate">€36.66 / heure</small>
             </label>
           </div>
         </div>
 
         <div class="step-nav">
-          <button class="btn-next" onclick="goToStep(5)">Suivant <span>→</span></button>
-          <button class="btn-back" onclick="goToStep(3)">← Retour</button>
+          <button class="btn-next" onclick="goToStep(5)"><span data-i18n="calc-next">Suivant</span> <span>→</span></button>
+          <button class="btn-back" onclick="goToStep(3)" data-i18n="calc-back">← Retour</button>
         </div>
       </div>
 
@@ -375,33 +390,33 @@
         <label class="toggle-card">
           <span class="toggle-icon">⛽</span>
           <div class="toggle-label-group">
-            <span class="toggle-label">Appliquer surcharge carburant</span>
-            <small>Ajoutez la surcharge carburant au devis</small>
+            <span class="toggle-label" data-i18n="calc-fuel-label">Appliquer surcharge carburant</span>
+            <small data-i18n="calc-fuel-sub">Ajoutez la surcharge carburant au devis</small>
           </div>
           <input type="checkbox" id="fuelEnabled" class="toggle-input" />
           <span class="toggle-track"></span>
         </label>
 
         <div class="cond-block" id="block-fuel">
-          <label class="field-label">% Surcharge carburant
+          <label class="field-label"><span data-i18n="calc-fuel-pct">% Surcharge carburant</span>
             <input type="number" id="fuelPct" class="field-input" min="0" max="100" step="0.01" value="7.75" />
-            <small class="helper warning-text">⚠ Valeur variable — à vérifier mensuellement. Exemple nov. 2020: 7.75%</small>
+            <small class="helper warning-text" data-i18n="calc-fuel-warning">⚠ Valeur variable — à vérifier mensuellement. Exemple nov. 2020 : 7,75 %</small>
           </label>
         </div>
 
         <label class="toggle-card" style="margin-top:12px;">
           <span class="toggle-icon">🧾</span>
           <div class="toggle-label-group">
-            <span class="toggle-label">Affichez prix TTC (TVA 21%)</span>
-            <small>Ajoutez la TVA au devis</small>
+            <span class="toggle-label" data-i18n="calc-vat-label">Afficher le prix TTC (TVA 21 %)</span>
+            <small data-i18n="calc-vat-sub">Ajoutez la TVA au devis</small>
           </div>
           <input type="checkbox" id="showVAT" class="toggle-input" />
           <span class="toggle-track"></span>
         </label>
 
         <div class="step-nav">
-          <button class="btn-next btn-calculate" onclick="goToSummary()">RÉSUMER <span>→</span></button>
-          <button class="btn-back" onclick="goToStep(4)">← Retour</button>
+          <button class="btn-next btn-calculate" onclick="goToSummary()"><span data-i18n="calc-resume">RÉSUMER</span> <span>→</span></button>
+          <button class="btn-back" onclick="goToStep(4)" data-i18n="calc-back">← Retour</button>
         </div>
       </div>
 
@@ -421,26 +436,26 @@
         <div class="breakdown-table" id="breakdown-table"></div>
         <div class="totals-block" id="totals-block"></div>
 
-        <p class="disclaimer-note">
-          Ce calculateur est basé sur le tarif 2021. Le prix final reste soumis à vérification commerciale. Tous les prix sont hors TVA (21%).
-        </p>
+        <p class="disclaimer-note" data-i18n="calc-disclaimer">Ce calculateur est basé sur le tarif 2021. Le prix final reste soumis à vérification commerciale. Tous les prix sont hors TVA (21 %).</p>
 
         <div class="result-actions">
-          <button class="btn-action" id="btnPrint">🖨️ Imprimer</button>
-          <button class="btn-action" id="btnCopy">📋 Copier</button>
+          <button class="btn-action" id="btnPrint" data-i18n="calc-print">🖨️ Imprimer</button>
+          <button class="btn-action" id="btnCopy"  data-i18n="calc-copy">📋 Copier</button>
         </div>
 
         <div class="step-nav">
-          <button class="btn-next" onclick="resetAll()">↺ Nouveau calcul</button>
-          <button class="btn-back" onclick="goToStep(5)">← Modifier</button>
+          <button class="btn-next" onclick="resetAll()" data-i18n="calc-new-calc">↺ Nouveau calcul</button>
+          <button class="btn-back" onclick="goToStep(5)" data-i18n="calc-modify">← Modifier</button>
         </div>
       </div>
 
     </div><!-- end content-card -->
   </div><!-- end app -->
 
+  <script src="lang.js"></script>
   <script src="calc.js"></script>
   <script>
+    /* ── Hamburger menu ── */
     var menuToggle = document.getElementById('menuToggle');
     var menuClose  = document.getElementById('menuClose');
     var mobileMenu = document.getElementById('mobileMenu');
@@ -450,19 +465,16 @@
       mobileMenu.classList.add('active');
       document.body.style.overflow = 'hidden';
     });
-
     menuClose.addEventListener('click', function () {
       mobileMenu.classList.remove('active');
       document.body.style.overflow = '';
     });
-
     menuItems.forEach(function (item) {
       item.addEventListener('click', function () {
         mobileMenu.classList.remove('active');
         document.body.style.overflow = '';
       });
     });
-
     mobileMenu.addEventListener('click', function (e) {
       if (e.target === mobileMenu) {
         mobileMenu.classList.remove('active');

@@ -2,7 +2,7 @@
 
 // ============================================================
 // TARIFF DATA — SINGLE SOURCE OF TRUTH
-// All values from TARIEVEN / TARIFS 2021 sheet.
+// All values from TARIEVEN / TARIFS 2026 sheet.
 // ============================================================
 const TARIFF_DATA = {
 
@@ -86,24 +86,24 @@ const TARIFF_DATA = {
 
   PRICES: {
     bxl: {
-      voiture: 9.15, bestel_1pal: 18.97, bestel_2pal: 37.04, bestel_3pal: 49.80,
-      camion_6pal: 71.10, camion_14pal: 88.88, camion_17pal: 94.81, camion_18pal_lourd: 106.65,
-      bache_18pal: 112.58, semi_bache_33pal: 130.36, frigo_15pal_minus12_0: 106.65, frigo_15pal_0_minus20: 118.50,
+      voiture: 17.68, bestel_1pal: 29.46, bestel_2pal: 55.98, bestel_3pal: 70.70,
+      camion_6pal: 100.16, camion_14pal: 127.27, camion_17pal: 135.51, camion_18pal_lourd: 153.19,
+      bache_18pal: 162.03, semi_bache_33pal: 187.36, frigo_15pal_minus12_0: 153.19, frigo_15pal_0_minus20: 168.51,
     },
     rand: {
-      voiture: 11.64, bestel_1pal: 21.37, bestel_2pal: 42.72, bestel_3pal: 55.71,
-      camion_6pal: 77.02, camion_14pal: 94.81, camion_17pal: 100.73, camion_18pal_lourd: 112.58,
-      bache_18pal: 118.50, semi_bache_33pal: 142.20, frigo_15pal_minus12_0: 112.58, frigo_15pal_0_minus20: 124.43,
+      voiture: 21.21, bestel_1pal: 32.99, bestel_2pal: 62.45, bestel_3pal: 76.59,
+      camion_6pal: 107.23, camion_14pal: 135.51, camion_17pal: 142.58, camion_18pal_lourd: 160.84,
+      bache_18pal: 170.87, semi_bache_33pal: 202.68, frigo_15pal_minus12_0: 160.84, frigo_15pal_0_minus20: 175.57,
     },
     prov_min: {
-      voiture: 22.18, bestel_1pal: 33.27, bestel_2pal: 49.90, bestel_3pal: 59.88,
-      camion_6pal: 83.17, camion_14pal: 102.55, camion_17pal: 109.39, camion_18pal_lourd: 113.95,
-      bache_18pal: 120.78, semi_bache_33pal: 153.82, frigo_15pal_minus12_0: 113.95, frigo_15pal_0_minus20: 127.62,
+      voiture: 35.35, bestel_1pal: 48.32, bestel_2pal: 70.70, bestel_3pal: 84.25,
+      camion_6pal: 115.48, camion_14pal: 147.30, camion_17pal: 155.54, camion_18pal_lourd: 170.87,
+      bache_18pal: 182.64, semi_bache_33pal: 223.89, frigo_15pal_minus12_0: 170.87, frigo_15pal_0_minus20: 181.47,
     },
     prov_km: {
-      voiture: 0.44, bestel_1pal: 0.51, bestel_2pal: 0.55, bestel_3pal: 0.60,
-      camion_6pal: 0.83, camion_14pal: 1.03, camion_17pal: 1.09, camion_18pal_lourd: 1.14,
-      bache_18pal: 1.20, semi_bache_33pal: 1.54, frigo_15pal_minus12_0: 1.14, frigo_15pal_0_minus20: 1.27,
+      voiture: 0.59, bestel_1pal: 0.67, bestel_2pal: 0.71, bestel_3pal: 0.78,
+      camion_6pal: 1.09, camion_14pal: 1.35, camion_17pal: 1.43, camion_18pal_lourd: 1.48,
+      bache_18pal: 1.58, semi_bache_33pal: 2.00, frigo_15pal_minus12_0: 1.48, frigo_15pal_0_minus20: 1.66,
     },
   },
 
@@ -136,69 +136,69 @@ const TARIFF_DATA = {
   },
 
   WAITING: {
-    voiture:                { includedMin: 0,  per15min: 6.99 },
-    bestel_1pal:            { includedMin: 0,  per15min: 6.99 },
-    bestel_2pal:            { includedMin: 15, per15min: 6.99 },
-    bestel_3pal:            { includedMin: 15, per15min: 6.99 },
-    camion_6pal:            { includedMin: 15, per15min: 8.11 },
-    camion_14pal:           { includedMin: 15, per15min: 10.18 },
-    camion_17pal:           { includedMin: 15, per15min: 10.18 },
-    camion_18pal_lourd:     { includedMin: 15, per15min: 10.73 },
-    bache_18pal:            { includedMin: 30, per15min: 10.73 },
-    semi_bache_33pal:       { includedMin: 30, per15min: 11.85 },
-    frigo_15pal_minus12_0:  { includedMin: 15, per15min: 10.73 },
-    frigo_15pal_0_minus20:  { includedMin: 30, per15min: 11.85 },
+    voiture:                { includedMin: 0,  per15min: 9.14 },
+    bestel_1pal:            { includedMin: 0,  per15min: 9.14 },
+    bestel_2pal:            { includedMin: 15, per15min: 9.14 },
+    bestel_3pal:            { includedMin: 15, per15min: 9.14 },
+    camion_6pal:            { includedMin: 15, per15min: 10.60 },
+    camion_14pal:           { includedMin: 15, per15min: 13.30 },
+    camion_17pal:           { includedMin: 15, per15min: 13.30 },
+    camion_18pal_lourd:     { includedMin: 15, per15min: 14.03 },
+    bache_18pal:            { includedMin: 30, per15min: 14.03 },
+    semi_bache_33pal:       { includedMin: 30, per15min: 15.50 },
+    frigo_15pal_minus12_0:  { includedMin: 15, per15min: 14.03 },
+    frigo_15pal_0_minus20:  { includedMin: 30, per15min: 15.50 },
   },
 
   EXTRA_STOPS: {
     bxl: {
-      voiture: 9.15, bestel_1pal: 16.52, bestel_2pal: 21.94, bestel_3pal: 27.35,
-      camion_6pal: 35.55, camion_14pal: 44.44, camion_17pal: 47.41, camion_18pal_lourd: 53.34,
-      bache_18pal: 56.29, semi_bache_33pal: 68.36, frigo_15pal_minus12_0: 53.34, frigo_15pal_0_minus20: 59.26,
+      voiture: 17.68, bestel_1pal: 23.57, bestel_2pal: 29.46, bestel_3pal: 41.25,
+      camion_6pal: 53.03, camion_14pal: 69.52, camion_17pal: 73.64, camion_18pal_lourd: 82.48,
+      bache_18pal: 87.20, semi_bache_33pal: 100.16, frigo_15pal_minus12_0: 82.48, frigo_15pal_0_minus20: 89.55,
     },
     other: {
-      voiture: 11.64, bestel_1pal: 16.52, bestel_2pal: 21.94, bestel_3pal: 27.35,
-      camion_6pal: 35.55, camion_14pal: 44.44, camion_17pal: 47.41, camion_18pal_lourd: 53.34,
-      bache_18pal: 56.29, semi_bache_33pal: 68.36, frigo_15pal_minus12_0: 53.34, frigo_15pal_0_minus20: 59.26,
+      voiture: 21.21, bestel_1pal: 23.57, bestel_2pal: 29.46, bestel_3pal: 41.25,
+      camion_6pal: 53.03, camion_14pal: 69.52, camion_17pal: 73.64, camion_18pal_lourd: 82.48,
+      bache_18pal: 87.20, semi_bache_33pal: 100.16, frigo_15pal_minus12_0: 82.48, frigo_15pal_0_minus20: 89.55,
     },
   },
 
   DISPO: {
     under6: {
-      voiture: null, bestel_1pal: 30.41, bestel_2pal: 38.74, bestel_3pal: 38.74,
-      camion_6pal: 45.58, camion_14pal: 51.28, camion_17pal: 55.83, camion_18pal_lourd: 60.73,
-      bache_18pal: 60.73, semi_bache_33pal: 72.26, frigo_15pal_minus12_0: 60.73, frigo_15pal_0_minus20: 65.65,
+      voiture: null, bestel_1pal: 50.66, bestel_2pal: 50.66, bestel_3pal: 59.59,
+      camion_6pal: 67.05, camion_14pal: 73.00, camion_17pal: 79.41, camion_18pal_lourd: 79.41,
+      bache_18pal: 79.41, semi_bache_33pal: 94.47, frigo_15pal_minus12_0: 79.41, frigo_15pal_0_minus20: 85.83,
     },
     over6: {
-      voiture: null, bestel_1pal: 0.00, bestel_2pal: 34.19, bestel_3pal: 34.19,
-      camion_6pal: 41.02, camion_14pal: 46.26, camion_17pal: 50.94, camion_18pal_lourd: 55.83,
-      bache_18pal: 55.83, semi_bache_33pal: 66.32, frigo_15pal_minus12_0: 55.83, frigo_15pal_0_minus20: 60.73,
+      voiture: null, bestel_1pal: 44.71, bestel_2pal: 44.71, bestel_3pal: 53.63,
+      camion_6pal: 60.48, camion_14pal: 66.60, camion_17pal: 73.00, camion_18pal_lourd: 73.00,
+      bache_18pal: 73.00, semi_bache_33pal: 86.71, frigo_15pal_minus12_0: 73.00, frigo_15pal_0_minus20: 79.41,
     },
     kmSupp: {
-      voiture: null, bestel_1pal: 0.26, bestel_2pal: 0.27, bestel_3pal: 0.30,
-      camion_6pal: 0.41, camion_14pal: 0.51, camion_17pal: 0.55, camion_18pal_lourd: 0.57,
-      bache_18pal: 0.60, semi_bache_33pal: 0.77, frigo_15pal_minus12_0: 0.57, frigo_15pal_0_minus20: 0.64,
+      voiture: null, bestel_1pal: 0.35, bestel_2pal: 0.39, bestel_3pal: 0.53,
+      camion_6pal: 0.67, camion_14pal: 0.71, camion_17pal: 0.74, camion_18pal_lourd: 0.78,
+      bache_18pal: 0.78, semi_bache_33pal: 1.01, frigo_15pal_minus12_0: 0.74, frigo_15pal_0_minus20: 0.83,
     },
   },
 
   NAVETTES: {
-    bxl:      { label: "Bxl / Brussel",    price: 6.65 },
-    rand:     { label: "Banl. / Rand",     price: 7.76 },
-    brabant:  { label: "Brabant",          price: 12.20 },
-    prov:     { label: "Prov.",            price: 15.25 },
-    prov_lux: { label: "Prov. Lux.",       price: 24.40 },
+    bxl:      { label: "Bxl / Brussel",    price: 8.71 },
+    rand:     { label: "Banl. / Rand",     price: 10.15 },
+    brabant:  { label: "Brabant",          price: 15.94 },
+    prov:     { label: "Prov.",            price: 19.93 },
+    prov_lux: { label: "Prov. Lux.",       price: 31.90 },
     export:   { label: "Export",           price: null, note: "À partir de €50 — prix sur demande" },
   },
 
   SUPPLEMENTS: {
-    nightBase:        67.22,
-    nightFrigo12_0:   79.44,
-    nightFrigo0_20:   91.67,
-    convoyeurPerHour: 31.27,
-    chauffeurPerHour: 36.66,
+    nightBase:        87.89,
+    nightFrigo12_0:   103.87,
+    nightFrigo0_20:   119.85,
+    convoyeurPerHour: 40.89,
+    chauffeurPerHour: 47.93,
   },
 
-  FUEL_SURCHARGE_EXAMPLE_PCT: 7.75,
+  FUEL_SURCHARGE_EXAMPLE_PCT: 19.50,
   VAT_RATE: 0.21,
 };
 
@@ -225,36 +225,15 @@ const VEHICLE_DISPLAY = {
 // ============================================================
 const STEP_DATA = [
   {
-    line1: "MODE DE", line2: "TARIFICATION",
-    subtitle: "Choisissez le mode de tarification qui correspond à votre besoin",
+    l1: 'calc-step1-l1', l2: 'calc-step1-l2', sub: 'calc-step1-sub',
     emoji: "🚚",
     heroHTML: '<div class="hero-images"><img class="hero-guy" src="images/calc/guy_1.png" alt=""><img class="hero-box" src="images/calc/box_1.png" alt=""></div>',
   },
-  {
-    line1: "CARACTÉRISTIQUES", line2: "DU CHARGEMENT",
-    subtitle: "Décrivez votre chargement le plus précisément possible",
-    emoji: "📦",
-  },
-  {
-    line1: "SÉLECTION", line2: "DU VÉHICULE",
-    subtitle: "Choisissez le véhicule adapté à vos chargements",
-    emoji: "🚛",
-  },
-  {
-    line1: "SUPPLÉMENTS", line2: "OPÉRATIONNELS",
-    subtitle: "Ajoutez les options et contraintes spécifiques à votre transport",
-    emoji: "⚙️",
-  },
-  {
-    line1: "CARBURANT", line2: "& TVA",
-    subtitle: "Indiquez les options fiscales à inclure dans le calcul",
-    emoji: "⛽",
-  },
-  {
-    line1: "RÉSUMÉ", line2: "DU DEVIS",
-    subtitle: "Récapitulatif complet de votre demande de transport",
-    emoji: "📋",
-  },
+  { l1: 'calc-step2-l1', l2: 'calc-step2-l2', sub: 'calc-step2-sub', emoji: "📦" },
+  { l1: 'calc-step3-l1', l2: 'calc-step3-l2', sub: 'calc-step3-sub', emoji: "🚛" },
+  { l1: 'calc-step4-l1', l2: 'calc-step4-l2', sub: 'calc-step4-sub', emoji: "⚙️" },
+  { l1: 'calc-step5-l1', l2: 'calc-step5-l2', sub: 'calc-step5-sub', emoji: "⛽" },
+  { l1: 'calc-sum-l1',   l2: 'calc-sum-l2',   sub: 'calc-sum-sub',   emoji: "📋" },
 ];
 
 let currentStep = 1;
@@ -322,9 +301,14 @@ function resetAll() {
 
 function updateHero(stepIndex) {
   const d = STEP_DATA[stepIndex];
+  const lang = localStorage.getItem('lang') || 'fr';
+  const t = (window._T && window._T[lang]) || {};
+  const l1 = t[d.l1] || d.l1;
+  const l2 = t[d.l2] || d.l2;
+  const sub = t[d.sub] || d.sub;
   document.getElementById("hero-title").innerHTML =
-    d.line1 + ' <span class="hero-accent">' + d.line2 + "</span>";
-  document.getElementById("hero-subtitle").textContent = d.subtitle;
+    l1 + ' <span class="hero-accent">' + l2 + "</span>";
+  document.getElementById("hero-subtitle").textContent = sub;
   const emojiEl = document.getElementById("hero-emoji");
   if (d.heroHTML) {
     emojiEl.innerHTML = d.heroHTML;
@@ -332,6 +316,12 @@ function updateHero(stepIndex) {
     emojiEl.textContent = d.emoji;
   }
 }
+
+/* Re-render hero when language changes */
+window.onLangChange = function() {
+  var idx = currentStep === "summary" ? 5 : currentStep - 1;
+  updateHero(idx);
+};
 
 function updateProgress(activeStep) {
   const container = document.getElementById("step-progress");
