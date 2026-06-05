@@ -896,42 +896,78 @@ function updateDebugPanel(debugInfo) {
 }
 
 // ============================================================
-// COPY TO CLIPBOARD
+// DOWNLOAD QUOTE AS PDF-READY HTML
 // ============================================================
 
-function copyBreakdownText() {
+function downloadQuote() {
   const vehicleName = document.getElementById("result-vehicle-name").textContent;
-  let text = "=== TARIEVEN / TARIFS 2021 ===\nVéhicule: " + vehicleName + "\n\n";
+  const vehicleReason = document.getElementById("result-vehicle-reason").textContent;
+  const breakdownHTML = document.getElementById("breakdown-table").innerHTML;
+  const totalsHTML = document.getElementById("totals-block").innerHTML;
+  const disclaimer = document.querySelector(".disclaimer-note")?.textContent || "";
+  const date = new Date().toLocaleDateString("fr-BE", { year: "numeric", month: "long", day: "numeric" });
 
-  document.querySelectorAll(".breakdown-section-title, .breakdown-row, .breakdown-note").forEach(el => {
-    if (el.classList.contains("breakdown-section-title")) {
-      text += "\n--- " + el.textContent + " ---\n";
-    } else if (el.classList.contains("breakdown-row")) {
-      const label = el.querySelector(".breakdown-label")?.textContent || "";
-      const value = el.querySelector(".breakdown-value")?.textContent || "";
-      text += label.padEnd(50) + " " + value + "\n";
-    } else if (el.classList.contains("breakdown-note")) {
-      text += "  * " + el.textContent + "\n";
-    }
-  });
+  const html = `<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Devis Number One Logistics — ${vehicleName}</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 13px; color: #222; background: #fff; padding: 40px; }
+  .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; border-bottom: 3px solid #d32f2f; padding-bottom: 16px; }
+  .logo-area h1 { font-size: 22px; color: #d32f2f; font-weight: 700; }
+  .logo-area p { color: #555; font-size: 12px; margin-top: 2px; }
+  .date-area { text-align: right; color: #555; font-size: 12px; }
+  .vehicle-card { background: #f8f8f8; border-left: 4px solid #d32f2f; padding: 12px 16px; margin-bottom: 24px; border-radius: 4px; }
+  .vehicle-card .v-name { font-size: 16px; font-weight: 700; }
+  .vehicle-card .v-reason { color: #555; font-size: 12px; margin-top: 4px; }
+  .breakdown-section-title { font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #d32f2f; margin: 18px 0 6px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
+  .breakdown-row { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dotted #eee; }
+  .breakdown-label { color: #444; }
+  .breakdown-value { font-weight: 600; white-space: nowrap; margin-left: 16px; }
+  .breakdown-note { font-size: 11px; color: #888; padding: 2px 0 2px 12px; font-style: italic; }
+  .totals-block { margin-top: 20px; border-top: 2px solid #d32f2f; padding-top: 12px; }
+  .total-row { display: flex; justify-content: space-between; padding: 5px 0; }
+  .total-label { font-weight: 600; }
+  .total-value { font-weight: 700; font-size: 14px; color: #d32f2f; }
+  .total-row.grand { background: #d32f2f; color: #fff; padding: 8px 10px; border-radius: 4px; margin-top: 6px; }
+  .total-row.grand .total-label, .total-row.grand .total-value { color: #fff; font-size: 15px; }
+  .disclaimer { margin-top: 28px; font-size: 11px; color: #888; border-top: 1px solid #eee; padding-top: 12px; }
+  .print-btn { display: block; margin: 20px auto 0; padding: 10px 28px; background: #d32f2f; color: #fff; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; }
+  @media print { .print-btn { display: none; } body { padding: 20px; } }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="logo-area">
+    <h1>Number One Logistics</h1>
+    <p>Devis / Offerte / Quotation</p>
+  </div>
+  <div class="date-area">
+    <div>${date}</div>
+  </div>
+</div>
+<div class="vehicle-card">
+  <div class="v-name">🚛 ${vehicleName}</div>
+  <div class="v-reason">${vehicleReason}</div>
+</div>
+${breakdownHTML}
+<div class="totals-block">${totalsHTML}</div>
+<p class="disclaimer">${disclaimer}</p>
+<button class="print-btn" onclick="window.print()">🖨️ Imprimer / Sauvegarder en PDF</button>
+</body>
+</html>`;
 
-  text += "\n--- TOTAUX ---\n";
-  document.querySelectorAll(".total-row").forEach(row => {
-    const label = row.querySelector(".total-label")?.textContent || "";
-    const value = row.querySelector(".total-value")?.textContent || "";
-    text += label.padEnd(50) + " " + value + "\n";
-  });
-
-  text += "\n[Tarif 2021 — Tous les prix HTVA (21%)]";
-
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = document.getElementById("btnCopy");
-    const orig = btn.textContent;
-    btn.textContent = "✓ Copié!";
-    setTimeout(() => { btn.textContent = orig; }, 2000);
-  }).catch(() => {
-    alert("Impossible de copier automatiquement. Veuillez sélectionner manuellement.");
-  });
+  const blob = new Blob([html], { type: "text/html" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "devis-number-one-logistics.html";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
 // ============================================================
@@ -965,7 +1001,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Print / copy
   document.getElementById("btnPrint")?.addEventListener("click", () => window.print());
-  document.getElementById("btnCopy")?.addEventListener("click", copyBreakdownText);
+  document.getElementById("btnDownload")?.addEventListener("click", downloadQuote);
 
   // Initial conditional block state
   toggleConditionalBlocks();

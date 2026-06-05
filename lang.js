@@ -174,7 +174,7 @@
             'calc-resume': 'RÉSUMER',
             'calc-disclaimer': 'Ce calculateur est basé sur le tarif 2026. Le prix final reste soumis à vérification commerciale. Tous les prix sont hors TVA (21 %).',
             'calc-print': '🖨️ Imprimer',
-            'calc-copy': '📋 Copier',
+            'calc-download': '⬇️ Télécharger',
             'calc-new-calc': '↺ Nouveau calcul',
             'calc-modify': '← Modifier',
 
@@ -412,7 +412,7 @@
             'calc-resume': 'SUMMARISE',
             'calc-disclaimer': 'This calculator is based on the 2026 tariff. The final price remains subject to commercial verification. All prices are excluding VAT (21%).',
             'calc-print': '🖨️ Print',
-            'calc-copy': '📋 Copy',
+            'calc-download': '⬇️ Download',
             'calc-new-calc': '↺ New calculation',
             'calc-modify': '← Edit',
 
@@ -648,7 +648,7 @@
             'calc-resume': 'SAMENVATTEN',
             'calc-disclaimer': 'Deze calculator is gebaseerd op het tarief van 2026. De uiteindelijke prijs blijft onderworpen aan commerciële verificatie. Alle prijzen zijn exclusief BTW (21%).',
             'calc-print': '🖨️ Afdrukken',
-            'calc-copy': '📋 Kopiëren',
+            'calc-download': '⬇️ Downloaden',
             'calc-new-calc': '↺ Nieuwe berekening',
             'calc-modify': '← Bewerken',
 
