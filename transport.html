@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number One Transport - Transport National &amp; International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="transport.css">
+    <script>
+        (function() {
+            var width = window.innerWidth;
+            var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+            if (width >= 768 && !isMobile) {
+                window.location.href = 'desktop.html';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="lang-picker" id="langPicker">
+                <button class="lang-btn" id="langBtn" aria-label="Change language">
+                    <img id="currentFlag" class="lang-flag" src="" alt="">
+                    <svg class="lang-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="#0F417B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-option" data-lang="fr"><img class="lang-flag lang-flag-fr" src="" alt=""> FR</button>
+                    <button class="lang-option" data-lang="nl"><img class="lang-flag lang-flag-nl" src="" alt=""> NL</button>
+                    <button class="lang-option" data-lang="en"><img class="lang-flag lang-flag-en" src="" alt=""> EN</button>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="images/logo_01.png" alt="Number One Transport">
+            </div>
+            <button class="menu-btn" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="menu-content">
+                <button class="menu-close" id="menuClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="#0F417B" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <nav class="menu-nav">
+                    <a href="mobile.html" class="menu-item" data-i18n="menu-home">ACCUEIL</a>
+                    <a href="mobile.html#fleet" class="menu-item" data-i18n="menu-vehicles">VÉHICULES</a>
+                    <a href="mobile.html#services" class="menu-item active" data-i18n="menu-services">NOS SERVICES</a>
+                    <a href="more.html" class="menu-item" data-i18n="menu-about">QUI SOMMES-NOUS ?</a>
+                    <a href="#" class="menu-item menu-item-outlined" data-i18n="menu-client">ACCÈS CLIENT</a>
+                    <a href="#" class="menu-item" data-i18n="menu-news">NEWS</a>
+                </nav>
+                <a href="tel:+3224276004" class="menu-call-btn" data-i18n="menu-call">APPELER</a>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="transport-hero">
+            <img src="images/image_25.png" alt="Transport" class="hero-truck">
+            <div class="hero-text">
+                <h1 class="hero-title">TRANSPORT</h1>
+                <p class="hero-subtitle" data-i18n="transport-subtitle">National et international</p>
+            </div>
+        </section>
+
+        <!-- Specialisation Banner -->
+        <div class="spec-banner">
+            <span data-i18n="transport-spec">Notre spécialisation depuis plus de 25 ans</span>
+        </div>
+
+        <!-- Content Section -->
+        <section class="transport-content">
+            <p class="content-p" data-i18n="transport-p1">Notre dénomination n'est pas usurpée, nous sommes les « Number One » dans notre secteur.</p>
+
+            <p class="content-p content-p--bold" data-i18n="transport-p2">Notre équipe expérimentée de près de 70 personnes (avec très peu de rotation depuis toutes ces années, gage de professionnalisme) est à votre disposition pour vous apporter <strong>LA Solution</strong> dont vous avez besoin.</p>
+
+            <p class="content-p content-p--accent" data-i18n="transport-p3">Nous nous chargeons de vos envois urgents vers/depuis la Belgique ou tous les pays européens.</p>
+
+            <p class="content-p" data-i18n="transport-p4">Plis, palettes ou colis volumineux sont retirés et livrés dans la foulée. Notre importante flotte de véhicules nous permet de vous proposer le véhicule parfaitement adapté à vos besoins (depuis la simple voiture jusqu'au semi-remorque). Nos chauffeurs-livreurs peuvent vous aider en matière de manutention&nbsp;… Tout comme nos dispatcheurs et les autres membres de notre personnel, ils sont à votre service&nbsp;!</p>
+        </section>
+
+        <!-- Footer Actions -->
+        <footer class="transport-footer">
+            <a href="mobile.html#contact" class="cta-btn">
+                <span data-i18n="transport-cta">NOUS CONTACTER</span>
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M7 13L11 9L7 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <a href="mobile.html#services" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M10 12L6 8L10 4" stroke="#0F417B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span data-i18n="back-label">Retour</span>
+            </a>
+        </footer>
+
+    </div>
+
+    <script src="lang.js"></script>
+    <script>
+        var menuToggle = document.getElementById('menuToggle');
+        var menuClose  = document.getElementById('menuClose');
+        var mobileMenu = document.getElementById('mobileMenu');
+        var menuItems  = document.querySelectorAll('.menu-item');
+
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        menuItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>

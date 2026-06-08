@@ -249,7 +249,15 @@
             'solution-p2': 'Nous vous proposons des <strong>solutions</strong> sur mesure, <strong>adaptées à vos besoins</strong> spécifiques.',
             'repondons': 'Nous répondons, <span class="hl">depuis plus de 25 ans</span> déjà, aux demandes de nos clients issus des secteurs les plus variés',
             'persuades-p1': 'Nous sommes <strong>persuadés</strong> qu\'une collaboration avec un partenaire de transport fiable pour vous accompagner, ne peut qu\'apporter une <strong>plus-value importante</strong> à votre société.',
-            'persuades-p2': 'Notre site Internet remanié est destiné à vous offrir un outil que nous voulons <b>pratique, convivial</b> et <b>interactif</b> particulièrement, grâce à notre « portail clients ».'
+            'persuades-p2': 'Notre site Internet remanié est destiné à vous offrir un outil que nous voulons <b>pratique, convivial</b> et <b>interactif</b> particulièrement, grâce à notre « portail clients ».',
+            /* ── transport.html ── */
+            'transport-subtitle': 'National et international',
+            'transport-spec': 'Notre spécialisation depuis plus de 25 ans',
+            'transport-p1': "Notre dénomination n'est pas usurpée, nous sommes les \u00ab\u00a0Number One\u00a0\u00bb dans notre secteur.",
+            'transport-p2': "Notre équipe expérimentée de près de 70 personnes (avec très peu de rotation depuis toutes ces années, gage de professionnalisme) est à votre disposition pour vous apporter <strong>LA Solution</strong> dont vous avez besoin.",
+            'transport-p3': 'Nous nous chargeons de vos envois urgents vers/depuis la Belgique ou tous les pays européens.',
+            'transport-p4': "Plis, palettes ou colis volumineux sont retirés et livrés dans la foulée. Notre importante flotte de véhicules nous permet de vous proposer le véhicule parfaitement adapté à vos besoins (depuis la simple voiture jusqu'au semi-remorque). Nos chauffeurs-livreurs peuvent vous aider en matière de manutention\u00a0… Tout comme nos dispatcheurs et les autres membres de notre personnel, ils sont à votre service\u00a0!",
+            'transport-cta': 'NOUS CONTACTER'
         },
 
         en: {
@@ -485,7 +493,15 @@
             'solution-p2': 'We offer <strong>tailored solutions</strong>, <strong>adapted to your specific needs</strong>.',
             'repondons': 'We have been responding, <span class="hl">for over 25 years</span>, to the needs of our clients from the most diverse sectors',
             'persuades-p1': 'We are <strong>convinced</strong> that working with a reliable transport partner can only bring <strong>significant added value</strong> to your business.',
-            'persuades-p2': 'Our redesigned website aims to offer you a tool that is <b>practical, user-friendly</b> and <b>interactive</b>, particularly through our "client portal".'
+            'persuades-p2': 'Our redesigned website aims to offer you a tool that is <b>practical, user-friendly</b> and <b>interactive</b>, particularly through our "client portal".',
+            /* ── transport.html ── */
+            'transport-subtitle': 'National &amp; international',
+            'transport-spec': 'Our specialisation for over 25 years',
+            'transport-p1': 'Our name is not taken lightly — we truly are the «\u00a0Number One\u00a0» in our sector.',
+            'transport-p2': 'Our experienced team of nearly 70 people (with very little turnover over the years, a mark of professionalism) is at your disposal to bring you <strong>THE Solution</strong> you need.',
+            'transport-p3': 'We handle your urgent shipments to/from Belgium or any European country.',
+            'transport-p4': 'Letters, pallets or bulky parcels are collected and delivered without delay. Our large fleet of vehicles allows us to offer you the perfectly suited vehicle for your needs (from a simple car to a semi-trailer). Our driver-deliverers can assist with handling\u00a0… Just like our dispatchers and other staff members, they are at your service\u00a0!',
+            'transport-cta': 'CONTACT US'
         },
 
         nl: {
@@ -721,7 +737,15 @@
             'solution-p2': 'Wij bieden <strong>oplossingen op maat</strong>, <strong>aangepast aan uw specifieke behoeften</strong>.',
             'repondons': 'Al meer dan <span class="hl">25 jaar</span> beantwoorden wij de vragen van onze klanten uit de meest uiteenlopende sectoren',
             'persuades-p1': 'Wij zijn er <strong>van overtuigd</strong> dat samenwerken met een betrouwbare transportpartner enkel een <strong>belangrijke meerwaarde</strong> voor uw bedrijf kan opleveren.',
-            'persuades-p2': 'Onze vernieuwde website wil u een tool bieden die <b>praktisch, gebruiksvriendelijk</b> en <b>interactief</b> is, met name dankzij ons "klantenportaal".'
+            'persuades-p2': 'Onze vernieuwde website wil u een tool bieden die <b>praktisch, gebruiksvriendelijk</b> en <b>interactief</b> is, met name dankzij ons "klantenportaal".',
+            /* ── transport.html ── */
+            'transport-subtitle': 'Nationaal &amp; internationaal',
+            'transport-spec': 'Onze specialisatie al meer dan 25 jaar',
+            'transport-p1': 'Onze naam is niet aanmatigend — wij zijn werkelijk de «\u00a0Number One\u00a0» in onze sector.',
+            'transport-p2': 'Ons ervaren team van bijna 70 mensen (met weinig verloop over de jaren, een teken van professionalisme) staat tot uw beschikking om u <strong>DE Oplossing</strong> te bieden die u nodig heeft.',
+            'transport-p3': 'Wij verzorgen uw urgente zendingen naar/vanuit België of alle Europese landen.',
+            'transport-p4': "Brieven, paletten of volumineuze pakketten worden opgehaald en onmiddellijk geleverd. Onze grote vloot voertuigen stelt ons in staat u het perfecte voertuig voor uw behoeften aan te bieden (van een eenvoudige auto tot een oplegger). Onze chauffeur-koeriers kunnen helpen bij het hanteren\u00a0… Net zoals onze dispatchers en andere personeelsleden staan zij tot uw dienst\u00a0!",
+            'transport-cta': 'NEEM CONTACT OP'
         }
     };
 
