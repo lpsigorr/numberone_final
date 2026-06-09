@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="more.css">
     <script>
         (function() {
-            var width = window.innerWidth;
-            var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
-            if (width >= 768 && !isMobile) {
+            if (window.innerWidth >= 768) {
                 window.location.href = 'desktop.html';
             }
         })();
