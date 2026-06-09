@@ -899,71 +899,198 @@ function updateDebugPanel(debugInfo) {
 // DOWNLOAD QUOTE AS PDF-READY HTML
 // ============================================================
 
-function downloadQuote() {
-  const vehicleName = document.getElementById("result-vehicle-name").textContent;
-  const vehicleReason = document.getElementById("result-vehicle-reason").textContent;
-  const breakdownHTML = document.getElementById("breakdown-table").innerHTML;
-  const totalsHTML = document.getElementById("totals-block").innerHTML;
-  const disclaimer = document.querySelector(".disclaimer-note")?.textContent || "";
-  const date = new Date().toLocaleDateString("fr-BE", { year: "numeric", month: "long", day: "numeric" });
+async function downloadQuote() {
+  // Embed logo as base64 so it works when the file is opened from Downloads
+  let logoSrc = '';
+  try {
+    const resp = await fetch('images/logo_01.png');
+    const blob = await resp.blob();
+    logoSrc = await new Promise(resolve => {
+      const r = new FileReader();
+      r.onload = () => resolve(r.result);
+      r.readAsDataURL(blob);
+    });
+  } catch(e) {}
+
+  // Summary DOM values
+  const vehicleName   = document.getElementById("result-vehicle-name")?.textContent || '—';
+  const vehicleReason = document.getElementById("result-vehicle-reason")?.textContent || '';
+
+  // User choices
+  const modeMap = {
+    bxl:      'Bruxelles / Brussel — Prix fixe ville',
+    prov_min: 'Province min. — Tarif fixe provincial',
+    rand:     'Rand / Banlieue — Périphérie',
+    prov_km:  'Province / Km — Tarif kilométrique',
+    navette:  'Navette',
+    dispo:    'Tournée / Dispo — Tarif horaire'
+  };
+  const mode        = document.querySelector('input[name="pricingMode"]:checked')?.value || '';
+  const modeLabel   = modeMap[mode] || mode;
+  const pallets     = document.getElementById("reqPallets")?.value || '0';
+  const weight      = document.getElementById("reqWeight")?.value || '0';
+  const heightV     = document.getElementById("reqHeight")?.value || '0';
+  const heightU     = document.getElementById("reqHeightUnit")?.value || 'm';
+  const lengthV     = document.getElementById("reqLength")?.value || '0';
+  const lengthU     = document.getElementById("reqLengthUnit")?.value || 'm';
+  const widthV      = document.getElementById("reqWidth")?.value || '0';
+  const widthU      = document.getElementById("reqWidthUnit")?.value || 'm';
+  const isRefrig    = document.getElementById("reqRefrigerated")?.checked;
+  const hasTailLift = document.getElementById("reqTailLift")?.checked;
+
+  // Build breakdown table rows from DOM
+  const bTable = document.getElementById("breakdown-table");
+  let tableRows = '';
+  if (bTable) {
+    for (const child of bTable.children) {
+      if (child.classList.contains('breakdown-section-title')) {
+        tableRows += `<tr><td colspan="2" style="background:#f0f4fa;color:#0F417B;font-weight:700;font-size:11px;text-transform:uppercase;padding:7px 12px;border-top:1px solid #d0d8e8;">${child.textContent}</td></tr>`;
+      } else if (child.classList.contains('breakdown-row')) {
+        const label   = child.querySelector('.breakdown-label')?.textContent || '';
+        const value   = child.querySelector('.breakdown-value')?.textContent || '';
+        const isZero  = child.querySelector('.breakdown-value')?.classList.contains('zero');
+        const color   = isZero ? '#aaa' : '#333';
+        const wColor  = isZero ? '#aaa' : '#222';
+        tableRows += `<tr><td style="padding:5px 12px;border-bottom:1px dotted #eee;color:${color}">${label}</td><td style="padding:5px 12px;border-bottom:1px dotted #eee;text-align:right;font-weight:600;color:${wColor};white-space:nowrap">${value}</td></tr>`;
+      } else if (child.classList.contains('breakdown-note')) {
+        tableRows += `<tr><td colspan="2" style="padding:2px 12px 6px 20px;font-size:10px;color:#888;font-style:italic;">${child.textContent}</td></tr>`;
+      }
+    }
+  }
+
+  // Build totals rows
+  const tBlock = document.getElementById("totals-block");
+  let totalRows = '';
+  if (tBlock) {
+    for (const child of tBlock.children) {
+      const label   = child.querySelector('.total-label')?.textContent || '';
+      const value   = child.querySelector('.total-value')?.textContent || '';
+      const isGrand = child.classList.contains('grand-total');
+      if (isGrand) {
+        totalRows += `<tr style="background:#0F417B;color:#fff;"><td style="padding:10px 12px;font-weight:700;font-size:13px;">${label}</td><td style="padding:10px 12px;text-align:right;font-weight:700;font-size:13px;">${value}</td></tr>`;
+      } else {
+        totalRows += `<tr><td style="padding:6px 12px;font-weight:600;border-bottom:1px solid #eee;">${label}</td><td style="padding:6px 12px;text-align:right;font-weight:700;color:#0F417B;border-bottom:1px solid #eee;">${value}</td></tr>`;
+      }
+    }
+  }
+
+  // Date & quote number
+  const now      = new Date();
+  const dateStr  = now.toLocaleDateString("fr-BE", { day: "2-digit", month: "2-digit", year: "numeric" });
+  const quoteNum = 'DEV-' + now.getFullYear() + String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0') + '-' + String(Math.floor(Math.random()*900)+100);
+
+  const loadDetails = [
+    pallets + ' PAL',
+    weight + ' kg',
+    heightV + heightU + ' × ' + lengthV + lengthU + ' × ' + widthV + widthU,
+    isRefrig    ? 'Frigorifique' : '',
+    hasTailLift ? 'Hayon'        : ''
+  ].filter(Boolean).join(' — ');
 
   const html = `<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Devis Number One Logistics — ${vehicleName}</title>
+<title>Devis Number One — ${quoteNum}</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Arial, sans-serif; font-size: 13px; color: #222; background: #fff; padding: 40px; }
-  .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; border-bottom: 3px solid #d32f2f; padding-bottom: 16px; }
-  .logo-area h1 { font-size: 22px; color: #d32f2f; font-weight: 700; }
-  .logo-area p { color: #555; font-size: 12px; margin-top: 2px; }
-  .date-area { text-align: right; color: #555; font-size: 12px; }
-  .vehicle-card { background: #f8f8f8; border-left: 4px solid #d32f2f; padding: 12px 16px; margin-bottom: 24px; border-radius: 4px; }
-  .vehicle-card .v-name { font-size: 16px; font-weight: 700; }
-  .vehicle-card .v-reason { color: #555; font-size: 12px; margin-top: 4px; }
-  .breakdown-section-title { font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #d32f2f; margin: 18px 0 6px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
-  .breakdown-row { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dotted #eee; }
-  .breakdown-label { color: #444; }
-  .breakdown-value { font-weight: 600; white-space: nowrap; margin-left: 16px; }
-  .breakdown-note { font-size: 11px; color: #888; padding: 2px 0 2px 12px; font-style: italic; }
-  .totals-block { margin-top: 20px; border-top: 2px solid #d32f2f; padding-top: 12px; }
-  .total-row { display: flex; justify-content: space-between; padding: 5px 0; }
-  .total-label { font-weight: 600; }
-  .total-value { font-weight: 700; font-size: 14px; color: #d32f2f; }
-  .total-row.grand { background: #d32f2f; color: #fff; padding: 8px 10px; border-radius: 4px; margin-top: 6px; }
-  .total-row.grand .total-label, .total-row.grand .total-value { color: #fff; font-size: 15px; }
-  .disclaimer { margin-top: 28px; font-size: 11px; color: #888; border-top: 1px solid #eee; padding-top: 12px; }
-  .print-btn { display: block; margin: 20px auto 0; padding: 10px 28px; background: #d32f2f; color: #fff; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; }
-  @media print { .print-btn { display: none; } body { padding: 20px; } }
+  body { font-family: Arial, sans-serif; font-size: 12px; color: #222; background: #fff; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 40px 60px; }
+  table { border-collapse: collapse; width: 100%; }
+  @media print { .no-print { display: none !important; } }
 </style>
 </head>
 <body>
-<div class="header">
-  <div class="logo-area">
-    <h1>Number One Logistics</h1>
-    <p>Devis / Offerte / Quotation</p>
+<div class="page">
+
+  <!-- HEADER: logo left, company info right -->
+  <table style="margin-bottom:28px;">
+    <tr>
+      <td style="width:45%;vertical-align:middle;">
+        ${logoSrc
+          ? `<img src="${logoSrc}" alt="Number One" style="height:110px;width:auto;">`
+          : `<div style="font-size:20px;font-weight:900;color:#0F417B;">NUMBER ONE</div>`}
+      </td>
+      <td style="vertical-align:top;text-align:right;font-size:12px;line-height:1.7;color:#333;">
+        <strong>sprl NUMBER ONE bvba</strong><br>
+        Rue de Lusambostraat 59<br>
+        1190 Bruxelles / Brussel<br>
+        Tél: 02 788 40 48<br>
+        TVA / BTW : BE 0480.021.821<br>
+        www.number-one.be
+      </td>
+    </tr>
+  </table>
+
+  <hr style="border:none;border-top:1px solid #ccc;margin-bottom:18px;">
+
+  <!-- INFO ROWS (mirrors invoice layout) -->
+  <table style="font-size:12px;margin-bottom:10px;">
+    <tr>
+      <td style="padding:3px 0;width:220px;color:#555;">Bruxelles / Bruxelles,</td>
+      <td style="padding:3px 0;font-weight:600;">${dateStr}</td>
+    </tr>
+    <tr>
+      <td style="padding:3px 0;color:#555;">Véhicule / Voertuig :</td>
+      <td style="padding:3px 0;font-weight:600;">${vehicleName}</td>
+    </tr>
+    <tr>
+      <td style="padding:3px 0;color:#555;">Mode de tarification :</td>
+      <td style="padding:3px 0;">${modeLabel}</td>
+    </tr>
+    <tr>
+      <td style="padding:3px 0;color:#555;">Chargement / Lading :</td>
+      <td style="padding:3px 0;">${loadDetails}</td>
+    </tr>
+  </table>
+
+  <!-- QUOTE NUMBER BOX -->
+  <div style="border:1px solid #bbb;text-align:center;padding:9px 16px;margin:18px 0;font-weight:700;font-size:13px;">
+    Devis / Offerte n° : &nbsp;${quoteNum}
   </div>
-  <div class="date-area">
-    <div>${date}</div>
+
+  <div style="font-size:12px;margin-bottom:4px;">Madame, Monsieur,<br>Mevrouw, Mijnheer,</div>
+  <div style="font-size:11px;color:#777;margin-bottom:18px;font-style:italic;">Ce devis est établi sur base de vos paramètres de transport. Le prix final reste soumis à vérification commerciale. / Deze offerte is opgesteld op basis van uw transportparameters.</div>
+
+  <hr style="border:none;border-top:1px solid #ccc;margin-bottom:14px;">
+
+  <!-- BREAKDOWN TITLE -->
+  <div style="text-align:center;font-weight:700;font-size:13px;text-decoration:underline;margin-bottom:12px;">
+    Résumé des frais / Samenvatting van de kosten
   </div>
+
+  <!-- BREAKDOWN + TOTALS TABLE -->
+  <table style="border:1px solid #ccc;">
+    ${tableRows}
+    <tr><td colspan="2" style="padding:6px;border-top:1px solid #ddd;"></td></tr>
+    ${totalRows}
+  </table>
+
+  <!-- FOOTER -->
+  <div style="margin-top:36px;text-align:center;font-size:10px;color:#888;border-top:1px solid #eee;padding-top:12px;line-height:1.8;">
+    <strong>sprl NUMBER ONE bvba</strong><br>
+    Rue de Lusambostraat 59 - Bruxelles 1190 Brussel - Adm: 02 788 40 48<br>
+    RPM Bruxelles / RPR Brussel &nbsp;TVA / BTW : BE 0480.021.821<br>
+    <strong>www.number-one.be</strong><br>
+    Conditions générales au verso - Algemene voorwaarden op keerzijde
+  </div>
+
+  <!-- PRINT BUTTON (hidden on print) -->
+  <div class="no-print" style="text-align:center;margin-top:24px;">
+    <button onclick="window.print()" style="padding:10px 28px;background:#0F417B;color:#fff;border:none;border-radius:6px;font-size:14px;cursor:pointer;">
+      🖨️ Imprimer / Sauvegarder en PDF
+    </button>
+  </div>
+
 </div>
-<div class="vehicle-card">
-  <div class="v-name">🚛 ${vehicleName}</div>
-  <div class="v-reason">${vehicleReason}</div>
-</div>
-${breakdownHTML}
-<div class="totals-block">${totalsHTML}</div>
-<p class="disclaimer">${disclaimer}</p>
-<button class="print-btn" onclick="window.print()">🖨️ Imprimer / Sauvegarder en PDF</button>
 </body>
 </html>`;
 
   const blob = new Blob([html], { type: "text/html" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "devis-number-one-logistics.html";
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement("a");
+  a.href     = url;
+  a.download = `devis-number-one-${quoteNum}.html`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
