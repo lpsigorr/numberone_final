@@ -14,6 +14,7 @@
             'nav-process': 'Notre Process',
             'nav-fleet': 'Notre Flotte',
             'nav-about': 'Qui Sommes-Nous',
+            'nav-news': 'News',
             'nav-quote': 'Faire un devis',
 
             /* ── Mobile menu ── */
@@ -257,7 +258,29 @@
             'transport-p2': "Notre équipe expérimentée de près de 70 personnes (avec très peu de rotation depuis toutes ces années, gage de professionnalisme) est à votre disposition pour vous apporter <strong>LA Solution</strong> dont vous avez besoin.",
             'transport-p3': 'Nous nous chargeons de vos envois urgents vers/depuis la Belgique ou tous les pays européens.',
             'transport-p4': "Plis, palettes ou colis volumineux sont retirés et livrés dans la foulée. Notre importante flotte de véhicules nous permet de vous proposer le véhicule parfaitement adapté à vos besoins (depuis la simple voiture jusqu'au semi-remorque). Nos chauffeurs-livreurs peuvent vous aider en matière de manutention\u00a0… Tout comme nos dispatcheurs et les autres membres de notre personnel, ils sont à votre service\u00a0!",
-            'transport-cta': 'NOUS CONTACTER'
+            'transport-cta': 'NOUS CONTACTER',
+
+            /* ── news.html ── */
+            'news-hero-line1': 'NOS',
+            'news-hero-line2': 'ACTUALITÉS',
+            'news-hero-subtitle': 'Restez informé de toutes les nouveautés Number one',
+            'news-filter': 'Trier: 5 dernières année',
+            'news-badge-new': 'Nouveau',
+            'news-1-date': '20 déc. 2020',
+            'news-1-title': 'Axe kilométrique en Belgique : modifications dès le 01/01/2019',
+            'news-1-excerpt': 'Indexation des tarifs en Wallonie et en Flandre et élargissement du réseau routier en Flandre.',
+            'news-2-date': '18 déc. 2018',
+            'news-2-title': 'Flandre : élargissement réseau routier soumis à la taxe kilométrique',
+            'news-2-excerpt': 'A partir du 01/01/2019, les trois tronçons suivants seront rajoutés au réseau routier soumis à la taxe kilométrique :',
+            'news-3-date': '18 déc. 2018',
+            'news-3-title': 'Flandre : élargissement réseau routier soumis à la taxe kilométrique',
+            'news-3-excerpt': 'A partir du 01/01/2019, les trois tronçons suivants seront rajoutés au réseau routier soumis à la taxe kilométrique :',
+            'news-4-date': '18 déc. 2018',
+            'news-4-title': 'Flandre : élargissement réseau routier soumis à la taxe kilométrique',
+            'news-4-excerpt': 'A partir du 01/01/2019, les trois tronçons suivants seront rajoutés au réseau routier soumis à la taxe kilométrique :',
+            'news-road-li1': "l'A11 de Bruges (N31) à Knokke-Heist (N49)",
+            'news-road-li2': 'la N36 de Roulers (R32) à Zarren (N35)',
+            'news-road-li3': 'la N722 de Hasselt (N80) à Saint-Trond (N718)'
         },
 
         en: {
@@ -267,6 +290,7 @@
             'nav-process': 'Our Process',
             'nav-fleet': 'Our Fleet',
             'nav-about': 'About Us',
+            'nav-news': 'News',
             'nav-quote': 'Get a Quote',
 
             'menu-home': 'HOME',
@@ -501,7 +525,29 @@
             'transport-p2': 'Our experienced team of nearly 70 people (with very little turnover over the years, a mark of professionalism) is at your disposal to bring you <strong>THE Solution</strong> you need.',
             'transport-p3': 'We handle your urgent shipments to/from Belgium or any European country.',
             'transport-p4': 'Letters, pallets or bulky parcels are collected and delivered without delay. Our large fleet of vehicles allows us to offer you the perfectly suited vehicle for your needs (from a simple car to a semi-trailer). Our driver-deliverers can assist with handling\u00a0… Just like our dispatchers and other staff members, they are at your service\u00a0!',
-            'transport-cta': 'CONTACT US'
+            'transport-cta': 'CONTACT US',
+
+            /* ── news.html ── */
+            'news-hero-line1': 'OUR',
+            'news-hero-line2': 'NEWS',
+            'news-hero-subtitle': 'Stay informed about all the latest updates from Number One',
+            'news-filter': 'Sort: Last 5 years',
+            'news-badge-new': 'New',
+            'news-1-date': '20 Dec. 2020',
+            'news-1-title': 'Kilometer tax in Belgium: changes from 01/01/2019',
+            'news-1-excerpt': 'Indexation of rates in Wallonia and Flanders and expansion of the road network in Flanders.',
+            'news-2-date': '18 Dec. 2018',
+            'news-2-title': 'Flanders: road network expansion subject to kilometer tax',
+            'news-2-excerpt': 'From 01/01/2019, the following three sections will be added to the road network subject to the kilometer tax:',
+            'news-3-date': '18 Dec. 2018',
+            'news-3-title': 'Flanders: road network expansion subject to kilometer tax',
+            'news-3-excerpt': 'From 01/01/2019, the following three sections will be added to the road network subject to the kilometer tax:',
+            'news-4-date': '18 Dec. 2018',
+            'news-4-title': 'Flanders: road network expansion subject to kilometer tax',
+            'news-4-excerpt': 'From 01/01/2019, the following three sections will be added to the road network subject to the kilometer tax:',
+            'news-road-li1': 'the A11 from Bruges (N31) to Knokke-Heist (N49)',
+            'news-road-li2': 'the N36 from Roeselare (R32) to Zarren (N35)',
+            'news-road-li3': 'the N722 from Hasselt (N80) to Sint-Truiden (N718)'
         },
 
         nl: {
@@ -511,6 +557,7 @@
             'nav-process': 'Ons Proces',
             'nav-fleet': 'Onze Vloot',
             'nav-about': 'Over Ons',
+            'nav-news': 'Nieuws',
             'nav-quote': 'Offerte aanvragen',
 
             'menu-home': 'STARTPAGINA',
@@ -745,7 +792,29 @@
             'transport-p2': 'Ons ervaren team van bijna 70 mensen (met weinig verloop over de jaren, een teken van professionalisme) staat tot uw beschikking om u <strong>DE Oplossing</strong> te bieden die u nodig heeft.',
             'transport-p3': 'Wij verzorgen uw urgente zendingen naar/vanuit België of alle Europese landen.',
             'transport-p4': "Brieven, paletten of volumineuze pakketten worden opgehaald en onmiddellijk geleverd. Onze grote vloot voertuigen stelt ons in staat u het perfecte voertuig voor uw behoeften aan te bieden (van een eenvoudige auto tot een oplegger). Onze chauffeur-koeriers kunnen helpen bij het hanteren\u00a0… Net zoals onze dispatchers en andere personeelsleden staan zij tot uw dienst\u00a0!",
-            'transport-cta': 'NEEM CONTACT OP'
+            'transport-cta': 'NEEM CONTACT OP',
+
+            /* ── news.html ── */
+            'news-hero-line1': 'ONS',
+            'news-hero-line2': 'NIEUWS',
+            'news-hero-subtitle': 'Blijf op de hoogte van al het laatste nieuws van Number One',
+            'news-filter': 'Sorteren: Laatste 5 jaar',
+            'news-badge-new': 'Nieuw',
+            'news-1-date': '20 dec. 2020',
+            'news-1-title': 'Kilometerheffing in België: wijzigingen vanaf 01/01/2019',
+            'news-1-excerpt': 'Indexering van de tarieven in Wallonië en Vlaanderen en uitbreiding van het wegennet in Vlaanderen.',
+            'news-2-date': '18 dec. 2018',
+            'news-2-title': 'Vlaanderen: uitbreiding wegennet onderworpen aan kilometerheffing',
+            'news-2-excerpt': 'Vanaf 01/01/2019 worden de volgende drie weggedeelten toegevoegd aan het wegennet dat onderworpen is aan de kilometerheffing:',
+            'news-3-date': '18 dec. 2018',
+            'news-3-title': 'Vlaanderen: uitbreiding wegennet onderworpen aan kilometerheffing',
+            'news-3-excerpt': 'Vanaf 01/01/2019 worden de volgende drie weggedeelten toegevoegd aan het wegennet dat onderworpen is aan de kilometerheffing:',
+            'news-4-date': '18 dec. 2018',
+            'news-4-title': 'Vlaanderen: uitbreiding wegennet onderworpen aan kilometerheffing',
+            'news-4-excerpt': 'Vanaf 01/01/2019 worden de volgende drie weggedeelten toegevoegd aan het wegennet dat onderworpen is aan de kilometerheffing:',
+            'news-road-li1': 'de A11 van Brugge (N31) naar Knokke-Heist (N49)',
+            'news-road-li2': 'de N36 van Roeselare (R32) naar Zarren (N35)',
+            'news-road-li3': 'de N722 van Hasselt (N80) naar Sint-Truiden (N718)'
         }
     };
 
