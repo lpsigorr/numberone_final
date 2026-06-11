@@ -51,6 +51,7 @@ body {
     transform: none;
     width: auto;
     height: auto;
+    text-decoration: none;
 }
 
 .logo img {
@@ -392,6 +393,9 @@ body {
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+    display: block;
+    color: inherit;
 }
 
 .service-card::before {

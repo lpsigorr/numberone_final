@@ -8,22 +8,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="more.css">
-    <script>
-        (function() {
-            if (window.innerWidth >= 768) {
-                window.location.href = 'desktop.html';
-            }
-        })();
-    </script>
 </head>
 <body>
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <!-- Language Picker -->
+            <a class="logo" href="index.html">
+                <img src="images/logo_01.png" alt="Number One Transport">
+                <p class="logo-subtitle" data-i18n="logo-subtitle">Du groupe FB logistic</p>
+            </a>
+            <nav class="desktop-nav">
+                <a href="desktop.html#services" data-i18n="nav-services">Services</a>
+                <a href="desktop.html#process" data-i18n="nav-process">Notre Process</a>
+                <a href="desktop.html#fleet" data-i18n="nav-fleet">Notre Flotte</a>
+                <a href="more.html" class="nav-active" data-i18n="nav-about">Qui Sommes-Nous</a>
+                <a href="calc.html" class="nav-cta" data-i18n="nav-quote">Faire un devis</a>
+            </nav>
             <div class="lang-picker" id="langPicker">
                 <button class="lang-btn" id="langBtn" aria-label="Change language">
                     <img id="currentFlag" class="lang-flag" src="" alt="">
+                    <span id="currentLangCode" class="lang-code">FR</span>
                     <svg class="lang-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
                         <path d="M1 1L5 5L9 1" stroke="#0F417B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -33,9 +37,6 @@
                     <button class="lang-option" data-lang="nl"><img class="lang-flag lang-flag-nl" src="" alt=""> NL</button>
                     <button class="lang-option" data-lang="en"><img class="lang-flag lang-flag-en" src="" alt=""> EN</button>
                 </div>
-            </div>
-            <div class="logo">
-                <img src="images/logo_01.png" alt="Number One Transport">
             </div>
             <button class="menu-btn" id="menuToggle">
                 <span></span>
@@ -152,8 +153,8 @@
 
         <div class="qsn-divider"></div>
 
-        <!-- Footer -->
-        <footer class="site-footer">
+        <!-- Footer (mobile) -->
+        <footer class="site-footer mobile-only">
             <div class="footer-buttons">
                 <a href="https://lpsigorr.github.io/vehicle_calculator/" class="btn btn-primary">
                     <span data-i18n="btn-quote">Faire un devis</span>
@@ -169,6 +170,77 @@
                 </a>
             </div>
         </footer>
+
+        <!-- Contact + Footer (desktop) -->
+        <div class="dt-bottom desktop-only">
+            <section class="dt-contact-section">
+                <div class="dt-contact-block dt-contact-block--white">
+                    <img src="images/fb_logo.png" alt="FB Logistics" class="dt-contact-logo">
+                    <div class="dt-contact-details">
+                        <p class="dt-contact-address">Brucargo 720/1, 1830 Machelen,<br>Forest (Bruxelles), Belgique</p>
+                        <a href="tel:+3224276004" class="dt-contact-phone">+32 2 427 60 04</a>
+                        <div class="dt-contact-emails">
+                            <a href="mailto:sales@fblogistics.be">sales@fblogistics.be</a>
+                            <a href="mailto:info@fblogistics.be">info@fblogistics.be</a>
+                        </div>
+                        <a href="https://fblogistics.be" class="dt-contact-web" target="_blank" rel="noopener">fblogistics.be</a>
+                    </div>
+                </div>
+                <div class="dt-contact-block dt-contact-block--blue">
+                    <img src="images/n1_logo.png" alt="Number One" class="dt-contact-logo dt-contact-logo--n1">
+                    <div class="dt-contact-details">
+                        <p class="dt-contact-address">Rue de Lusambo 59, 1190<br>Forest (Bruxelles), Belgique</p>
+                        <a href="tel:+3224276004" class="dt-contact-phone">+32 2 427 60 04</a>
+                        <a href="mailto:express@number-one.be" class="dt-contact-email-single">express@number-one.be</a>
+                    </div>
+                    <div class="dt-contact-services">
+                        <h3 class="dt-contact-services-title" data-i18n="menu-services">NOS SERVICES</h3>
+                        <nav class="dt-contact-services-nav">
+                            <a href="desktop.html" data-i18n="menu-home">Accueil</a>
+                            <a href="desktop.html#fleet" data-i18n="menu-vehicles">Véhicules</a>
+                            <a href="desktop.html#services" data-i18n="menu-services-link">Nos services</a>
+                            <a href="more.html" data-i18n="menu-about-link">Qui sommes-nous ?</a>
+                            <a href="#" data-i18n="menu-client">Accès client</a>
+                            <a href="#" data-i18n="menu-news">News</a>
+                            <a href="tel:+3224276004" data-i18n="menu-call">Appeler</a>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+            <footer class="dt-footer">
+                <div class="dt-footer-content">
+                    <div class="dt-footer-col">
+                        <h4>Number One Transport</h4>
+                        <p data-i18n="footer-col1-p1">Solutions de transport professionnel de 1 gramme à 30 tonnes.</p>
+                        <p data-i18n="footer-col1-p2">Fiabilité, rapidité et expertise depuis plus de 20 ans.</p>
+                    </div>
+                    <div class="dt-footer-col">
+                        <h4 data-i18n="footer-col2-title">Services</h4>
+                        <a href="desktop.html#services" data-i18n="footer-nat">Transport National</a>
+                        <a href="desktop.html#services" data-i18n="footer-intl">Transport International</a>
+                        <a href="desktop.html#fleet" data-i18n="footer-fleet">Notre Flotte</a>
+                        <a href="desktop.html#process" data-i18n="footer-process">Notre Process</a>
+                    </div>
+                    <div class="dt-footer-col">
+                        <h4 data-i18n="footer-col3-title">Entreprise</h4>
+                        <a href="more.html" data-i18n="footer-about">Qui Sommes-Nous</a>
+                        <a href="desktop.html#contact" data-i18n="footer-contact">Contact</a>
+                        <a href="calc.html" data-i18n="footer-quote-link">Faire un Devis</a>
+                        <a href="#" data-i18n="footer-legal">Mentions Légales</a>
+                    </div>
+                    <div class="dt-footer-col">
+                        <h4 data-i18n="footer-col4-title">Contact</h4>
+                        <p data-i18n="footer-location">Brussels Airport<br>Machelen, Belgique</p>
+                        <a href="tel:+3224276004">+32 2 427 60 04</a>
+                        <a href="mailto:express@number-one.be">express@number-one.be</a>
+                    </div>
+                </div>
+                <div class="dt-footer-bottom">
+                    <p data-i18n="footer-copy">© 2026 Number One Transport. Tous droits réservés.</p>
+                </div>
+            </footer>
+        </div>
+
     </div>
 
     <script src="lang.js"></script>
