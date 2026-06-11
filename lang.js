@@ -55,7 +55,7 @@
             'step1-desc': 'Gestion rapide de vos marchandises à l\'arrivée avec traçabilité complète',
             'step1-desc-mobile': 'Gestion rapide de<br>vos marchandises à<br>l\'arrivée !',
             'step2-name': 'PRÉPARATION',
-            'step2-name-mobile': 'ENVOL &amp;<br>PRÉPARATION',
+            'step2-name-mobile': 'EXPÉDITION &amp;<br>PRÉPARATION',
             'step2-desc': 'Commandes traitées avec précision par notre équipe d\'experts',
             'step2-desc-mobile': 'Commandes traitées<br>avec précision !',
             'step3-name': 'LIVRAISON',
@@ -95,8 +95,8 @@
             'about-title-mobile': 'QUI SOMMES<br>NOUS ?',
             'about-p1': 'Depuis plus de 20 ans, <span class="highlight">Number One</span> est spécialiste du transport express en Belgique et en Europe.',
             'about-p2': '<span class="highlight">De 1 gramme à 30 tonnes</span>, nous prenons en charge tous vos envois, du courrier à la marchandise volumineuse.',
-            'about-p3': 'Nous proposons des <span class="highlight">solutions adaptées</span> à chaque besoin grâce à un <span class="highlight">service sur mesure</span>',
-            'about-p4': '<span class="highlight">Fiabilité, rapidité</span> et suivi rigoureux font de Number One un partenaire de confiance pour les professionnels',
+            'about-p3': 'Nous proposons des <span class="highlight">solutions adaptées</span> à chaque besoin grâce à un <span class="highlight">service sur mesure</span>.',
+            'about-p4': '<span class="highlight">Fiabilité, rapidité</span> et suivi rigoureux font de Number One un partenaire de confiance pour les professionnels.',
             'about-btn': 'En savoir plus',
 
             /* ── Contact footer ── */
@@ -204,7 +204,7 @@
             'calc-sum-frigo12':      'Nuit frigo -12°C/0°C',
             'calc-sum-frigo20':      'Nuit frigo 0°C/-20°C',
             'calc-sum-convoyeur':    'Convoyeur',
-            'calc-sum-chauffeur':    '2° Chauffeur',
+            'calc-sum-chauffeur':    '2e Chauffeur',
             'calc-sum-fuel-label':   'Surcharge carburant',
             'calc-sum-fuel-note':    '⚠ % variable — vérifier mensuellement',
             'calc-sum-subtotal':     'Sous-total HTVA',
@@ -248,7 +248,7 @@
             'solution-banner': 'Quelle que soit <strong>votre demande,</strong><br>nous avons <strong>Votre Solution.</strong>',
             'solution-p1': 'Les <strong>compétences</strong> de notre équipe expérimentée permettent à Number One de vous accompagner pour toutes vos activités.',
             'solution-p2': 'Nous vous proposons des <strong>solutions</strong> sur mesure, <strong>adaptées à vos besoins</strong> spécifiques.',
-            'repondons': 'Nous répondons, <span class="hl">depuis plus de 25 ans</span> déjà, aux demandes de nos clients issus des secteurs les plus variés',
+            'repondons': 'Nous répondons, <span class="hl">depuis plus de 25 ans</span> déjà, aux demandes de nos clients issus des secteurs les plus variés.',
             'persuades-p1': 'Nous sommes <strong>persuadés</strong> qu\'une collaboration avec un partenaire de transport fiable pour vous accompagner, ne peut qu\'apporter une <strong>plus-value importante</strong> à votre société.',
             'persuades-p2': 'Notre site Internet remanié est destiné à vous offrir un outil que nous voulons <b>pratique, convivial</b> et <b>interactif</b> particulièrement, grâce à notre « portail clients ».',
             /* ── transport.html ── */
@@ -263,8 +263,8 @@
             /* ── news.html ── */
             'news-hero-line1': 'NOS',
             'news-hero-line2': 'ACTUALITÉS',
-            'news-hero-subtitle': 'Restez informé de toutes les nouveautés Number one',
-            'news-filter': 'Trier: 5 dernières année',
+            'news-hero-subtitle': 'Restez informé de toutes les nouveautés Number One',
+            'news-filter': 'Trier: 5 dernières années',
             'news-badge-new': 'Nouveau',
             'news-1-date': '20 déc. 2020',
             'news-1-title': 'Axe kilométrique en Belgique : modifications dès le 01/01/2019',
@@ -358,14 +358,14 @@
             'stat-clients': 'Satisfied clients',
             'stat-vehicles-m': 'vehicles',
             'stat-exp-m': 'years of<br>experience',
-            'stat-sol-m': 'one only<br>solution',
+            'stat-sol-m': 'unique<br>solution',
             'stat-clients-m': 'Clients',
             'about-title': 'WHO ARE WE?',
             'about-title-mobile': 'WHO ARE<br>WE?',
             'about-p1': 'For over 20 years, <span class="highlight">Number One</span> has been a specialist in express transport in Belgium and across Europe.',
             'about-p2': '<span class="highlight">From 1 gram to 30 tonnes</span>, we handle all your shipments, from letters to oversized freight.',
-            'about-p3': 'We offer <span class="highlight">tailored solutions</span> for every need, backed by a <span class="highlight">bespoke service</span>',
-            'about-p4': '<span class="highlight">Reliability and speed</span>, combined with rigorous tracking, make Number One a trusted partner for professionals',
+            'about-p3': 'We offer <span class="highlight">tailored solutions</span> for every need, backed by a <span class="highlight">bespoke service</span>.',
+            'about-p4': '<span class="highlight">Reliability and speed</span>, combined with rigorous tracking, make Number One a trusted partner for professionals.',
             'about-btn': 'Learn more',
 
             /* ── Contact footer ── */
@@ -515,7 +515,7 @@
             'solution-banner': 'Whatever your <strong>request,</strong><br>we have <strong>Your Solution.</strong>',
             'solution-p1': 'The <strong>expertise</strong> of our experienced team allows Number One to support you in all your activities.',
             'solution-p2': 'We offer <strong>tailored solutions</strong>, <strong>adapted to your specific needs</strong>.',
-            'repondons': 'We have been responding, <span class="hl">for over 25 years</span>, to the needs of our clients from the most diverse sectors',
+            'repondons': 'We have been responding, <span class="hl">for over 25 years</span>, to the needs of our clients from the most diverse sectors.',
             'persuades-p1': 'We are <strong>convinced</strong> that working with a reliable transport partner can only bring <strong>significant added value</strong> to your business.',
             'persuades-p2': 'Our redesigned website aims to offer you a tool that is <b>practical, user-friendly</b> and <b>interactive</b>, particularly through our "client portal".',
             /* ── transport.html ── */
@@ -631,8 +631,8 @@
             'about-title-mobile': 'WIE ZIJN<br>WIJ?',
             'about-p1': 'Sinds meer dan 20 jaar is <span class="highlight">Number One</span> specialist in expresvervoer in België en Europa.',
             'about-p2': '<span class="highlight">Van 1 gram tot 30 ton</span>, wij verwerken al uw zendingen, van brieven tot volumineuze goederen.',
-            'about-p3': 'Wij bieden <span class="highlight">oplossingen op maat</span> voor elke behoefte, dankzij een <span class="highlight">persoonlijke service</span>',
-            'about-p4': '<span class="highlight">Betrouwbaarheid en snelheid</span>, gecombineerd met nauwgezette opvolging, maken Number One een vertrouwde partner voor professionals',
+            'about-p3': 'Wij bieden <span class="highlight">oplossingen op maat</span> voor elke behoefte, dankzij een <span class="highlight">persoonlijke service</span>.',
+            'about-p4': '<span class="highlight">Betrouwbaarheid en snelheid</span>, gecombineerd met nauwgezette opvolging, maken Number One een vertrouwde partner voor professionals.',
             'about-btn': 'Meer informatie',
 
             /* ── Contact footer ── */
@@ -782,7 +782,7 @@
             'solution-banner': 'Wat ook uw <strong>vraag is,</strong><br>wij hebben <strong>Uw Oplossing.</strong>',
             'solution-p1': 'De <strong>expertise</strong> van ons ervaren team stelt Number One in staat u bij al uw activiteiten te ondersteunen.',
             'solution-p2': 'Wij bieden <strong>oplossingen op maat</strong>, <strong>aangepast aan uw specifieke behoeften</strong>.',
-            'repondons': 'Al meer dan <span class="hl">25 jaar</span> beantwoorden wij de vragen van onze klanten uit de meest uiteenlopende sectoren',
+            'repondons': 'Al meer dan <span class="hl">25 jaar</span> beantwoorden wij de vragen van onze klanten uit de meest uiteenlopende sectoren.',
             'persuades-p1': 'Wij zijn er <strong>van overtuigd</strong> dat samenwerken met een betrouwbare transportpartner enkel een <strong>belangrijke meerwaarde</strong> voor uw bedrijf kan opleveren.',
             'persuades-p2': 'Onze vernieuwde website wil u een tool bieden die <b>praktisch, gebruiksvriendelijk</b> en <b>interactief</b> is, met name dankzij ons "klantenportaal".',
             /* ── transport.html ── */
