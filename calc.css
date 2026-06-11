@@ -101,6 +101,9 @@ body {
   border-radius: 2px;
 }
 
+.desktop-nav { display: none; }
+.lang-code    { display: none; }
+
 /* ================================================================
    APP LAYOUT — mobile: stacked. desktop: side-by-side
    ================================================================ */
@@ -1090,12 +1093,78 @@ body {
 @media (min-width: 1024px) {
   body { overflow: hidden; }
 
-  .header { position: fixed; width: 100%; top: 0; }
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 0 80px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+  }
+
+  .logo img { width: 90px; height: 75px; }
+
+  .logo-subtitle { font-size: 11px; }
+
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .desktop-nav a {
+    color: #0F417B;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+    letter-spacing: 0.3px;
+  }
+
+  .desktop-nav a:not(.nav-cta):hover { color: #3EB550; }
+
+  .desktop-nav a:not(.nav-cta)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; left: 0;
+    width: 0; height: 2px;
+    background: #3EB550;
+    transition: width 0.3s ease;
+  }
+
+  .desktop-nav a:not(.nav-cta):hover::after { width: 100%; }
+
+  .nav-active:not(.nav-cta)::after { width: 100% !important; }
+
+  .nav-cta {
+    background: linear-gradient(135deg, #3EB550 0%, #35a045 100%);
+    color: white !important;
+    padding: 14px 32px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(62, 181, 80, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(62, 181, 80, 0.4);
+  }
+
+  .lang-code { display: inline; }
+  .lang-picker { z-index: 1001; }
+  .lang-dropdown { right: 0; left: auto; }
+  .menu-btn { display: none; }
+  .mobile-menu { display: none !important; }
 
   .app {
     flex-direction: row;
-    height: calc(100vh - 60px);
-    margin-top: 60px;
+    height: calc(100vh - 124px);
+    margin-top: 124px;
     max-width: none;
   }
 
