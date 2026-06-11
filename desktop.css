@@ -245,7 +245,7 @@ body {
 .person-img {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 20px 15px rgba(0, 0, 0, 0.45));
     margin: 0;
 }
 
@@ -263,7 +263,7 @@ body {
 .packages-img {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(0 20px 15px rgba(0, 0, 0, 0.45));
 }
 
 .ground-separator {
