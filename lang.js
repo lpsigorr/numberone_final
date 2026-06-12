@@ -27,8 +27,8 @@
             'menu-call': 'APPELER',
 
             /* ── Hero ── */
-            'hero-subtitle': 'Solutions de transport fiables et efficaces<br>pour tous vos besoins logistiques',
-            'hero-subtitle-mobile': 'Solutions de transport<br>fiables et efficaces',
+            'hero-subtitle': 'Solutions de transport dédié et express, fiables et efficaces<br>pour tous vos besoins logistiques',
+            'hero-subtitle-mobile': 'Solutions de transport dédié et express,<br>fiables et efficaces',
 
             /* ── CTA ── */
             'cta-info': 'Besoin d\'une solution rapide ?',
@@ -52,15 +52,15 @@
             /* ── Process ── */
             'process-subtitle': 'de la réception à la livraison',
             'step1-name': 'RÉCEPTION',
-            'step1-desc': 'Gestion rapide de vos marchandises à l\'arrivée avec traçabilité complète',
-            'step1-desc-mobile': 'Gestion rapide de<br>vos marchandises à<br>l\'arrivée !',
+            'step1-desc': '→ Contact client<br>→ Prise en commande',
+            'step1-desc-mobile': '→ Contact client<br>→ Prise en commande',
             'step2-name': 'PRÉPARATION',
-            'step2-name-mobile': 'EXPÉDITION &amp;<br>PRÉPARATION',
-            'step2-desc': 'Commandes traitées avec précision par notre équipe d\'experts',
-            'step2-desc-mobile': 'Commandes traitées<br>avec précision !',
+            'step2-name-mobile': 'PRÉPARATION',
+            'step2-desc': '→ Attribution du chauffeur<br>→ Trajet vers le point de chargement<br>→ Chargement du véhicule',
+            'step2-desc-mobile': '→ Attribution chauffeur<br>→ Point de chargement<br>→ Chargement',
             'step3-name': 'LIVRAISON',
-            'step3-desc': 'Expédition efficace, fiable et rapide partout en Europe',
-            'step3-desc-mobile': 'Expédition efficace,<br>fiable et rapide !',
+            'step3-desc': '→ Trajet vers la destination<br>→ Déchargement<br>→ Signature POD (Proof of Delivery)',
+            'step3-desc-mobile': '→ Trajet destination<br>→ Déchargement<br>→ Signature POD',
 
             /* ── Fleet ── */
             'fleet-title': 'NOTRE FLOTTE',
@@ -95,8 +95,8 @@
             'about-title-mobile': 'QUI SOMMES<br>NOUS ?',
             'about-p1': 'Depuis plus de 20 ans, <span class="highlight">Number One</span> est spécialiste du transport express en Belgique et en Europe.',
             'about-p2': '<span class="highlight">De 1 gramme à 30 tonnes</span>, nous prenons en charge tous vos envois, du courrier à la marchandise volumineuse.',
-            'about-p3': 'Nous proposons des <span class="highlight">solutions adaptées</span> à chaque besoin grâce à un <span class="highlight">service sur mesure</span>.',
-            'about-p4': '<span class="highlight">Fiabilité, rapidité</span> et suivi rigoureux font de Number One un partenaire de confiance pour les professionnels.',
+            'about-p3': 'Notre flotte complète — de la simple voiture au semi-remorque — et notre équipe de 70 professionnels sont à votre service pour chaque envoi.',
+            'about-p4': '<span class="highlight">Fiabilité, rapidité</span> et rigueur : ce sont les valeurs qui font de nous un partenaire de confiance depuis plus de 25 ans.',
             'about-btn': 'En savoir plus',
 
             /* ── Contact footer ── */
@@ -259,6 +259,17 @@
             'transport-p3': 'Nous nous chargeons de vos envois urgents vers/depuis la Belgique ou tous les pays européens.',
             'transport-p4': "Plis, palettes ou colis volumineux sont retirés et livrés dans la foulée. Notre importante flotte de véhicules nous permet de vous proposer le véhicule parfaitement adapté à vos besoins (depuis la simple voiture jusqu'au semi-remorque). Nos chauffeurs-livreurs peuvent vous aider en matière de manutention\u00a0… Tout comme nos dispatcheurs et les autres membres de notre personnel, ils sont à votre service\u00a0!",
             'transport-cta': 'NOUS CONTACTER',
+            'express-title': 'Transport Express',
+            'express-p1': "Nous nous chargeons de vos envois express vers/depuis la Belgique et tous les pays européens. Grâce à notre large choix de véhicules, qui va de la simple voiture à la semi-remorque, nous mettons à votre disposition le véhicule parfaitement adapté à vos besoins. Plis, palettes ou colis volumineux : nous assurons une prise en charge et une livraison rapides. Nos chauffeurs-livreurs, tout comme nos dispatcheurs et l'ensemble de notre équipe, sont à votre écoute et prêts à vous assister, y compris pour la manutention.",
+            'eco-title': 'Service Économie',
+            'eco-tagline': '40 % de réduction sur le tarif express',
+            'eco-p1': "Cette formule vous permet de bénéficier, sous certaines conditions, d'une réduction attractive de 40 % sur le tarif express ! Nous proposons ce service complémentaire à notre clientèle fidèle pour les envois dont les délais de livraison sont plus flexibles. Soyez amplement rassurés : les coûts de vos transports sont allégés, mais la qualité de notre service reste inchangée.",
+            'eco-li1': 'Pour toute commande passée avant 18 h, vos envois seront livrés dans un délai de 48 h en Belgique.',
+            'eco-li2': "Ce système de navettes a été créé pour tous vos envois qui ne nécessitent pas une livraison « express ». Veuillez cocher la case prévue à cet effet sur notre note d'envoi — à défaut, les courses seront automatiquement considérées comme express.",
+            'eco-li3': 'Réduction de 40 % pour chaque commande passée la veille avant 16 h, à livrer entre 8 h et 18 h le lendemain (J+1).',
+            'driver-title': 'Mise à disposition',
+            'driver-tagline': "Un chauffeur professionnel à votre service, à l'heure ou à la journée",
+            'driver-p1': "Bénéficiez, à tout moment, d'un véritable professionnel du transport à votre service ! Que ce soit à l'heure ou pour la journée entière, un chauffeur flexible, prêt à s'adapter à vos besoins, est mis à votre disposition. La solution idéale en cas de surcharge de travail, de défaillance de votre flotte ou si vous souhaitez éviter de gérer du personnel. Le véhicule est automatiquement remplacé en cas de panne ou d'accident. Ce service est disponible au départ et retour de Bruxelles — vous ne payez le chauffeur que pour les heures réellement prestées.",
 
             /* ── news.html ── */
             'news-hero-line1': 'NOS',
@@ -301,8 +312,8 @@
             'menu-news': 'NEWS',
             'menu-call': 'CALL US',
 
-            'hero-subtitle': 'Reliable and efficient transport solutions<br>for all your logistics needs',
-            'hero-subtitle-mobile': 'Reliable and efficient<br>transport solutions',
+            'hero-subtitle': 'Dedicated and express transport solutions, reliable and efficient<br>for all your logistics needs',
+            'hero-subtitle-mobile': 'Dedicated and express transport solutions,<br>reliable and efficient',
 
             'cta-info': 'Need a quick solution?',
             'btn-quote': 'Get a Quote',
@@ -323,15 +334,15 @@
 
             'process-subtitle': 'from reception to delivery',
             'step1-name': 'RECEPTION',
-            'step1-desc': 'Fast handling of your goods upon arrival with full traceability',
-            'step1-desc-mobile': 'Fast handling of<br>your goods upon<br>arrival!',
+            'step1-desc': '→ Client contact<br>→ Order intake',
+            'step1-desc-mobile': '→ Client contact<br>→ Order intake',
             'step2-name': 'PREPARATION',
-            'step2-name-mobile': 'DISPATCH &amp;<br>PREPARATION',
-            'step2-desc': 'Orders processed with precision by our team of experts',
-            'step2-desc-mobile': 'Orders processed<br>with precision!',
+            'step2-name-mobile': 'PREPARATION',
+            'step2-desc': '→ Assign driver<br>→ Drive to loading point<br>→ Load vehicle',
+            'step2-desc-mobile': '→ Assign driver<br>→ Loading point<br>→ Load vehicle',
             'step3-name': 'DELIVERY',
-            'step3-desc': 'Efficient, reliable and fast shipping across Europe',
-            'step3-desc-mobile': 'Efficient, reliable<br>and fast shipping!',
+            'step3-desc': '→ Drive to destination<br>→ Unload vehicle<br>→ Sign POD (Proof of Delivery)',
+            'step3-desc-mobile': '→ Drive to destination<br>→ Unload vehicle<br>→ Sign POD',
 
             'fleet-title': 'OUR FLEET',
             'fleet-subtitle': 'OF VEHICLES',
@@ -364,8 +375,8 @@
             'about-title-mobile': 'WHO ARE<br>WE?',
             'about-p1': 'For over 20 years, <span class="highlight">Number One</span> has been a specialist in express transport in Belgium and across Europe.',
             'about-p2': '<span class="highlight">From 1 gram to 30 tonnes</span>, we handle all your shipments, from letters to oversized freight.',
-            'about-p3': 'We offer <span class="highlight">tailored solutions</span> for every need, backed by a <span class="highlight">bespoke service</span>.',
-            'about-p4': '<span class="highlight">Reliability and speed</span>, combined with rigorous tracking, make Number One a trusted partner for professionals.',
+            'about-p3': 'Our complete fleet — from a simple car to a semi-trailer — and our team of 70 professionals are at your service for every shipment.',
+            'about-p4': '<span class="highlight">Reliability, speed</span> and rigour: the values that have made us a trusted partner for over 25 years.',
             'about-btn': 'Learn more',
 
             /* ── Contact footer ── */
@@ -526,6 +537,17 @@
             'transport-p3': 'We handle your urgent shipments to/from Belgium or any European country.',
             'transport-p4': 'Letters, pallets or bulky parcels are collected and delivered without delay. Our large fleet of vehicles allows us to offer you the perfectly suited vehicle for your needs (from a simple car to a semi-trailer). Our driver-deliverers can assist with handling\u00a0… Just like our dispatchers and other staff members, they are at your service\u00a0!',
             'transport-cta': 'CONTACT US',
+            'express-title': 'Express Transport',
+            'express-p1': 'We handle your express shipments to/from Belgium and all European countries. With our wide range of vehicles, from a simple car to a semi-trailer, we put at your disposal the vehicle perfectly suited to your needs. Letters, pallets or bulky parcels: we ensure rapid collection and delivery. Our drivers, dispatchers and entire team are ready to listen and assist you, including with handling.',
+            'eco-title': 'Economy Service',
+            'eco-tagline': '40% discount on the express rate',
+            'eco-p1': "This formula allows you, under certain conditions, to benefit from an attractive 40% discount on the express rate! We offer this complementary service to our loyal customers for shipments with more flexible delivery deadlines. Rest assured: your transport costs are reduced, but the quality of our service remains unchanged.",
+            'eco-li1': 'For any order placed before 6 pm, your shipments will be delivered within 48 hours in Belgium.',
+            'eco-li2': "This shuttle system was created for shipments that do not require express delivery. Please tick the relevant box on our shipping note — otherwise courses will automatically be treated as express.",
+            'eco-li3': '40% reduction for any order placed the day before before 4 pm, for delivery between 8 am and 6 pm the following day (D+1).',
+            'driver-title': 'Vehicle with Driver',
+            'driver-tagline': 'A professional driver at your service, by the hour or the day',
+            'driver-p1': "Benefit at any time from a true transport professional at your service! Whether by the hour or for the full day, a flexible driver, ready to adapt to your needs, is put at your disposal. The ideal solution in case of work overload, fleet failure, or if you wish to avoid managing staff. The vehicle is automatically replaced in case of breakdown or accident. This service is available from and to Brussels — you only pay the driver for hours actually worked.",
 
             /* ── news.html ── */
             'news-hero-line1': 'OUR',
@@ -568,8 +590,8 @@
             'menu-news': 'NIEUWS',
             'menu-call': 'BELLEN',
 
-            'hero-subtitle': 'Betrouwbare en efficiënte transportoplossingen<br>voor al uw logistieke behoeften',
-            'hero-subtitle-mobile': 'Betrouwbare en efficiënte<br>transportoplossingen',
+            'hero-subtitle': 'Toegewijde en express transportoplossingen, betrouwbaar en efficiënt<br>voor al uw logistieke behoeften',
+            'hero-subtitle-mobile': 'Toegewijde en express transportoplossingen,<br>betrouwbaar en efficiënt',
 
             'cta-info': 'Heeft u snel een oplossing nodig?',
             'btn-quote': 'Offerte aanvragen',
@@ -590,15 +612,15 @@
 
             'process-subtitle': 'van ontvangst tot levering',
             'step1-name': 'ONTVANGST',
-            'step1-desc': 'Snelle verwerking van uw goederen bij aankomst met volledige traceerbaarheid',
-            'step1-desc-mobile': 'Snelle verwerking van<br>uw goederen bij<br>aankomst!',
+            'step1-desc': '→ Klantcontact<br>→ Orderopname',
+            'step1-desc-mobile': '→ Klantcontact<br>→ Orderopname',
             'step2-name': 'VOORBEREIDING',
-            'step2-name-mobile': 'VERZENDING &amp;<br>VOORBEREIDING',
-            'step2-desc': 'Bestellingen nauwkeurig verwerkt door ons team van experts',
-            'step2-desc-mobile': 'Bestellingen nauwkeurig<br>verwerkt!',
+            'step2-name-mobile': 'VOORBEREIDING',
+            'step2-desc': '→ Chauffeur toewijzen<br>→ Rijden naar laadpunt<br>→ Voertuig laden',
+            'step2-desc-mobile': '→ Chauffeur toewijzen<br>→ Laadpunt<br>→ Voertuig laden',
             'step3-name': 'LEVERING',
-            'step3-desc': 'Efficiënte, betrouwbare en snelle verzending door heel Europa',
-            'step3-desc-mobile': 'Efficiënte, betrouwbare<br>en snelle levering!',
+            'step3-desc': '→ Rijden naar de bestemming<br>→ Lossen<br>→ POD ondertekenen (Proof of Delivery)',
+            'step3-desc-mobile': '→ Rijden naar bestemming<br>→ Lossen<br>→ POD ondertekenen',
 
             'fleet-title': 'ONZE VLOOT',
             'fleet-subtitle': 'VAN VOERTUIGEN',
@@ -631,8 +653,8 @@
             'about-title-mobile': 'WIE ZIJN<br>WIJ?',
             'about-p1': 'Sinds meer dan 20 jaar is <span class="highlight">Number One</span> specialist in expresvervoer in België en Europa.',
             'about-p2': '<span class="highlight">Van 1 gram tot 30 ton</span>, wij verwerken al uw zendingen, van brieven tot volumineuze goederen.',
-            'about-p3': 'Wij bieden <span class="highlight">oplossingen op maat</span> voor elke behoefte, dankzij een <span class="highlight">persoonlijke service</span>.',
-            'about-p4': '<span class="highlight">Betrouwbaarheid en snelheid</span>, gecombineerd met nauwgezette opvolging, maken Number One een vertrouwde partner voor professionals.',
+            'about-p3': 'Onze complete vloot — van een eenvoudige auto tot een oplegger — en ons team van 70 professionals staan klaar voor elke zending.',
+            'about-p4': '<span class="highlight">Betrouwbaarheid, snelheid</span> en nauwgezetheid: de waarden die ons al meer dan 25 jaar een vertrouwde partner maken.',
             'about-btn': 'Meer informatie',
 
             /* ── Contact footer ── */
@@ -793,6 +815,17 @@
             'transport-p3': 'Wij verzorgen uw urgente zendingen naar/vanuit België of alle Europese landen.',
             'transport-p4': "Brieven, paletten of volumineuze pakketten worden opgehaald en onmiddellijk geleverd. Onze grote vloot voertuigen stelt ons in staat u het perfecte voertuig voor uw behoeften aan te bieden (van een eenvoudige auto tot een oplegger). Onze chauffeur-koeriers kunnen helpen bij het hanteren\u00a0… Net zoals onze dispatchers en andere personeelsleden staan zij tot uw dienst\u00a0!",
             'transport-cta': 'NEEM CONTACT OP',
+            'express-title': 'Expressvervoer',
+            'express-p1': 'Wij verzorgen uw expreszendingen naar/vanuit België en alle Europese landen. Met ons ruim aanbod aan voertuigen, van een eenvoudige auto tot een oplegger, stellen wij het voertuig ter beschikking dat perfect is afgestemd op uw behoeften. Brieven, paletten of volumineuze pakketten : wij zorgen voor snelle afhaling en levering. Onze chauffeurs, dispatchers en het volledige team staan voor u klaar en zijn bereid u te helpen, ook bij de behandeling.',
+            'eco-title': 'Economiedienst',
+            'eco-tagline': '40 % korting op het expresstarief',
+            'eco-p1': "Deze formule laat u toe, onder bepaalde voorwaarden, te genieten van een aantrekkelijke korting van 40 % op het expresstarief ! Wij bieden deze aanvullende dienst aan onze trouwe klanten voor zendingen met flexibelere leveringstermijnen. Wees gerust : uw transportkosten worden verlaagd, maar de kwaliteit van onze dienstverlening blijft ongewijzigd.",
+            'eco-li1': 'Voor elke bestelling geplaatst vóór 18 u worden uw zendingen binnen 48 u in België geleverd.',
+            'eco-li2': "Dit pendelsysteem is gemaakt voor zendingen die geen expreslevering vereisen. Gelieve het betreffende vakje op onze verzendnota aan te kruisen — anders worden de ritten automatisch als express beschouwd.",
+            'eco-li3': '40 % korting voor elke bestelling geplaatst de dag voordien vóór 16 u, te leveren tussen 8 u en 18 u de volgende dag (J+1).',
+            'driver-title': 'Voertuig met chauffeur',
+            'driver-tagline': 'Een professionele chauffeur tot uw beschikking, per uur of per dag',
+            'driver-p1': "Geniet op elk moment van een echte transportprofessional die voor u klaarstaat ! Per uur of voor de volledige dag, een flexibele chauffeur klaar om zich aan uw behoeften aan te passen, staat tot uw beschikking. De ideale oplossing bij overbelasting, vlootproblemen of als u geen personeel wilt beheren. Het voertuig wordt automatisch vervangen bij panne of accident. Deze dienst is beschikbaar vanuit en naar Brussel — u betaalt de chauffeur alleen voor de werkelijk gepresteerde uren.",
 
             /* ── news.html ── */
             'news-hero-line1': 'ONS',

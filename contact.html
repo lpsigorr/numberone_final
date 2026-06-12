@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Number One Transport</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="desktop.css">
+    <script>
+        (function() {
+            var width = window.innerWidth;
+            var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+            if (width < 768 || isMobile) {
+                window.location.href = 'mobile.html';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Fixed Navigation Header -->
+        <header class="header">
+            <a class="logo" href="index.html">
+                <img src="images/nr1_logo.png" alt="Number One Transport">
+                <p class="logo-subtitle" data-i18n="logo-subtitle">Du groupe FB logistic</p>
+            </a>
+            <nav class="desktop-nav">
+                <a href="desktop.html#services" data-i18n="nav-services">Services</a>
+                <a href="desktop.html#process" data-i18n="nav-process">Notre Process</a>
+                <a href="desktop.html#fleet" data-i18n="nav-fleet">Notre Flotte</a>
+                <a href="more.html" data-i18n="nav-about">Qui Sommes-Nous</a>
+                <a href="news.html" data-i18n="nav-news">News</a>
+                <a href="calc.html" class="nav-cta" data-i18n="nav-quote">Faire un devis</a>
+            </nav>
+            <!-- Language Picker -->
+            <div class="lang-picker" id="langPicker">
+                <button class="lang-btn" id="langBtn" aria-label="Change language">
+                    <img id="currentFlag" class="lang-flag" src="" alt="">
+                    <span id="currentLangCode" class="lang-code">FR</span>
+                    <svg class="lang-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="#0F417B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-option" data-lang="fr"><img class="lang-flag lang-flag-fr" src="" alt=""> FR</button>
+                    <button class="lang-option" data-lang="nl"><img class="lang-flag lang-flag-nl" src="" alt=""> NL</button>
+                    <button class="lang-option" data-lang="en"><img class="lang-flag lang-flag-en" src="" alt=""> EN</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Contact Section (serves as main content and footer) -->
+        <div class="contact-separator" style="margin-top: 80px;"></div>
+        <section id="contact" class="contact-section">
+            <!-- FB Logistics block (grey) -->
+            <div class="contact-block contact-block--white">
+                <a href="https://www.fblogistics.be/en/" target="_blank" rel="noopener"><img src="images/fb_logo.png" alt="FB Logistics" class="contact-logo"></a>
+                <div class="contact-details">
+                    <p class="contact-address">Brucargo 720/1, 1830 Machelen,<br>Forest (Bruxelles), Belgique</p>
+                    <a href="tel:+3224276004" class="contact-phone">+32 2 427 60 04</a>
+                    <div class="contact-emails">
+                        <a href="mailto:sales@fblogistics.be">sales@fblogistics.be</a>
+                        <a href="mailto:info@fblogistics.be">info@fblogistics.be</a>
+                    </div>
+                    <a href="https://fblogistics.be" class="contact-web" target="_blank" rel="noopener">fblogistics.be</a>
+                </div>
+            </div>
+            <!-- Number One block (blue) -->
+            <div class="contact-block contact-block--blue">
+                <img src="images/nr1_logo_neg.png" alt="Number One" class="contact-logo contact-logo--n1">
+                <div class="contact-details">
+                    <p class="contact-address">Rue de Lusambo 59, 1190<br>Forest (Bruxelles), Belgique</p>
+                    <a href="tel:+3224276004" class="contact-phone">+32 2 427 60 04</a>
+                    <a href="mailto:express@number-one.be" class="contact-email-single">express@number-one.be</a>
+                </div>
+                <div class="contact-services">
+                    <h3 class="contact-services-title" data-i18n="menu-services">NOS SERVICES</h3>
+                    <nav class="contact-services-nav">
+                        <a href="desktop.html" data-i18n="menu-home">Accueil</a>
+                        <a href="desktop.html#fleet" data-i18n="menu-vehicles">Véhicules</a>
+                        <a href="desktop.html#services" data-i18n="menu-services-link">Nos services</a>
+                        <a href="more.html" data-i18n="menu-about-link">Qui sommes-nous ?</a>
+                        <a href="https://n1.log2x.com/wops_n1" data-i18n="menu-client" target="_blank" rel="noopener">Accès client</a>
+                        <a href="news.html" data-i18n="menu-news">News</a>
+                        <a href="tel:+3224276004" data-i18n="menu-call">Appeler</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script src="lang.js"></script>
+</body>
+</html>

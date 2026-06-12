@@ -81,7 +81,7 @@
                                 <path d="M7 15L13 10L7 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <a href="#contact" class="btn btn-secondary">
+                        <a href="contact.html" class="btn btn-secondary">
                             <span data-i18n="btn-contact">Nous contacter</span>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                 <path d="M7 15L13 10L7 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -241,7 +241,7 @@
             <div class="fleet-vehicles">
                 <div class="vehicles-scroll">
                     <!-- Voiture -->
-                    <div class="vehicle-card">
+                    <a class="vehicle-card" href="mailto:express@number-one.be">
                         <div class="vehicle-image">
                             <img src="images/voiture.png" alt="Voiture">
                         </div>
@@ -252,10 +252,10 @@
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Camionnette 9 M³ -->
-                    <div class="vehicle-card">
+                    <a class="vehicle-card" href="mailto:express@number-one.be">
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 9 M³">
                         </div>
@@ -266,10 +266,10 @@
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Camionnette 2,70 m³ -->
-                    <div class="vehicle-card">
+                    <a class="vehicle-card" href="mailto:express@number-one.be">
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 2,70 m³">
                         </div>
@@ -280,10 +280,10 @@
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Camionnette 6 M³ -->
-                    <div class="vehicle-card">
+                    <a class="vehicle-card" href="mailto:express@number-one.be">
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 6 M³">
                         </div>
@@ -294,7 +294,7 @@
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -316,7 +316,7 @@
                     <div class="stat-label" data-i18n="stat-solution">Solution unique</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">400<span class="stat-plus">+</span></div>
+                    <div class="stat-number">500<span class="stat-plus">+</span></div>
                     <div class="stat-label" data-i18n="stat-clients">Clients satisfaits</div>
                 </div>
             </div>
@@ -332,17 +332,15 @@
                 <div class="about-text">
                     <p data-i18n="about-p1">Depuis plus de 20 ans, <span class="highlight">Number One</span> est spécialiste du transport express en Belgique et en Europe.</p>
                     <p class="highlight-box" data-i18n="about-p2"><span class="highlight">De 1 gramme à 30 tonnes</span>, nous prenons en charge tous vos envois, du courrier à la marchandise volumineuse.</p>
-                    <p data-i18n="about-p3">Nous proposons des <span class="highlight">solutions adaptées</span> à chaque besoin grâce à un <span class="highlight">service sur mesure</span></p>
-                    <p data-i18n="about-p4"><span class="highlight">Fiabilité, rapidité</span> et suivi rigoureux font de Number One un partenaire de confiance pour les professionnels</p>
                 </div>
 
                 <a href="more.html" class="about-btn" data-i18n="about-btn">En savoir plus</a>
             </div>
         </section>
 
-        <!-- Footer -->
-        <!-- Contact Section -->
-        <section class="contact-section">
+        <!-- Contact Section (serves as footer) -->
+        <div class="contact-separator"></div>
+        <section id="contact" class="contact-section">
             <!-- FB Logistics block (white) -->
             <div class="contact-block contact-block--white">
                 <a href="https://www.fblogistics.be/en/" target="_blank" rel="noopener"><img src="images/fb_logo.png" alt="FB Logistics" class="contact-logo"></a>
@@ -379,38 +377,6 @@
             </div>
         </section>
 
-        <footer id="contact" class="footer">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>Number One Transport</h4>
-                    <p data-i18n="footer-col1-p1">Solutions de transport professionnel de 1 gramme à 30 tonnes.</p>
-                    <p data-i18n="footer-col1-p2">Fiabilité, rapidité et expertise depuis plus de 20 ans.</p>
-                </div>
-                <div class="footer-column">
-                    <h4 data-i18n="footer-col2-title">Services</h4>
-                    <a href="#services" data-i18n="footer-nat">Transport National</a>
-                    <a href="#services" data-i18n="footer-intl">Transport International</a>
-                    <a href="#fleet" data-i18n="footer-fleet">Notre Flotte</a>
-                    <a href="#process" data-i18n="footer-process">Notre Process</a>
-                </div>
-                <div class="footer-column">
-                    <h4 data-i18n="footer-col3-title">Entreprise</h4>
-                    <a href="#about" data-i18n="footer-about">Qui Sommes-Nous</a>
-                    <a href="#contact" data-i18n="footer-contact">Contact</a>
-                    <a href="#contact" data-i18n="footer-quote-link">Faire un Devis</a>
-                    <a href="#" data-i18n="footer-legal">Mentions Légales</a>
-                </div>
-                <div class="footer-column">
-                    <h4 data-i18n="footer-col4-title">Contact</h4>
-                    <p data-i18n="footer-location">Brussels Airport<br>Machelen, Belgique</p>
-                    <a href="tel:+32">+32 XX XXX XX XX</a>
-                    <a href="mailto:contact@numberone.be">contact@numberone.be</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p data-i18n="footer-copy">© 2026 Number One Transport. Tous droits réservés.</p>
-            </div>
-        </footer>
     </div>
     <script src="lang.js"></script>
 </body>
