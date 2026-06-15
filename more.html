@@ -11,11 +11,12 @@
 </head>
 <body>
     <div class="container">
+
         <!-- Header -->
         <header class="header">
             <a class="logo" href="index.html">
                 <img src="images/nr1_logo.png" alt="Number One Transport">
-                <p class="logo-subtitle" data-i18n="logo-subtitle">Du groupe FB logistic</p>
+                <p class="logo-subtitle" data-i18n="logo-subtitle">Du groupe FB logistics</p>
             </a>
             <nav class="desktop-nav">
                 <a href="desktop.html#services" data-i18n="nav-services">Services</a>
@@ -40,9 +41,7 @@
                 </div>
             </div>
             <button class="menu-btn" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </header>
 
@@ -54,7 +53,6 @@
                         <path d="M18 6L6 18M6 6L18 18" stroke="#0F417B" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </button>
-
                 <nav class="menu-nav">
                     <a href="mobile.html" class="menu-item" data-i18n="menu-home">ACCUEIL</a>
                     <a href="mobile.html#fleet" class="menu-item" data-i18n="menu-vehicles">VÉHICULES</a>
@@ -63,114 +61,120 @@
                     <a href="https://n1.log2x.com/wops_n1" class="menu-item menu-item-outlined" data-i18n="menu-client" target="_blank" rel="noopener">ACCÈS CLIENT</a>
                     <a href="news.html" class="menu-item" data-i18n="menu-news">NEWS</a>
                 </nav>
-
-                <a href="tel:+32" class="menu-call-btn" data-i18n="menu-call">APPELER</a>
+                <a href="tel:+3224276004" class="menu-call-btn" data-i18n="menu-call">APPELER</a>
             </div>
         </div>
 
-        <!-- Qui Sommes Nous Section -->
-        <section class="qsn">
-            <div class="qsn-head">
-                <a href="mobile.html" class="back-btn" aria-label="Retour" data-i18n-aria="back-label">
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                        <path d="M19 12H5M12 19l-7-7 7-7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <div class="qsn-title-block">
-                    <h1 class="qsn-title"><span data-i18n="qsn-title">Qui sommes<br>nous ?</span><img src="images/dtruck.png" alt="" class="qsn-truck"></h1>
-                    <div class="qsn-title-line"></div>
+        <!-- Hero -->
+        <section class="about-hero">
+            <img src="images/perso_1.png" alt="Number One Transport" class="hero-img">
+            <div class="hero-text">
+                <h1 class="hero-title" data-i18n="qsn-title">Qui sommes<br>nous ?</h1>
+                <p class="hero-subtitle" data-i18n="qsn-intro">Nous nous occupons de vos envois les plus urgents vers/depuis la Belgique ou tous les pays européens !</p>
+            </div>
+        </section>
+
+        <!-- Wave -->
+        <div class="hero-wave"></div>
+
+        <!-- Spec banner -->
+        <div class="spec-banner">
+            <span data-i18n="about-spec">Notre spécialisation depuis plus de 25 ans</span>
+        </div>
+
+        <!-- Section 1: Who we are -->
+        <section class="about-section">
+            <div class="about-intro">
+                <p class="about-p" data-i18n="qsn-text">Nous sommes une entreprise familiale, active dans le secteur du transport depuis plus de 25 ans. Le sérieux, la rigueur, la rapidité et le suivi administratif sont synonymes, pour notre société, de gage de confiance.</p>
+                <p class="about-p" data-i18n="charroi-text">Notre charroi de +/- 30 camions et camionnettes nous permet d'assurer les transports de plus de 400 clients fidèles, depuis l'artisan jusqu'à la multinationale en passant bien sûr par la PME.</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-row">
+                <div class="stat-item">
+                    <span class="stat-number">~30</span>
+                    <span class="stat-label" data-i18n="stat-vehicles">Véhicules</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">400+</span>
+                    <span class="stat-label" data-i18n="stat-clients">Clients satisfaits</span>
                 </div>
             </div>
-
-            <p class="qsn-intro" data-i18n="qsn-intro">Nous nous occupons de vos envois les plus urgents vers/depuis la Belgique ou tous les pays européens !</p>
-
-            <div class="qsn-divider"></div>
-
-            <div class="qsn-photo">
-                <img src="images/image_1.png" alt="Number One Transport - chargement de marchandises">
-            </div>
-
-            <div class="qsn-divider"></div>
-
-            <div class="qsn-slogan">
-                <p class="qsn-slogan-label" data-i18n="qsn-slogan-label">Notre slogan :</p>
-                <div class="qsn-slogan-bar" data-i18n="qsn-slogan-bar">« De 1 gramme à 30 tonnes » !</div>
-            </div>
-
-            <p class="qsn-text" data-i18n="qsn-text">Nous sommes une entreprise familiale, active dans le secteur du transport depuis plus de 25 ans. Le sérieux, la rigueur, la rapidité et le suivi administratif sont synonymes, pour notre société, de gage de confiance.</p>
         </section>
 
-        <!-- Charroi Section -->
-        <section class="charroi">
-            <p class="charroi-text" data-i18n="charroi-text">Notre charroi de +/- 30 camions et camionnettes nous permet d'assurer les transports de plus de 400 clients fidèles, depuis l'artisan jusqu'à la multinationale en passant bien sûr par la PME.</p>
-            <div class="charroi-band"></div>
-            <img src="images/perso_1.png" alt="Livreur Number One" class="charroi-person">
+        <!-- Section 2: What we do -->
+        <section class="what-section">
+            <div class="what-text">
+                <p data-i18n="colis-bottom">Vos plis et enveloppes, palettes ou autres colis sont retirés et livrés <strong>immédiatement</strong> et dans la foulée.</p>
+            </div>
+            <div class="what-image">
+                <img src="images/box_1.png" alt="Livraison Number One">
+            </div>
         </section>
 
-        <div class="qsn-divider"></div>
-
-        <!-- Colis Section -->
-        <section class="colis">
-            <p class="colis-text colis-text--top" data-i18n="colis-top">Nous nous occupons de vos envois les plus urgents vers/depuis la Belgique ou tous les <strong>pays européens.</strong></p>
-
-            <div class="colis-box">
-                <img src="images/box_1.png" alt="Colis Number One">
+        <!-- Section 3: Our promise -->
+        <section class="promise-section">
+            <!-- Slogan -->
+            <div class="slogan-block">
+                <span class="slogan-quote">&ldquo;</span>
+                <p class="slogan-text" data-i18n="qsn-slogan-bar">De 1 gramme à 30 tonnes</p>
+                <span class="slogan-quote">&rdquo;</span>
             </div>
 
-            <p class="colis-text colis-text--bottom" data-i18n="colis-bottom">Vos plis et enveloppes, palettes ou autres colis sont retirés et livrés <strong>immédiatement</strong> et dans la foulée.</p>
-        </section>
-
-        <div class="qsn-divider"></div>
-
-        <!-- Solution Banner -->
-        <section class="solution-banner-section">
+            <!-- Solution banner -->
             <div class="solution-banner">
                 <p data-i18n="solution-banner">Quelle que soit <strong>votre demande,</strong><br>nous avons <strong>Votre Solution.</strong></p>
             </div>
+
+            <!-- Closing paragraphs -->
+            <div class="promise-text">
+                <p data-i18n="solution-p1">Les <strong>compétences</strong> de notre équipe expérimentée permettent à Number One de vous accompagner pour toutes vos activités.</p>
+                <p data-i18n="solution-p2">Nous vous proposons des <strong>solutions</strong> sur mesure, <strong>adaptées à vos besoins</strong> spécifiques.</p>
+                <p data-i18n="persuades-p1">Nous sommes <strong>persuadés</strong> qu'une collaboration avec un partenaire de transport fiable ne peut qu'apporter une <strong>plus-value importante</strong> à votre société.</p>
+            </div>
         </section>
-
-        <div class="qsn-divider"></div>
-
-        <!-- Solution Text -->
-        <section class="solution-text-section">
-            <p class="solution-text" data-i18n="solution-p1">Les <strong>compétences</strong> de notre équipe expérimentée permettent à Number One de vous accompagner pour toutes vos activités.</p>
-            <p class="solution-text" data-i18n="solution-p2">Nous vous proposons des <strong>solutions</strong> sur mesure, <strong>adaptées à vos besoins</strong> spécifiques.</p>
-        </section>
-
-        <div class="qsn-divider"></div>
-
-        <!-- Nous répondons -->
-        <section class="repondons-section">
-            <p data-i18n="repondons">Nous répondons, <span class="hl">depuis plus de 25 ans</span> déjà, aux demandes de nos clients issus des secteurs les plus variés</p>
-        </section>
-
-        <div class="qsn-divider"></div>
-
-        <!-- Persuadés Section -->
-        <section class="persuades-section">
-            <p class="persuades-text" data-i18n="persuades-p1">Nous sommes <strong>persuadés</strong> qu'une collaboration avec un partenaire de transport fiable pour vous accompagner, ne peut qu'apporter une <strong>plus-value importante</strong> à votre société.</p>
-            <p class="persuades-text" data-i18n="persuades-p2">Notre site Internet remanié est destiné à vous offrir un outil que nous voulons <b>pratique, convivial</b> et <b>interactif</b> particulièrement, grâce à notre « portail clients ».</p>
-        </section>
-
-        <div class="qsn-divider"></div>
 
         <!-- Footer (mobile) -->
         <footer class="site-footer mobile-only">
             <div class="footer-buttons">
-                <a href="https://lpsigorr.github.io/vehicle_calculator/" class="btn btn-primary">
+                <a href="calc.html" class="btn btn-primary">
                     <span data-i18n="btn-quote">Faire un devis</span>
-                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M6 12L10 8L6 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
                 <a href="mobile.html#contact" class="btn btn-secondary">
                     <span data-i18n="btn-contact">Nous contacter</span>
-                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M6 12L10 8L6 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
             </div>
         </footer>
+
+        <!-- CTA (desktop) -->
+        <div class="dt-cta desktop-only">
+            <div class="dt-cta-inner">
+                <a href="calc.html" class="dt-btn dt-btn-primary">
+                    <span data-i18n="btn-quote">Faire un devis</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7 15L13 10L7 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="contact.html" class="dt-btn dt-btn-secondary">
+                    <span data-i18n="btn-contact">Nous contacter</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7 15L13 10L7 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- FB Group bar -->
+        <div class="fb-group-bar desktop-only">
+            <span data-i18n="fb-group-bar">Du groupe FB Logistics</span>
+        </div>
 
         <!-- Contact + Footer (desktop) -->
         <div class="dt-bottom desktop-only">
@@ -195,18 +199,6 @@
                         <a href="tel:+3224276004" class="dt-contact-phone">+32 2 427 60 04</a>
                         <a href="mailto:express@number-one.be" class="dt-contact-email-single">express@number-one.be</a>
                     </div>
-                    <div class="dt-contact-services">
-                        <h3 class="dt-contact-services-title" data-i18n="menu-services">NOS SERVICES</h3>
-                        <nav class="dt-contact-services-nav">
-                            <a href="desktop.html" data-i18n="menu-home">Accueil</a>
-                            <a href="desktop.html#fleet" data-i18n="menu-vehicles">Véhicules</a>
-                            <a href="desktop.html#services" data-i18n="menu-services-link">Nos services</a>
-                            <a href="more.html" data-i18n="menu-about-link">Qui sommes-nous ?</a>
-                            <a href="https://n1.log2x.com/wops_n1" data-i18n="menu-client" target="_blank" rel="noopener">Accès client</a>
-                            <a href="news.html" data-i18n="menu-news">News</a>
-                            <a href="tel:+3224276004" data-i18n="menu-call">Appeler</a>
-                        </nav>
-                    </div>
                 </div>
             </section>
         </div>
@@ -216,27 +208,24 @@
     <script src="lang.js"></script>
     <script>
         var menuToggle = document.getElementById('menuToggle');
-        var menuClose = document.getElementById('menuClose');
+        var menuClose  = document.getElementById('menuClose');
         var mobileMenu = document.getElementById('mobileMenu');
-        var menuItems = document.querySelectorAll('.menu-item');
+        var menuItems  = document.querySelectorAll('.menu-item');
 
         menuToggle.addEventListener('click', function() {
             mobileMenu.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
-
         menuClose.addEventListener('click', function() {
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
         });
-
         menuItems.forEach(function(item) {
             item.addEventListener('click', function() {
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
             });
         });
-
         mobileMenu.addEventListener('click', function(e) {
             if (e.target === mobileMenu) {
                 mobileMenu.classList.remove('active');

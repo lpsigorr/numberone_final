@@ -226,7 +226,7 @@ body {
 /* Hero Right Side - Person & Packages */
 .hero-visual {
     position: relative;
-    height: 100%;
+    align-self: stretch;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -236,15 +236,14 @@ body {
     position: absolute;
     left: -50px;
     bottom: 0;
-    width: clamp(320px, 32vw, 520px);
-    height: auto;
     z-index: 3;
     margin: 0;
 }
 
 .person-img {
-    width: 100%;
-    height: auto;
+    height: clamp(360px, 72vh, 640px);
+    width: auto;
+    display: block;
     filter: drop-shadow(0 20px 15px rgba(0, 0, 0, 0.45));
     margin: 0;
 }
@@ -252,17 +251,16 @@ body {
 .packages-section {
     position: absolute;
     right: 0;
-    bottom: clamp(120px, 13vw, 230px);
-    width: clamp(240px, 26vw, 400px);
-    height: auto;
+    bottom: clamp(60px, 8vh, 200px);
     z-index: 2;
     margin: 0;
     display: flex;
 }
 
 .packages-img {
-    width: 100%;
-    height: auto;
+    height: clamp(200px, 30vh, 400px);
+    width: auto;
+    display: block;
     filter: drop-shadow(0 20px 15px rgba(0, 0, 0, 0.45));
 }
 
@@ -1038,6 +1036,20 @@ body {
 
 .lang-option.lang-active {
     background: #e6eef9;
+}
+
+/* ── FB Group Bar ── */
+.fb-group-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8ecf0;
+    padding: 12px 80px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #5a6a7a;
+    letter-spacing: 0.05em;
+    border-top: 1px solid #d8dfe8;
 }
 
 /* ── Contact Separator ── */

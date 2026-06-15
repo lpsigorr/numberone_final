@@ -1132,6 +1132,20 @@ body {
     background: #e6eef9;
 }
 
+/* ── FB Group Bar ── */
+.fb-group-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8ecf0;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #5a6a7a;
+    letter-spacing: 0.05em;
+    border-top: 1px solid #d8dfe8;
+}
+
 /* ── Contact Separator ── */
 .contact-separator {
     width: 100%;

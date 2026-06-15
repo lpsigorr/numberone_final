@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number One Transport - Transport National &amp; International</title>
+    <title>Number One Transport - Service Économique</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="transport.css">
+    <link rel="stylesheet" href="economical.css">
 </head>
 <body>
     <div class="container">
@@ -68,66 +68,43 @@
         </div>
 
         <!-- Hero Section -->
-        <section class="transport-hero">
-            <img src="images/trukk.png" alt="Transport" class="hero-truck">
+        <section class="eco-hero">
+            <div class="hero-badge-wrap">
+                <span class="hero-badge">-40%</span>
+            </div>
+            <img src="images/sqsq_1.png" alt="Service Économique" class="hero-img">
             <div class="hero-text">
-                <h1 class="hero-title">TRANSPORT</h1>
-                <p class="hero-subtitle" data-i18n="transport-subtitle">National et international</p>
+                <h1 class="hero-title" data-i18n="eco-page-title">ÉCONOMIQUE</h1>
+                <p class="hero-subtitle" data-i18n="eco-tagline">40 % de réduction sur le tarif express</p>
             </div>
         </section>
 
         <!-- Wave transition -->
         <div class="hero-wave"></div>
 
-        <!-- Specialisation Banner -->
+        <!-- Tagline Banner -->
         <div class="spec-banner">
-            <span data-i18n="transport-spec">Notre spécialisation depuis plus de 25 ans</span>
+            <svg width="18" height="18" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+                <circle cx="14" cy="14" r="11" stroke="white" stroke-width="2.5"/>
+                <path d="M14 8v6l4 2" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span data-i18n="eco-tagline">40 % de réduction sur le tarif express</span>
         </div>
 
-        <!-- Intro -->
-        <section class="transport-content">
-            <p class="content-p" data-i18n="transport-p1">Notre dénomination n'est pas usurpée, nous sommes les « Number One » dans notre secteur.</p>
-            <p class="content-p content-p--bold" data-i18n="transport-p2">Notre équipe expérimentée de près de 70 personnes (avec très peu de rotation depuis toutes ces années, gage de professionnalisme) est à votre disposition pour vous apporter <strong>LA Solution</strong> dont vous avez besoin.</p>
-        </section>
+        <!-- Intro + Accordion -->
+        <section class="eco-content">
+            <p class="content-p" data-i18n="eco-p1">Cette formule vous permet de bénéficier, sous certaines conditions, d'une réduction attractive de 40% sur le tarif express ! Nous proposons ce service complémentaire à notre clientèle fidèle pour les envois dont les délais de livraison sont plus flexibles. Soyez amplement rassurée : les coûts de vos transports sont allégés mais la qualité de notre service reste inchangée.</p>
 
-        <!-- Service Blocks -->
-        <section class="transport-services">
-
-            <!-- Express -->
-            <div class="transport-service-block transport-service-block--express">
-                <div class="service-block-header">
-                    <div class="service-block-icon service-block-icon--green">
-                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 14L25 14M17 7L25 14L17 21" stroke="#3EB550" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h2 class="service-block-title" data-i18n="express-title">Transport Express</h2>
-                </div>
-                <p class="service-block-p" data-i18n="express-p1">Nous nous chargeons de vos envois express vers/depuis la Belgique et tous les pays européens. Grâce à notre large choix de véhicules, qui va de la simple voiture à la semi-remorque, nous mettons à votre disposition le véhicule parfaitement adapté à vos besoins. Plis, palettes ou colis volumineux : nous assurons une prise en charge et une livraison rapides. Nos chauffeurs-livreurs, tout comme nos dispatcheurs et l'ensemble de notre équipe, sont à votre écoute et prêts à vous assister, y compris pour la manutention.</p>
-            </div>
-
-            <!-- Économie -->
-            <!-- Mise à disposition -->
-            <div class="transport-service-block transport-service-block--driver">
-                <div class="service-block-header">
-                    <div class="service-block-icon service-block-icon--blue">
-                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="14" cy="9" r="4" stroke="#0F417B" stroke-width="2.5"/>
-                            <path d="M6 24c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#0F417B" stroke-width="2.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h2 class="service-block-title" data-i18n="driver-title">Mise à disposition</h2>
-                        <p class="service-block-tagline service-block-tagline--blue" data-i18n="driver-tagline">Un chauffeur professionnel à votre service, à l'heure ou à la journée</p>
-                    </div>
-                </div>
-                <p class="service-block-p" data-i18n="driver-p1">Bénéficiez, à tout moment, d'un véritable professionnel du transport à votre service ! Que ce soit à l'heure ou pour la journée entière, un chauffeur flexible, prêt à s'adapter à vos besoins, est mis à votre disposition.</p>
-            </div>
-
+            <!-- Details list -->
+            <ul class="eco-details-list">
+                <li data-i18n="eco-li1">Pour toute commande passée avant 18 heures, vos envois seront livrés dans un délai de 48 heures en Belgique.</li>
+                <li data-i18n="eco-li2">Ce système de navettes a été créé pour tous vos envois qui ne nécessitent pas une livraison « express ». Nous vous demandons donc de bien vouloir cocher la case prévue à cet effet sur notre note d'envoi. À défaut de quoi, les courses seront automatiquement considérées comme des « express ».</li>
+                <li data-i18n="eco-li3">Nous vous proposons de réduire le prix de vos transports de 40%, pour chaque commande passée la veille avant 16h00 et à livrer entre 8h00 et 18h00 le lendemain (J+1).</li>
+            </ul>
         </section>
 
         <!-- Footer Actions (mobile) -->
-        <footer class="transport-footer mobile-only">
+        <footer class="eco-footer mobile-only">
             <a href="mobile.html#contact" class="cta-btn">
                 <span data-i18n="transport-cta">NOUS CONTACTER</span>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -190,7 +167,6 @@
                     </div>
                 </div>
             </section>
-            
         </div>
 
     </div>
@@ -225,6 +201,7 @@
                 document.body.style.overflow = '';
             }
         });
+
     </script>
 </body>
 </html>
