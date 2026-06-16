@@ -389,8 +389,10 @@
     <script src="fleet-modal.js"></script>
     <script>
         (function () {
+            if (localStorage.getItem('welcome_shown')) return;
             var overlay = document.getElementById('welcomePopup');
             function closePopup() {
+                localStorage.setItem('welcome_shown', '1');
                 overlay.classList.add('welcome-popup-hide');
                 setTimeout(function () { overlay.style.display = 'none'; }, 400);
             }
