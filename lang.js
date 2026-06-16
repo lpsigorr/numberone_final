@@ -100,6 +100,11 @@
             'about-p4': '<span class="highlight">Fiabilité, rapidité</span> et rigueur : ce sont les valeurs qui font de nous un partenaire de confiance depuis plus de 25 ans.',
             'about-btn': 'En savoir plus',
 
+            /* ── Welcome popup ── */
+            'popup-title': 'Bienvenue chez Number One !',
+            'popup-body': 'Vous êtes au bon endroit pour tous vos besoins de transport — national et international. De 1 gramme à 30 tonnes, nous livrons partout en Belgique et en Europe.',
+            'popup-close': 'Découvrir nos services',
+
             /* ── Contact footer ── */
             'menu-services-link': 'Nos services',
             'menu-about-link': 'Qui sommes-nous ?',
@@ -384,6 +389,11 @@
             'about-p4': '<span class="highlight">Reliability, speed</span> and rigour: the values that have made us a trusted partner for over 25 years.',
             'about-btn': 'Learn more',
 
+            /* ── Welcome popup ── */
+            'popup-title': 'Welcome to Number One!',
+            'popup-body': 'You\'re on the right page for all your transportation needs — national and international. From 1 gram to 30 tonnes, we deliver across Belgium and Europe.',
+            'popup-close': 'Explore our services',
+
             /* ── Contact footer ── */
             'menu-services-link': 'Our services',
             'menu-about-link': 'About us',
@@ -665,6 +675,11 @@
             'about-p3': 'Onze complete vloot — van een eenvoudige auto tot een oplegger — en ons team van 70 professionals staan klaar voor elke zending.',
             'about-p4': '<span class="highlight">Betrouwbaarheid, snelheid</span> en nauwgezetheid: de waarden die ons al meer dan 25 jaar een vertrouwde partner maken.',
             'about-btn': 'Meer informatie',
+
+            /* ── Welcome popup ── */
+            'popup-title': 'Welkom bij Number One!',
+            'popup-body': 'U bent op de juiste pagina voor al uw transportbehoeften — nationaal en internationaal. Van 1 gram tot 30 ton, wij leveren door heel België en Europa.',
+            'popup-close': 'Ontdek onze diensten',
 
             /* ── Contact footer ── */
             'menu-services-link': 'Onze diensten',

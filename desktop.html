@@ -370,6 +370,37 @@
         </section>
 
     </div>
+
+    <!-- Welcome Popup -->
+    <div id="welcomePopup" class="welcome-popup-overlay">
+        <div class="welcome-popup">
+            <button class="welcome-popup-x" id="welcomePopupX" aria-label="Fermer">&#10005;</button>
+            <div class="welcome-popup-icon">
+                <img src="images/nr1_logo.png" alt="Number One">
+            </div>
+            <h2 class="welcome-popup-title" data-i18n="popup-title">Bienvenue chez Number One !</h2>
+            <p class="welcome-popup-body" data-i18n="popup-body">Vous êtes au bon endroit pour tous vos besoins de transport — national et international. De 1 gramme à 30 tonnes, nous livrons partout en Belgique et en Europe.</p>
+            <button class="welcome-popup-btn" id="welcomePopupBtn" data-i18n="popup-close">Découvrir nos services</button>
+        </div>
+    </div>
+
     <script src="lang.js"></script>
+    <script>
+        (function () {
+            var overlay = document.getElementById('welcomePopup');
+            function closePopup() {
+                overlay.classList.add('welcome-popup-hide');
+                setTimeout(function () { overlay.style.display = 'none'; }, 400);
+            }
+            setTimeout(function () {
+                overlay.classList.add('welcome-popup-show');
+            }, 1500);
+            document.getElementById('welcomePopupX').addEventListener('click', closePopup);
+            document.getElementById('welcomePopupBtn').addEventListener('click', closePopup);
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closePopup();
+            });
+        })();
+    </script>
 </body>
 </html>
