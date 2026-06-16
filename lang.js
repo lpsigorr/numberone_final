@@ -28,7 +28,7 @@
             'menu-call': 'APPELER',
 
             /* ── Hero ── */
-            'hero-subtitle': 'Solutions de transport dédié et express, fiables et efficaces<br>pour tous vos besoins logistiques',
+            'hero-subtitle': 'Solutions de transport dédié et express, fiables et efficaces pour tous vos besoins logistiques',
             'hero-subtitle-mobile': 'Solutions de transport dédié et express,<br>fiables et efficaces',
 
             /* ── CTA ── */
@@ -340,7 +340,7 @@
             'menu-news': 'NEWS',
             'menu-call': 'CALL US',
 
-            'hero-subtitle': 'Dedicated and express transport solutions, reliable and efficient<br>for all your logistics needs',
+            'hero-subtitle': 'Dedicated and express transport solutions, reliable and efficient for all your logistics needs',
             'hero-subtitle-mobile': 'Dedicated and express transport solutions,<br>reliable and efficient',
 
             'cta-info': 'Need a quick solution?',
@@ -645,7 +645,7 @@
             'menu-news': 'NIEUWS',
             'menu-call': 'BELLEN',
 
-            'hero-subtitle': 'Toegewijde en express transportoplossingen, betrouwbaar en efficiënt<br>voor al uw logistieke behoeften',
+            'hero-subtitle': 'Toegewijde en express transportoplossingen, betrouwbaar en efficiënt voor al uw logistieke behoeften',
             'hero-subtitle-mobile': 'Toegewijde en express transportoplossingen,<br>betrouwbaar en efficiënt',
 
             'cta-info': 'Heeft u snel een oplossing nodig?',
