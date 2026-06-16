@@ -1,0 +1,354 @@
+/* ── Fleet Vehicle Detail Modal ── */
+
+.fleet-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 65, 123, 0.62);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 9998;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.fleet-modal-overlay.fleet-modal-open {
+    display: flex;
+}
+.fleet-modal-overlay.fleet-modal-closing {
+    animation: fmFadeOut 0.3s ease forwards;
+}
+@keyframes fmFadeOut { to { opacity: 0; } }
+
+/* ── Card wrapper (holds card + floating close button) ── */
+.fleet-modal-card-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100dvh - 32px);
+    width: min(420px, 100%);
+}
+
+/* ── Card ── */
+.fleet-modal-card {
+    background: #fff;
+    border-radius: 20px;
+    width: min(420px, 100%);
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    box-shadow: 0 28px 72px rgba(15, 65, 123, 0.28);
+    animation: fmCardIn 0.38s cubic-bezier(0.34, 1.5, 0.64, 1) both;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.fleet-modal-card::-webkit-scrollbar { display: none; }
+.fleet-modal-overlay.fleet-modal-closing .fleet-modal-card {
+    animation: fmCardOut 0.3s ease forwards;
+}
+@keyframes fmCardIn {
+    from { transform: scale(0.86) translateY(18px); opacity: 0; }
+    to   { transform: scale(1)    translateY(0);    opacity: 1; }
+}
+@keyframes fmCardOut {
+    to   { transform: scale(0.9) translateY(10px); opacity: 0; }
+}
+.fleet-modal-card.fleet-modal-slide {
+    opacity: 0;
+    transform: scale(0.97);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+/* ── Close button — floats to the right of the card ── */
+.fleet-modal-close {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 12px);
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1.5px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 3;
+    transition: background 0.2s, transform 0.15s;
+    line-height: 1;
+}
+.fleet-modal-close:hover {
+    background: rgba(255,255,255,0.32);
+    transform: scale(1.1);
+}
+
+/* ── Header ── */
+.fleet-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 22px 20px 0 20px;
+    gap: 10px;
+}
+.fleet-modal-vehicle-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.fleet-modal-type-icon {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.fleet-modal-type {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F417B;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+}
+.fleet-modal-subtext {
+    font-size: 11px;
+    color: #999;
+    margin-top: 3px;
+    font-weight: 500;
+}
+.fleet-modal-badge {
+    background: #edf8f0;
+    color: #3EB550;
+    border: 1.5px solid #3EB550;
+    border-radius: 20px;
+    padding: 5px 11px;
+    font-size: 10.5px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* ── Vehicle image ── */
+.fleet-modal-img-wrap {
+    margin: 16px 16px 0;
+    background: linear-gradient(145deg, #eaf1f8 0%, #dde9f5 100%);
+    border-radius: 14px;
+    padding: 20px 16px;
+    text-align: center;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.fleet-modal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 18px rgba(15, 65, 123, 0.18));
+}
+
+/* ── 3 Stats ── */
+.fleet-modal-stats {
+    display: flex;
+    gap: 8px;
+    padding: 16px 16px 0;
+}
+.fleet-modal-stat {
+    flex: 1;
+    background: #f7f9fc;
+    border: 1px solid #e8edf3;
+    border-radius: 12px;
+    padding: 12px 6px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.fleet-modal-stat-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+.fleet-modal-shield {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fleet-modal-stat-label {
+    font-size: 9.5px;
+    color: #999;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+}
+.fleet-modal-stat-value {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F417B;
+    line-height: 1;
+}
+.fleet-modal-stat-green {
+    color: #3EB550;
+}
+
+/* ── Specs table ── */
+.fleet-modal-specs {
+    padding: 16px 20px 0;
+}
+.fleet-modal-specs-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #0F417B;
+    letter-spacing: 0.08em;
+    margin: 0 0 6px;
+    text-transform: uppercase;
+}
+.fleet-modal-specs-bar {
+    height: 2.5px;
+    width: 30px;
+    background: #3EB550;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+.fleet-modal-spec-row {
+    display: flex;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid #f0f3f7;
+    gap: 10px;
+}
+.fleet-modal-spec-row:last-child { border-bottom: none; }
+.fleet-modal-spec-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+.fleet-modal-spec-label {
+    flex: 1;
+    font-size: 12.5px;
+    color: #555;
+    font-weight: 400;
+}
+.fleet-modal-spec-value {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #0F417B;
+}
+
+/* ── Pagination dots ── */
+.fleet-modal-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    padding: 18px 0 4px;
+}
+.fleet-modal-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #d0d8e4;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+.fleet-modal-dot-active {
+    background: #0F417B;
+    transform: scale(1.3);
+}
+
+/* ── CTA ── */
+.fleet-modal-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 14px 16px 20px;
+    background: #3EB550;
+    color: #fff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+}
+.fleet-modal-cta:hover {
+    background: #33a045;
+    transform: translateY(-1px);
+}
+
+/* ── Nav arrows ── */
+.fleet-modal-nav {
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(15, 65, 123, 0.18);
+    transition: transform 0.15s, box-shadow 0.15s;
+    flex-shrink: 0;
+}
+.fleet-modal-nav:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(15, 65, 123, 0.26);
+}
+
+/* ── Mobile adjustments ── */
+@media (max-width: 600px) {
+    .fleet-modal-overlay {
+        gap: 0;
+        padding: 0;
+        align-items: flex-end;
+    }
+    .fleet-modal-card-wrap {
+        width: 100%;
+        max-height: 92dvh;
+    }
+    .fleet-modal-card {
+        width: 100%;
+        max-height: 92dvh;
+        border-radius: 24px 24px 0 0;
+        animation: fmCardInMobile 0.4s cubic-bezier(0.34, 1.3, 0.64, 1) both;
+    }
+    @keyframes fmCardInMobile {
+        from { transform: translateY(100%); }
+        to   { transform: translateY(0); }
+    }
+    .fleet-modal-overlay.fleet-modal-closing .fleet-modal-card {
+        animation: fmCardOutMobile 0.3s ease forwards;
+    }
+    @keyframes fmCardOutMobile {
+        to { transform: translateY(100%); }
+    }
+    /* On mobile, close button sits top-right inside the card (no room outside) */
+    .fleet-modal-close {
+        top: 12px;
+        left: auto;
+        right: 14px;
+        background: #f0f4f8;
+        border-color: transparent;
+        color: #888;
+        backdrop-filter: none;
+    }
+    .fleet-modal-close:hover { background: #0F417B; color: #fff; }
+    .fleet-modal-nav { display: none; }
+    .fleet-modal-dots { padding: 16px 0 2px; }
+}

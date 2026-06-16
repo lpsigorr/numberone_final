@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="desktop.css">
+    <link rel="stylesheet" href="fleet-modal.css">
     <script>
         (function() {
             var width = window.innerWidth;
@@ -241,7 +242,7 @@
             <div class="fleet-vehicles">
                 <div class="vehicles-scroll">
                     <!-- Voiture -->
-                    <a class="vehicle-card" href="mailto:express@number-one.be">
+                    <div class="vehicle-card" role="button" tabindex="0">
                         <div class="vehicle-image">
                             <img src="images/voiture.png" alt="Voiture">
                         </div>
@@ -252,10 +253,10 @@
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                    </a>
+                    </div>
 
                     <!-- Camionnette 9 M³ -->
-                    <a class="vehicle-card" href="mailto:express@number-one.be">
+                    <div class="vehicle-card" role="button" tabindex="0">
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 9 M³">
                         </div>
@@ -266,10 +267,10 @@
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                    </a>
+                    </div>
 
                     <!-- Camionnette 2,70 m³ -->
-                    <a class="vehicle-card" href="mailto:express@number-one.be">
+                    <div class="vehicle-card" role="button" tabindex="0">
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 2,70 m³">
                         </div>
@@ -280,10 +281,10 @@
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                    </a>
+                    </div>
 
                     <!-- Camionnette 6 M³ -->
-                    <a class="vehicle-card" href="mailto:express@number-one.be">
+                    <div class="vehicle-card" role="button" tabindex="0">
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 6 M³">
                         </div>
@@ -294,7 +295,7 @@
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -385,6 +386,7 @@
     </div>
 
     <script src="lang.js"></script>
+    <script src="fleet-modal.js"></script>
     <script>
         (function () {
             var overlay = document.getElementById('welcomePopup');

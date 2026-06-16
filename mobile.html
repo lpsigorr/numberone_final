@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="fleet-modal.css">
     <script>
         (function() {
             var width = window.innerWidth;
@@ -281,57 +282,57 @@
 
             <div class="fleet-vehicles">
                 <div class="vehicles-scroll">
-                    <a class="vehicle-card" href="mailto:express@number-one.be">
+                    <div class="vehicle-card" role="button" tabindex="0">
                         <div class="vehicle-image">
                             <img src="images/voiture.png" alt="Voiture">
                         </div>
                         <h4 data-i18n="veh1-name">VOITURE</h4>
                         <p data-i18n="veh1-desc-mobile">Idéale pour les petits déplacements<br>et livraisons rapides.</p>
-                        <button class="vehicle-arrow">
+                        <div class="vehicle-arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                        </button>
-                    </a>
+                        </div>
+                    </div>
 
-                    <a class="vehicle-card" href="mailto:express@number-one.be">
+                    <div class="vehicle-card" role="button" tabindex="0">
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 9 M³">
                         </div>
                         <h4 data-i18n="veh2-name">CAMIONNETTE 9 M³ / 4</h4>
                         <p data-i18n="veh2-desc-mobile">Volume optimal pour transport<br>plus important, en toute sécurité.</p>
-                        <button class="vehicle-arrow">
+                        <div class="vehicle-arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                        </button>
-                    </a>
+                        </div>
+                    </div>
 
-                    <a class="vehicle-card" href="mailto:express@number-one.be">
+                    <div class="vehicle-card" role="button" tabindex="0">
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 2,70 m³">
                         </div>
                         <h4 data-i18n="veh3-name">CAMIONNETTE 2,70 m³ / 450 kg</h4>
                         <p data-i18n="veh3-desc-mobile">Parfaite pour les petits transports et<br>livraisons.</p>
-                        <button class="vehicle-arrow">
+                        <div class="vehicle-arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                        </button>
-                    </a>
+                        </div>
+                    </div>
 
-                    <a class="vehicle-card" href="mailto:express@number-one.be">
+                    <div class="vehicle-card" role="button" tabindex="0">
                         <div class="vehicle-image">
                             <img src="images/camionnette.png" alt="Camionnette 6 M³">
                         </div>
                         <h4 data-i18n="veh4-name">CAMIONNETTE 6 M³ / 4</h4>
                         <p data-i18n="veh4-desc-mobile">Idéale pour vos déménagements<br>et livraisons du quotidien.</p>
-                        <button class="vehicle-arrow">
+                        <div class="vehicle-arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M9 18L15 12L9 6" stroke="#3EB550" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                        </button>
-                    </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -429,6 +430,7 @@
     </div>
 
     <script src="lang.js"></script>
+    <script src="fleet-modal.js"></script>
     <script>
         var menuToggle = document.getElementById('menuToggle');
         var menuClose = document.getElementById('menuClose');
